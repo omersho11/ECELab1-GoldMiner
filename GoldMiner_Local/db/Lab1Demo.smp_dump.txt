@@ -1,0 +1,8 @@
+
+State Machine - |main|StageController:inst1|stageSM
+Name stageSM.S_LEVEL stageSM.S_LOSS_MENU stageSM.S_WIN_MENU stageSM.S_SHOP stageSM.S_MAIN_MENU 
+stageSM.S_MAIN_MENU 0 0 0 0 0 
+stageSM.S_SHOP 0 0 0 1 1 
+stageSM.S_WIN_MENU 0 0 1 0 1 
+stageSM.S_LOSS_MENU 0 1 0 0 1 
+stageSM.S_LEVEL 1 0 0 0 1 

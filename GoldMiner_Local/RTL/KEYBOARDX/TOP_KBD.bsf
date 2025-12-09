@@ -1,0 +1,149 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 272 272)
+	(text "TOP_KBD" (rect 5 0 73 20)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 233 31 252)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLOCK_50" (rect 0 0 75 20)(font "Intel Clear" (font_size 8)))
+		(text "CLOCK_50" (rect 21 27 96 47)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 46 20)(font "Intel Clear" (font_size 8)))
+		(text "resetN" (rect 21 43 67 63)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "PS2_CLK" (rect 0 0 63 20)(font "Intel Clear" (font_size 8)))
+		(text "PS2_CLK" (rect 21 59 84 79)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "PS2_DAT" (rect 0 0 66 20)(font "Intel Clear" (font_size 8)))
+		(text "PS2_DAT" (rect 21 75 87 95)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 256 32)
+		(output)
+		(text "keyIsPressed[9..0]" (rect 0 0 127 20)(font "Intel Clear" (font_size 8)))
+		(text "keyIsPressed[9..0]" (rect 108 27 235 47)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 32)(pt 240 32)(line_width 3))
+	)
+	(port
+		(pt 256 48)
+		(output)
+		(text "Plus" (rect 0 0 30 20)(font "Intel Clear" (font_size 8)))
+		(text "Plus" (rect 205 43 235 63)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 48)(pt 240 48))
+	)
+	(port
+		(pt 256 64)
+		(output)
+		(text "back" (rect 0 0 33 20)(font "Intel Clear" (font_size 8)))
+		(text "back" (rect 202 59 235 79)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 64)(pt 240 64))
+	)
+	(port
+		(pt 256 80)
+		(output)
+		(text "slash" (rect 0 0 36 20)(font "Intel Clear" (font_size 8)))
+		(text "slash" (rect 199 75 235 95)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 80)(pt 240 80))
+	)
+	(port
+		(pt 256 96)
+		(output)
+		(text "del" (rect 0 0 22 20)(font "Intel Clear" (font_size 8)))
+		(text "del" (rect 213 91 235 111)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 96)(pt 240 96))
+	)
+	(port
+		(pt 256 112)
+		(output)
+		(text "enter" (rect 0 0 37 20)(font "Intel Clear" (font_size 8)))
+		(text "enter" (rect 198 107 235 127)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 112)(pt 240 112))
+	)
+	(port
+		(pt 256 128)
+		(output)
+		(text "minus" (rect 0 0 42 20)(font "Intel Clear" (font_size 8)))
+		(text "minus" (rect 193 123 235 143)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 128)(pt 240 128))
+	)
+	(port
+		(pt 256 144)
+		(output)
+		(text "star" (rect 0 0 27 20)(font "Intel Clear" (font_size 8)))
+		(text "star" (rect 208 139 235 159)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 144)(pt 240 144))
+	)
+	(port
+		(pt 256 160)
+		(output)
+		(text "num" (rect 0 0 31 20)(font "Intel Clear" (font_size 8)))
+		(text "num" (rect 204 155 235 175)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 160)(pt 240 160))
+	)
+	(port
+		(pt 256 176)
+		(output)
+		(text "keyPad[3..0]" (rect 0 0 87 20)(font "Intel Clear" (font_size 8)))
+		(text "keyPad[3..0]" (rect 148 171 235 191)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 176)(pt 240 176)(line_width 3))
+	)
+	(port
+		(pt 256 192)
+		(output)
+		(text "keyPadValid" (rect 0 0 87 20)(font "Intel Clear" (font_size 8)))
+		(text "keyPadValid" (rect 148 187 235 207)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 192)(pt 240 192))
+	)
+	(port
+		(pt 256 208)
+		(output)
+		(text "anyKeyMake" (rect 0 0 89 20)(font "Intel Clear" (font_size 8)))
+		(text "anyKeyMake" (rect 146 203 235 223)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 208)(pt 240 208))
+	)
+	(port
+		(pt 256 224)
+		(output)
+		(text "anyKeyBreak" (rect 0 0 92 20)(font "Intel Clear" (font_size 8)))
+		(text "anyKeyBreak" (rect 143 219 235 239)(font "Intel Clear" (font_size 8)))
+		(line (pt 256 224)(pt 240 224))
+	)
+	(drawing
+		(rectangle (rect 16 16 240 240))
+	)
+)

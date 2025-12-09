@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "PS2_DAT",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[27]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[25]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[24]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

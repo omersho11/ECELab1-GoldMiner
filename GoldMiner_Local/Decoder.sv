@@ -1,0 +1,11 @@
+module Decoder
+#(parameter int SIZE = 4)
+  
+(	input logic [SIZE-1:0] data,
+	output logic [(2**(SIZE))-1:0] out ) ;
+
+	always_comb begin
+		out = 0;
+		out[data] = 1;
+	end
+endmodule
