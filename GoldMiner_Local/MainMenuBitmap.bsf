@@ -21,7 +21,7 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 256 160)
+	(rect 16 16 232 160)
 	(text "MainMenuBitmap" (rect 5 0 73 12)(font "Arial" ))
 	(text "inst" (rect 8 128 20 140)(font "Arial" ))
 	(port
@@ -55,32 +55,25 @@ agreement for further details.
 	(port
 		(pt 0 96)
 		(input)
-		(text "InsideRectangle" (rect 0 0 62 12)(font "Arial" ))
-		(text "InsideRectangle" (rect 21 91 83 103)(font "Arial" ))
+		(text "enable" (rect 0 0 24 12)(font "Arial" ))
+		(text "enable" (rect 21 91 45 103)(font "Arial" ))
 		(line (pt 0 96)(pt 16 96)(line_width 1))
 	)
 	(port
-		(pt 240 32)
+		(pt 216 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 63 12)(font "Arial" ))
-		(text "drawingRequest" (rect 156 27 219 39)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32)(line_width 1))
+		(text "drawingRequest" (rect 132 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 1))
 	)
 	(port
-		(pt 240 48)
+		(pt 216 48)
 		(output)
 		(text "RGBout[7..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "RGBout[7..0]" (rect 166 43 219 55)(font "Arial" ))
-		(line (pt 240 48)(pt 224 48)(line_width 3))
-	)
-	(port
-		(pt 240 64)
-		(output)
-		(text "HitEdgeCode[3..0]" (rect 0 0 73 12)(font "Arial" ))
-		(text "HitEdgeCode[3..0]" (rect 146 59 219 71)(font "Arial" ))
-		(line (pt 240 64)(pt 224 64)(line_width 3))
+		(text "RGBout[7..0]" (rect 142 43 195 55)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 224 128)(line_width 1))
+		(rectangle (rect 16 16 200 128)(line_width 1))
 	)
 )

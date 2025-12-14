@@ -22,6 +22,22 @@
 				{
 					"name" : "OVGA[24]",
 					"strict" : false
+				},
+				{
+					"name" : "OVGA[22]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[14]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[13]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[5]",
+					"strict" : false
 				}
 			]
 		}

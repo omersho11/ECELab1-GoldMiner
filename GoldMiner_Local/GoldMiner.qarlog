@@ -1,0 +1,75 @@
+Quartus Prime Archive log --	C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GoldMiner.qarlog
+
+Archive:	C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GoldMiner.qar
+Date:		Sun Dec 14 09:47:50 2025
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Bitmaps/MainMenuBitmap.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/CLK_31P5.cmp
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/CLK_31P5.qip
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/CLK_31P5.sip
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/CLK_31P5.spd
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/CLK_31P5.v
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/CLK_31P5/CLK_31P5_0002.qip
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/CLK_31P5/CLK_31P5_0002.v
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/CLK_31P5_sim/CLK_31P5.vo
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Decoder.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/StageController.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Lab1Demo.qpf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Lab1Demo.qsf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Lab1Demo_assignment_defaults.qdf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RANDOM_SIGNAL_TAP.stp
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/AUDIO.bdf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/JukeBox1.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/Mili_sec_counter.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/SinTable.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/ToneDecoder.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/addr_counter.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/audio_codec_controller/DualSerial2parallel.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/audio_codec_controller/clock_500.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/audio_codec_controller/i2c.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/melody_player_1.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/prescaler.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/GameLoop/main.bdf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/KEYBOARDX/TOP_KBD.bdf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/KEYBOARDX/keyPad_decoder.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/KEYBOARDX/random.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/KEYBOARDX/simple_up_counter.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/Seg7/SEG7.SV
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/HART_DISPLAY.bdf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/HartsMatrixBitMap.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/MyConstant.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/NumbersBitMap.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/Smiley_Block_T.bdf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/TOP_VGA_DEMO_KBD.bdf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/TOP_VGA_DEMO_KBD_old.bdf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/VGA_Controller.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/back_ground_draw.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/game_controller.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/objects_mux.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/old_objects_mux.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/smileyBitMap.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/smiley_move.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/square_Hart_object.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/square_object.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/valX.bsf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/valX.qip
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/valX.v
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/valX_bb.v
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/valX_inst.v
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/MainMenu.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/assignment_defaults.qdf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/constraints/DE10_Standard_Audio.sdc
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/constraints/pin.tcl
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/RANDOM_SIGNAL_TAP_auto_stripped.stp
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/Chain1.cdf
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/Chain2.cdf
+	======= Total: 64 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

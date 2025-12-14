@@ -3,11 +3,10 @@ module MainMenuBitmap (
 	input logic resetN,
 	input logic [10:0] offsetX,
 	input logic [10:0] offsetY,
-	input logic InsideRectangle,
+	input logic enable,
 
 	output logic drawingRequest,
-	output logic [7:0] RGBout,
-	output logic [3:0] HitEdgeCode
+	output logic [7:0] RGBout
 );
 
 localparam int OBJECT_NUMBER_OF_X_BITS = 7;
@@ -85,18 +84,21 @@ logic [0:OBJECT_HEIGHT_Y-1][0:OBJECT_WIDTH_X-1][7:0] mainMenuColors = {
 };
 
 
+
+
+
+
+
 always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin
 		drawingRequest <=	1'b0;
 	end
 	else begin
-		drawingRequest <=	1'b0;
-	
-		if (InsideRectangle == 1'b1 )
-		
-	      drawingRequest <= (mainMenuColors[offsetY>>2][offsetX>>2]); //uncomment to show bitmap enlarged by two, 
-//							comment the previous line and adjust the square object to double size as the size of a double bitmap	
+	if (enable) begin	
+			drawingRequest <= 1'b1;
+			RGBout <= (mainMenuColors[offsetY][offsetX]); 
+		end
 	end 
 end
 

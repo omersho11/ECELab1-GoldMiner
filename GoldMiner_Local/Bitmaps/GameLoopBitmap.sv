@@ -1,0 +1,25 @@
+module GameLoopBitmap (
+	input logic clk,
+	input logic resetN,
+	input logic [10:0] offsetX,
+	input logic [10:0] offsetY,
+	input logic enable,
+
+	output logic drawingRequest,
+	output logic [7:0] RGBout
+);
+
+always_ff@(posedge clk or negedge resetN)
+begin
+	if(!resetN) begin
+		drawingRequest <=	1'b0;
+	end
+	else begin
+	if (enable) begin		
+			drawingRequest <= 1'b1;
+			RGBout <= (offsetY < 80 ? 8'hFC : 8'hF0);	
+		end 
+	end
+end
+
+endmodule
