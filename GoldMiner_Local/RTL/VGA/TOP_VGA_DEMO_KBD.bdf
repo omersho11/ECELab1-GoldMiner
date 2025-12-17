@@ -1488,12 +1488,6 @@ agreement for further details.
 	(pt -4400 -608)
 )
 (connector
-	(text "address[18..0]" (rect -5054 -504 -4964 -485)(font "Intel Clear" ))
-	(pt -5056 -488)
-	(pt -4992 -488)
-	(bus)
-)
-(connector
 	(text "clk" (rect -5049 -488 -5032 -469)(font "Intel Clear" ))
 	(pt -5056 -472)
 	(pt -4992 -472)
@@ -2107,6 +2101,12 @@ agreement for further details.
 	(text "boxRGB[7..0]" (rect -4542 864 -4460 883)(font "Intel Clear" ))
 	(pt -4544 880)
 	(pt -4488 880)
+	(bus)
+)
+(connector
+	(text "address[18..0]" (rect -5078 -504 -4988 -485)(font "Intel Clear" ))
+	(pt -4992 -488)
+	(pt -5080 -488)
 	(bus)
 )
 (junction (pt -5008 1136))

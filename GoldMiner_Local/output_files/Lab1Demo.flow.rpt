@@ -1,5 +1,5 @@
 Flow report for Lab1Demo
-Sun Dec 14 13:03:29 2025
+Wed Dec 17 16:38:18 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -38,24 +38,29 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Flow Summary                                                              ;
-+-----------------------------+---------------------------------------------+
-; Flow Status                 ; Flow Failed - Sun Dec 14 13:03:29 2025      ;
-; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
-; Revision Name               ; Lab1Demo                                    ;
-; Top-level Entity Name       ; main                                        ;
-; Family                      ; Cyclone V                                   ;
-; Device                      ; 5CSXFC6D6F31C6                              ;
-; Timing Models               ; Final                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Wed Dec 17 16:38:09 2025       ;
+; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                   ; Lab1Demo                                    ;
+; Top-level Entity Name           ; main                                        ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSXFC6D6F31C6                              ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 332 / 41,910 ( < 1 % )                      ;
+; Total registers                 ; 679                                         ;
+; Total pins                      ; 33 / 499 ( 7 % )                            ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 132,608 / 5,662,720 ( 2 % )                 ;
+; Total DSP Blocks                ; 1 / 112 ( < 1 % )                           ;
+; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                               ;
+; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                               ;
+; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                               ;
+; Total HSSI PMA TX Serializers   ; 0 / 9 ( 0 % )                               ;
+; Total PLLs                      ; 1 / 15 ( 7 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/14/2025 13:03:22 ;
+; Start date & time ; 12/17/2025 16:36:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab1Demo            ;
 +-------------------+---------------------+
@@ -74,7 +79,7 @@ agreement for further details.
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                     ; Value                                                                                                           ; Default Value ; Entity Name ; Section Id       ;
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 213533737471305.176571020102924                                                                                 ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID               ; 213533737471305.176598221617116                                                                                 ; --            ; --          ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                                                                              ; --            ; --          ; --               ;
 ; FITTER_EFFORT                       ; Fast Fit                                                                                                        ; Auto Fit      ; --          ; --               ;
 ; MISC_FILE                           ; RTL/VGA/valX.bsf                                                                                                ; --            ; --          ; --               ;
@@ -125,29 +130,38 @@ agreement for further details.
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4802 MB             ; 00:00:19                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:19                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:21     ; 1.0                     ; 5011 MB             ; 00:00:48                           ;
+; Fitter                    ; 00:00:41     ; 1.1                     ; 7990 MB             ; 00:04:16                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 4843 MB             ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.5                     ; 5355 MB             ; 00:00:09                           ;
+; Total                     ; 00:01:16     ; --                      ; --                  ; 00:05:19                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-IMBL1LM  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-IMBL1LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; DESKTOP-IMBL1LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; DESKTOP-IMBL1LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-IMBL1LM  ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
+quartus_fit --read_settings_files=off --write_settings_files=off Lab1Demo -c Lab1Demo
+quartus_asm --read_settings_files=off --write_settings_files=off Lab1Demo -c Lab1Demo
+quartus_sta Lab1Demo -c Lab1Demo
 
 
 

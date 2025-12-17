@@ -1,0 +1,48 @@
+module Tilemap (
+	input logic [10:0] x,
+	input logic [10:0] y,
+	input logic [3:0] stageID,
+
+	output logic [18:0] MIFAddress
+);
+
+
+//each tile is 32x32, therefore the jump between two tiles has a 1024 offset
+
+localparam int NUM_OF_TILES_WIDTH = 20;
+localparam int NUM_OF_TILES_HEIGHT = 15;
+
+
+// 3D array         [stageID][Rows][Columns]
+(* ram_init_file = "all_stages.txt", ramstyle = "M9K" *) 
+logic [8:0] tilemaps [0:15][0:14][0:19];
+
+logic [5:0] xIndex, yIndex;
+logic [4:0] deltaX, deltaY;
+logic [8:0] currentTileID;
+
+initial begin
+	$readmemh("all_stages.txt", tilemaps);
+end
+
+
+always_comb begin
+	// Use bit-slicing for division by 32 (x >> 5)
+	xIndex = x[10:5]; 
+	yIndex = y[10:5];
+
+	// Use bit-slicing for modulo 32 (x % 32)
+	deltaX = x[4:0];
+	deltaY = y[4:0];
+
+	if (xIndex < 20 && yIndex < 15) begin
+		currentTileID = tilemap[stageID][yIndex][xIndex];
+	end else begin
+		currentTileID = 9'd0; 
+	end
+
+
+	MIFAddress = (19'(currentTileID) << 10) + (19'(deltaY) << 5) + 19'(deltaX);	
+end
+
+endmodule
