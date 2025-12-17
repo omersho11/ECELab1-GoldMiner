@@ -1,5 +1,5 @@
 Archive Project report for Lab1Demo
-Sun Dec 14 09:47:50 2025
+Wed Dec 17 22:48:34 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Sun Dec 14 09:47:50 2025 ;
+; Archive Project Status ; Successful - Wed Dec 17 22:48:34 2025 ;
 ; Revision Name          ; Lab1Demo                              ;
 ; Top-level Entity Name  ; main                                  ;
 ; Family                 ; Cyclone V                             ;
@@ -59,9 +59,9 @@ Info: ----------------------------------------------------------
 Info: Generated report 'Lab1Demo.archive.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4836 megabytes
-    Info: Processing ended: Sun Dec 14 09:47:50 2025
-    Info: Elapsed time: 00:00:07
+    Info: Peak virtual memory: 4837 megabytes
+    Info: Processing ended: Wed Dec 17 22:48:34 2025
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
@@ -71,6 +71,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 ; File Name                                                  ;
 +------------------------------------------------------------+
 ; assignment_defaults.qdf                                    ;
+; Bitmaps/GameLoopBitmap.sv                                  ;
 ; Bitmaps/MainMenuBitmap.sv                                  ;
 ; CLK_31P5.cmp                                               ;
 ; CLK_31P5.qip                                               ;
@@ -86,10 +87,13 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 ; DE10_Standard_Audio.sdc                                    ;
 ; Decoder.sv                                                 ;
 ; GameControl/StageController.sv                             ;
+; Graphics/BackgroundMux.sv                                  ;
+; Graphics/DisplayMux.sv                                     ;
 ; KBDINTF.qxp                                                ;
 ; Lab1Demo.qpf                                               ;
 ; Lab1Demo.qsf                                               ;
 ; Lab1Demo_assignment_defaults.qdf                           ;
+; MIF/tilemap.mif                                            ;
 ; output_files/Chain1.cdf                                    ;
 ; output_files/Chain2.cdf                                    ;
 ; RANDOM_SIGNAL_TAP.stp                                      ;
@@ -132,8 +136,10 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 ; RTL/VGA/valX_bb.v                                          ;
 ; RTL/VGA/valX_inst.v                                        ;
 ; RTL/VGA/VGA_Controller.sv                                  ;
+; stages/all_stages.txt                                      ;
 ; Stages/LevelController.sv                                  ;
 ; Stages/MainMenu.sv                                         ;
+; Tilemap/Tilemap.sv                                         ;
 +------------------------------------------------------------+
 
 
