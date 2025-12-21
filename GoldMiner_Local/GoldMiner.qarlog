@@ -1,7 +1,7 @@
 Quartus Prime Archive log --	C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GoldMiner.qarlog
 
 Archive:	C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GoldMiner.qar
-Date:		Wed Dec 17 22:48:34 2025
+Date:		Sun Dec 21 13:20:05 2025
 Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 	=========== Files Selected: ===========
@@ -17,6 +17,7 @@ C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/CLK_31P5/CLK_31
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/CLK_31P5_sim/CLK_31P5.vo
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Decoder.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/GrabbableObject.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/StageController.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/BackgroundMux.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/DisplayMux.sv
@@ -75,7 +76,8 @@ C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/RANDOM_SIGNA
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/Chain1.cdf
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/Chain2.cdf
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/all_stages.txt
-	======= Total: 70 files to archive =======
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/level_data.txt
+	======= Total: 72 files to archive =======
 
 	================ Status: ===============
 All files archived successfully.

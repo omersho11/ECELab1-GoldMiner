@@ -54,7 +54,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 256 504 432 520)
+	(rect 16 368 192 384)
 	(text "INPUT" (rect 133 0 169 13)(font "Arial" (font_size 6)))
 	(text "PS2_CLK" (rect 9 0 72 15)(font "Arial" ))
 	(pt 176 8)
@@ -70,7 +70,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 256 520 432 536)
+	(rect 16 384 192 400)
 	(text "INPUT" (rect 133 0 169 13)(font "Arial" (font_size 6)))
 	(text "PS2_DAT" (rect 9 0 71 15)(font "Arial" ))
 	(pt 176 8)
@@ -86,7 +86,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1840 -128 2016 -112)
+	(rect 1896 -376 2072 -360)
 	(text "OUTPUT" (rect 1 0 51 13)(font "Arial" (font_size 6)))
 	(text "OVGA[28..0]" (rect 90 0 166 15)(font "Arial" ))
 	(pt 0 8)
@@ -161,7 +161,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 1528 -200 1736 -56)
+	(rect 1584 -448 1792 -304)
 	(text "VGA_Controller" (rect 5 0 104 15)(font "Arial" ))
 	(text "inst8" (rect 8 128 39 147)(font "Intel Clear" ))
 	(port
@@ -225,7 +225,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 1200 72 1360 152)
+	(rect 1024 0 1184 80)
 	(text "MyConstant" (rect 5 0 80 15)(font "Arial" ))
 	(text "inst6" (rect 8 64 39 79)(font "Arial" ))
 	(port
@@ -248,67 +248,10 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 144 64))
 	)
-	(annotation_block (parameter)(rect 1000 72 1198 132))
+	(annotation_block (parameter)(rect 824 0 1022 60))
 )
 (symbol
-	(rect 1128 472 1336 584)
-	(text "LevelController" (rect 5 0 102 15)(font "Arial" ))
-	(text "inst2" (rect 8 96 39 111)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 17 15)(font "Arial" ))
-		(text "clk" (rect 21 27 38 42)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "resetN" (rect 0 0 43 15)(font "Arial" ))
-		(text "resetN" (rect 21 43 64 58)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "cycleLevel" (rect 0 0 66 15)(font "Arial" ))
-		(text "cycleLevel" (rect 21 59 87 74)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "enable" (rect 0 0 44 15)(font "Arial" ))
-		(text "enable" (rect 21 75 65 90)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 208 32)
-		(output)
-		(text "drLevel" (rect 0 0 47 15)(font "Arial" ))
-		(text "drLevel" (rect 148 27 195 42)(font "Arial" ))
-		(line (pt 208 32)(pt 192 32))
-	)
-	(port
-		(pt 208 48)
-		(output)
-		(text "stageEnded" (rect 0 0 79 15)(font "Arial" ))
-		(text "stageEnded" (rect 121 43 200 58)(font "Arial" ))
-		(line (pt 208 48)(pt 192 48))
-	)
-	(port
-		(pt 208 64)
-		(output)
-		(text "lastLevelEnded" (rect 0 0 100 15)(font "Arial" ))
-		(text "lastLevelEnded" (rect 103 59 203 74)(font "Arial" ))
-		(line (pt 208 64)(pt 192 64))
-	)
-	(drawing
-		(rectangle (rect 16 16 192 96))
-	)
-)
-(symbol
-	(rect 408 168 608 312)
+	(rect 144 104 344 248)
 	(text "StageController" (rect 5 0 106 15)(font "Arial" ))
 	(text "inst1" (rect 8 128 39 143)(font "Arial" ))
 	(port
@@ -358,7 +301,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 672 168 896 248)
+	(rect 408 104 632 184)
 	(text "Decoder" (rect 5 0 60 15)(font "Arial" ))
 	(text "inst4" (rect 8 64 39 79)(font "Arial" ))
 	(port
@@ -383,10 +326,10 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 208 64))
 	)
-	(annotation_block (parameter)(rect 688 104 888 144))
+	(annotation_block (parameter)(rect 424 40 624 80))
 )
 (symbol
-	(rect 448 448 704 704)
+	(rect 208 312 464 568)
 	(text "TOP_KBD" (rect 5 0 73 20)(font "Intel Clear" (font_size 8)))
 	(text "inst5" (rect 8 233 39 252)(font "Intel Clear" ))
 	(port
@@ -513,7 +456,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 1128 352 1344 464)
+	(rect 816 256 1032 368)
 	(text "MainMenu" (rect 5 0 71 15)(font "Arial" ))
 	(text "inst" (rect 8 96 31 111)(font "Arial" ))
 	(port
@@ -729,6 +672,146 @@ agreement for further details.
 	)
 	(annotation_block (parameter)(rect 152 -536 478 -296))
 )
+(symbol
+	(rect 816 376 1024 520)
+	(text "LevelController" (rect 5 0 102 15)(font "Arial" ))
+	(text "inst2" (rect 8 128 39 143)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 17 15)(font "Arial" ))
+		(text "clk" (rect 21 27 38 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 43 15)(font "Arial" ))
+		(text "resetN" (rect 21 43 64 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "cycleLevel" (rect 0 0 66 15)(font "Arial" ))
+		(text "cycleLevel" (rect 21 59 87 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "pixelX[10..0]" (rect 0 0 76 15)(font "Arial" ))
+		(text "pixelX[10..0]" (rect 21 75 97 90)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "pixelY[10..0]" (rect 0 0 76 15)(font "Arial" ))
+		(text "pixelY[10..0]" (rect 21 91 97 106)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "enable" (rect 0 0 44 15)(font "Arial" ))
+		(text "enable" (rect 21 107 65 122)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "levelDR" (rect 0 0 50 15)(font "Arial" ))
+		(text "levelDR" (rect 145 27 187 42)(font "Arial" ))
+		(line (pt 208 32)(pt 192 32))
+	)
+	(port
+		(pt 208 48)
+		(output)
+		(text "RGBout[7..0]" (rect 0 0 81 15)(font "Arial" ))
+		(text "RGBout[7..0]" (rect 119 43 187 58)(font "Arial" ))
+		(line (pt 208 48)(pt 192 48)(line_width 3))
+	)
+	(port
+		(pt 208 64)
+		(output)
+		(text "stageEnded" (rect 0 0 79 15)(font "Arial" ))
+		(text "stageEnded" (rect 121 59 187 74)(font "Arial" ))
+		(line (pt 208 64)(pt 192 64))
+	)
+	(port
+		(pt 208 80)
+		(output)
+		(text "lastLevelEnded" (rect 0 0 100 15)(font "Arial" ))
+		(text "lastLevelEnded" (rect 103 75 187 90)(font "Arial" ))
+		(line (pt 208 80)(pt 192 80))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 128))
+	)
+)
+(symbol
+	(rect 1232 -448 1472 -336)
+	(text "DisplayMux" (rect 5 0 78 15)(font "Arial" ))
+	(text "inst10" (rect 8 96 48 111)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "RGBBackground[7..0]" (rect 0 0 139 15)(font "Arial" ))
+		(text "RGBBackground[7..0]" (rect 21 27 160 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "levelDR" (rect 0 0 50 15)(font "Arial" ))
+		(text "levelDR" (rect 21 43 71 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "levelRGB[7..0]" (rect 0 0 90 15)(font "Arial" ))
+		(text "levelRGB[7..0]" (rect 21 59 111 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "RGBout[7..0]" (rect 0 0 81 15)(font "Arial" ))
+		(text "RGBout[7..0]" (rect 151 27 219 42)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 224 96))
+	)
+)
+(symbol
+	(rect 1024 80 1184 160)
+	(text "MyConstant" (rect 5 0 80 15)(font "Arial" ))
+	(text "inst11" (rect 8 64 48 83)(font "Intel Clear" ))
+	(port
+		(pt 160 32)
+		(output)
+		(text "value[size-1..0]" (rect 0 0 95 15)(font "Arial" ))
+		(text "value[size-1..0]" (rect 59 27 154 42)(font "Arial" ))
+		(line (pt 160 32)(pt 144 32)(line_width 3))
+	)
+	(parameter
+		"size"
+		"10"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MyValue"
+		"1"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 144 64))
+	)
+	(annotation_block (parameter)(rect 824 80 1022 140))
+)
 (connector
 	(pt 296 -40)
 	(pt 288 -40)
@@ -752,139 +835,9 @@ agreement for further details.
 	(pt 384 -80)
 )
 (connector
-	(text "resetN" (rect 410 472 450 491)(font "Intel Clear" ))
-	(pt 400 496)
-	(pt 448 496)
-)
-(connector
-	(text "clk" (rect 426 456 443 475)(font "Intel Clear" ))
-	(pt 400 480)
-	(pt 448 480)
-)
-(connector
-	(pt 432 512)
-	(pt 448 512)
-)
-(connector
-	(pt 432 528)
-	(pt 448 528)
-)
-(connector
-	(text "anyKeyPressed" (rect 704 632 799 651)(font "Intel Clear" ))
-	(pt 704 656)
-	(pt 800 656)
-)
-(connector
-	(text "anyKeyReleased" (rect 714 648 815 667)(font "Intel Clear" ))
-	(pt 704 672)
-	(pt 800 672)
-)
-(connector
-	(text "clk" (rect 1106 360 1123 379)(font "Intel Clear" ))
-	(pt 1080 384)
-	(pt 1128 384)
-)
-(connector
-	(text "resetN" (rect 1090 376 1130 395)(font "Intel Clear" ))
-	(pt 1080 400)
-	(pt 1128 400)
-)
-(connector
-	(text "StageEnable[4]" (rect 1016 392 1111 411)(font "Intel Clear" ))
-	(pt 1024 416)
-	(pt 1128 416)
-)
-(connector
-	(text "anyKeyPressed" (rect 1032 408 1127 427)(font "Intel Clear" ))
-	(pt 1032 432)
-	(pt 1128 432)
-)
-(connector
-	(text "clk" (rect 1106 480 1123 499)(font "Intel Clear" ))
-	(pt 1080 504)
-	(pt 1128 504)
-)
-(connector
-	(text "resetN" (rect 1090 496 1130 515)(font "Intel Clear" ))
-	(pt 1080 520)
-	(pt 1128 520)
-)
-(connector
-	(text "StageEnable[0]" (rect 992 528 1087 547)(font "Intel Clear" ))
-	(pt 992 552)
-	(pt 1128 552)
-)
-(connector
-	(text "ZERO[10..0]" (rect 1360 80 1436 99)(font "Intel Clear" ))
-	(pt 1360 104)
-	(pt 1400 104)
-	(bus)
-)
-(connector
-	(text "pixelX[10..0]" (rect 1786 -184 1862 -169)(font "Arial" ))
-	(pt 1736 -168)
-	(pt 1856 -168)
-	(bus)
-)
-(connector
-	(text "pixelY[10..0]" (rect 1786 -168 1862 -153)(font "Arial" ))
-	(pt 1736 -152)
-	(pt 1856 -152)
-	(bus)
-)
-(connector
-	(text "startOfFrame" (rect 1784 -152 1867 -133)(font "Intel Clear" ))
-	(pt 1736 -136)
-	(pt 1856 -136)
-)
-(connector
-	(text "address[18..0]" (rect 1738 -120 1828 -101)(font "Intel Clear" ))
-	(pt 1736 -104)
-	(pt 1856 -104)
-	(bus)
-)
-(connector
-	(text "clk" (rect 1490 -168 1507 -149)(font "Intel Clear" ))
-	(pt 1480 -152)
-	(pt 1528 -152)
-)
-(connector
-	(text "resetN" (rect 1488 -152 1531 -137)(font "Arial" ))
-	(pt 1480 -136)
-	(pt 1528 -136)
-)
-(connector
-	(text "OVGA[28..0]" (rect 1746 -136 1826 -117)(font "Intel Clear" ))
-	(pt 1736 -120)
-	(pt 1840 -120)
-	(bus)
-)
-(connector
-	(text "StageEnable[15..0]" (rect 896 176 1015 195)(font "Intel Clear" ))
-	(pt 896 200)
-	(pt 920 200)
-	(bus)
-)
-(connector
 	(text "lookupAddress[18..0]" (rect 146 -288 282 -269)(font "Intel Clear" ))
 	(pt 232 -272)
 	(pt 144 -272)
-	(bus)
-)
-(connector
-	(text "clk" (rect 386 176 403 195)(font "Intel Clear" ))
-	(pt 408 200)
-	(pt 360 200)
-)
-(connector
-	(text "resetN" (rect 370 192 410 211)(font "Intel Clear" ))
-	(pt 360 216)
-	(pt 408 216)
-)
-(connector
-	(text "stageID[3..0]" (rect 608 176 688 195)(font "Intel Clear" ))
-	(pt 608 200)
-	(pt 672 200)
 	(bus)
 )
 (connector
@@ -923,10 +876,185 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "RGBBackground[7..0]" (rect 1284 -184 1418 -165)(font "Intel Clear" ))
-	(pt 1272 -168)
-	(pt 1528 -168)
+	(text "resetN" (rect 170 336 210 355)(font "Intel Clear" ))
+	(pt 160 360)
+	(pt 208 360)
+)
+(connector
+	(text "clk" (rect 186 320 203 339)(font "Intel Clear" ))
+	(pt 160 344)
+	(pt 208 344)
+)
+(connector
+	(pt 192 376)
+	(pt 208 376)
+)
+(connector
+	(pt 192 392)
+	(pt 208 392)
+)
+(connector
+	(text "anyKeyPressed" (rect 464 496 559 515)(font "Intel Clear" ))
+	(pt 464 520)
+	(pt 560 520)
+)
+(connector
+	(text "anyKeyReleased" (rect 474 512 575 531)(font "Intel Clear" ))
+	(pt 464 536)
+	(pt 560 536)
+)
+(connector
+	(text "StageEnable[15..0]" (rect 632 112 751 131)(font "Intel Clear" ))
+	(pt 632 136)
+	(pt 656 136)
 	(bus)
+)
+(connector
+	(text "clk" (rect 122 112 139 131)(font "Intel Clear" ))
+	(pt 144 136)
+	(pt 96 136)
+)
+(connector
+	(text "resetN" (rect 106 128 146 147)(font "Intel Clear" ))
+	(pt 96 152)
+	(pt 144 152)
+)
+(connector
+	(text "stageID[3..0]" (rect 344 112 424 131)(font "Intel Clear" ))
+	(pt 344 136)
+	(pt 408 136)
+	(bus)
+)
+(connector
+	(text "clk" (rect 794 264 811 283)(font "Intel Clear" ))
+	(pt 768 288)
+	(pt 816 288)
+)
+(connector
+	(text "resetN" (rect 778 280 818 299)(font "Intel Clear" ))
+	(pt 768 304)
+	(pt 816 304)
+)
+(connector
+	(text "StageEnable[4]" (rect 704 296 799 315)(font "Intel Clear" ))
+	(pt 712 320)
+	(pt 816 320)
+)
+(connector
+	(text "anyKeyPressed" (rect 720 312 815 331)(font "Intel Clear" ))
+	(pt 720 336)
+	(pt 816 336)
+)
+(connector
+	(text "clk" (rect 794 384 811 403)(font "Intel Clear" ))
+	(pt 768 408)
+	(pt 816 408)
+)
+(connector
+	(text "resetN" (rect 778 400 818 419)(font "Intel Clear" ))
+	(pt 768 424)
+	(pt 816 424)
+)
+(connector
+	(text "pixelY[10..0]" (rect 746 456 822 471)(font "Arial" ))
+	(pt 712 472)
+	(pt 816 472)
+	(bus)
+)
+(connector
+	(text "pixelX[10..0]" (rect 746 440 822 455)(font "Arial" ))
+	(pt 712 456)
+	(pt 816 456)
+	(bus)
+)
+(connector
+	(text "levelRGB[7..0]" (rect 1034 408 1121 427)(font "Intel Clear" ))
+	(pt 1024 424)
+	(pt 1152 424)
+	(bus)
+)
+(connector
+	(text "levelDR" (rect 1034 392 1080 411)(font "Intel Clear" ))
+	(pt 1152 408)
+	(pt 1024 408)
+)
+(connector
+	(text "anyKeyPressed" (rect 720 488 815 507)(font "Intel Clear" ))
+	(pt 720 488)
+	(pt 816 488)
+)
+(connector
+	(text "ZERO[10..0]" (rect 1184 8 1260 27)(font "Intel Clear" ))
+	(pt 1184 32)
+	(pt 1224 32)
+	(bus)
+)
+(connector
+	(text "CONST_ONE[9..0]" (rect 1184 88 1298 107)(font "Intel Clear" ))
+	(pt 1184 112)
+	(pt 1224 112)
+	(bus)
+)
+(connector
+	(text "pixelX[10..0]" (rect 1842 -432 1918 -417)(font "Arial" ))
+	(pt 1792 -416)
+	(pt 1912 -416)
+	(bus)
+)
+(connector
+	(text "pixelY[10..0]" (rect 1842 -416 1918 -401)(font "Arial" ))
+	(pt 1792 -400)
+	(pt 1912 -400)
+	(bus)
+)
+(connector
+	(text "startOfFrame" (rect 1840 -400 1923 -381)(font "Intel Clear" ))
+	(pt 1792 -384)
+	(pt 1912 -384)
+)
+(connector
+	(text "address[18..0]" (rect 1794 -368 1884 -349)(font "Intel Clear" ))
+	(pt 1792 -352)
+	(pt 1912 -352)
+	(bus)
+)
+(connector
+	(text "clk" (rect 1546 -416 1563 -397)(font "Intel Clear" ))
+	(pt 1536 -400)
+	(pt 1584 -400)
+)
+(connector
+	(text "resetN" (rect 1544 -400 1587 -385)(font "Arial" ))
+	(pt 1536 -384)
+	(pt 1584 -384)
+)
+(connector
+	(text "OVGA[28..0]" (rect 1802 -384 1882 -365)(font "Intel Clear" ))
+	(pt 1792 -368)
+	(pt 1896 -368)
+	(bus)
+)
+(connector
+	(pt 1584 -416)
+	(pt 1472 -416)
+	(bus)
+)
+(connector
+	(text "RGBBackground[7..0]" (rect 1092 -432 1226 -413)(font "Intel Clear" ))
+	(pt 1080 -416)
+	(pt 1232 -416)
+	(bus)
+)
+(connector
+	(text "levelRGB[7..0]" (rect 1114 -400 1201 -381)(font "Intel Clear" ))
+	(pt 1104 -384)
+	(pt 1232 -384)
+	(bus)
+)
+(connector
+	(text "levelDR" (rect 1114 -416 1160 -397)(font "Intel Clear" ))
+	(pt 1232 -400)
+	(pt 1104 -400)
 )
 (text "31.5 MHz Clock generator" (rect 136 -168 419 -141)(font "Intel Clear" (font_size 12)(bold)))
 (text "MIF Tilemap" (rect 192 -584 327 -557)(font "Intel Clear" (font_size 12)(bold)))

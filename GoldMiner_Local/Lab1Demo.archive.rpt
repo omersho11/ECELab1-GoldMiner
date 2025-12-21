@@ -1,5 +1,5 @@
 Archive Project report for Lab1Demo
-Wed Dec 17 22:48:34 2025
+Sun Dec 21 13:20:05 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Wed Dec 17 22:48:34 2025 ;
+; Archive Project Status ; Successful - Sun Dec 21 13:20:05 2025 ;
 ; Revision Name          ; Lab1Demo                              ;
 ; Top-level Entity Name  ; main                                  ;
 ; Family                 ; Cyclone V                             ;
@@ -59,8 +59,8 @@ Info: ----------------------------------------------------------
 Info: Generated report 'Lab1Demo.archive.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4837 megabytes
-    Info: Processing ended: Wed Dec 17 22:48:34 2025
+    Info: Peak virtual memory: 4839 megabytes
+    Info: Processing ended: Sun Dec 21 13:20:05 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -86,6 +86,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 ; db/RANDOM_SIGNAL_TAP_auto_stripped.stp                     ;
 ; DE10_Standard_Audio.sdc                                    ;
 ; Decoder.sv                                                 ;
+; GameControl/GrabbableObject.sv                             ;
 ; GameControl/StageController.sv                             ;
 ; Graphics/BackgroundMux.sv                                  ;
 ; Graphics/DisplayMux.sv                                     ;
@@ -137,6 +138,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 ; RTL/VGA/valX_inst.v                                        ;
 ; RTL/VGA/VGA_Controller.sv                                  ;
 ; stages/all_stages.txt                                      ;
+; stages/level_data.txt                                      ;
 ; Stages/LevelController.sv                                  ;
 ; Stages/MainMenu.sv                                         ;
 ; Tilemap/Tilemap.sv                                         ;
