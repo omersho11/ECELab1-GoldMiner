@@ -1,0 +1,49 @@
+module DrawLine (
+    input  logic [9:0] pixelX, pixelY, // Current VGA scan position
+    input  logic [9:0] x1, y1, x2, y2, // Line coordinates
+    input  logic [4:0] width,          // Thickness
+    input  logic [7:0] lineColor,     // RRRGGGBB input
+    output logic lineDR,
+    output logic [7:0] lineRGB
+);
+	localparam TRANSPARENT_ENCODING = 8'hFF;
+	// Using signed logic for vector math
+	logic signed [11:0] dx, dy, pdx, pdy;
+	logic signed [23:0] cross_product;
+	logic signed [23:0] dot_product;
+	logic signed [23:0] line_len_sq;
+
+	assign dx = x2 - x1;
+	assign dy = y2 - y1;
+	assign pdx = pixelX - x1;
+	assign pdy = pixelY - y1;
+
+	// Cross product determines distance from the infinite line
+	// Area = |dx*pdy - dy*pdx|
+	assign cross_product = (dx * pdy) - (dy * pdx);
+
+	// Dot product helps restrict the line to the segment (start to end)
+	assign dot_product = (pdx * dx) + (pdy * dy);
+	assign line_len_sq = (dx * dx) + (dy * dy);
+
+	always_comb begin
+	  // 1. Check if the pixel is within the "length" of the segment
+	  // 2. Check if the distance (cross product) is within the width
+	  // Note: cross_product^2 <= (width/2)^2 * line_len_sq (to avoid division)
+	  
+		if (dot_product >= 0 && dot_product <= line_len_sq) begin
+			// Approximate distance check (squared to avoid sqrt)
+			if ((cross_product * cross_product) <= (width * width * line_len_sq / 4)) begin
+				lineDR = 1'b1;
+				lineRGB = lineColor;
+			end else begin
+				lineDR = 1'b0;
+				lineRGB = TRANSPARENT_ENCODING;
+			end
+		end else begin
+			lineDR = 1'b0;
+			lineRGB = TRANSPARENT_ENCODING;
+		end
+	end
+
+endmodule

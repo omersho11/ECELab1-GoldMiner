@@ -232,7 +232,7 @@ agreement for further details.
 		(pt 160 32)
 		(output)
 		(text "value[size-1..0]" (rect 0 0 95 15)(font "Arial" ))
-		(text "value[size-1..0]" (rect 59 27 154 42)(font "Arial" ))
+		(text "value[size-1..0]" (rect 59 27 139 42)(font "Arial" ))
 		(line (pt 160 32)(pt 144 32)(line_width 3))
 	)
 	(parameter
@@ -293,7 +293,7 @@ agreement for further details.
 		(pt 200 32)
 		(output)
 		(text "stage[3..0]" (rect 0 0 67 15)(font "Arial" ))
-		(text "stage[3..0]" (rect 123 27 190 42)(font "Arial" ))
+		(text "stage[3..0]" (rect 123 27 179 42)(font "Arial" ))
 		(line (pt 200 32)(pt 184 32)(line_width 3))
 	)
 	(drawing
@@ -315,7 +315,7 @@ agreement for further details.
 		(pt 224 32)
 		(output)
 		(text "out[2**SIZE-1..0]" (rect 0 0 106 15)(font "Arial" ))
-		(text "out[2**SIZE-1..0]" (rect 114 27 220 42)(font "Arial" ))
+		(text "out[2**SIZE-1..0]" (rect 114 27 203 42)(font "Arial" ))
 		(line (pt 224 32)(pt 208 32)(line_width 3))
 	)
 	(parameter
@@ -491,14 +491,14 @@ agreement for further details.
 		(pt 216 32)
 		(output)
 		(text "drLevel" (rect 0 0 47 15)(font "Arial" ))
-		(text "drLevel" (rect 156 27 203 42)(font "Arial" ))
+		(text "drLevel" (rect 156 27 195 42)(font "Arial" ))
 		(line (pt 216 32)(pt 200 32))
 	)
 	(port
 		(pt 216 48)
 		(output)
 		(text "stateEnded" (rect 0 0 74 15)(font "Arial" ))
-		(text "stateEnded" (rect 133 43 207 58)(font "Arial" ))
+		(text "stateEnded" (rect 133 43 195 58)(font "Arial" ))
 		(line (pt 216 48)(pt 200 48))
 	)
 	(drawing
@@ -520,7 +520,7 @@ agreement for further details.
 		(pt 48 16)
 		(output)
 		(text "OUT" (rect 32 7 56 23)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 32 7 56 23)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 52 23)(font "Courier New" (bold))(invisible))
 		(line (pt 39 16)(pt 48 16))
 	)
 	(drawing
@@ -533,7 +533,7 @@ agreement for further details.
 (symbol
 	(rect 696 -416 920 -304)
 	(text "Tilemap" (rect 5 0 58 15)(font "Arial" ))
-	(text "inst13" (rect 8 96 48 115)(font "Intel Clear" ))
+	(text "inst13" (rect 8 96 48 111)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -559,7 +559,7 @@ agreement for further details.
 		(pt 224 32)
 		(output)
 		(text "MIFAddress[18..0]" (rect 0 0 115 15)(font "Arial" ))
-		(text "MIFAddress[18..0]" (rect 106 27 221 42)(font "Arial" ))
+		(text "MIFAddress[18..0]" (rect 106 27 203 42)(font "Arial" ))
 		(line (pt 224 32)(pt 208 32)(line_width 3))
 	)
 	(drawing
@@ -569,7 +569,7 @@ agreement for further details.
 (symbol
 	(rect 232 -296 344 -200)
 	(text "LPM_ROM" (rect 25 0 124 19)(font "Arial" (font_size 10)))
-	(text "inst9" (rect 3 85 34 104)(font "Intel Clear" ))
+	(text "inst9" (rect 3 85 36 101)(font "Arial" (font_size 8)))
 	(port
 		(pt 0 24)
 		(input)
@@ -602,7 +602,7 @@ agreement for further details.
 		(pt 112 48)
 		(output)
 		(text "q[LPM_WIDTH-1..0]" (rect 80 41 216 57)(font "Arial" (font_size 8)))
-		(text "q[]" (rect 80 41 97 57)(font "Arial" (font_size 8)))
+		(text "q[]" (rect 77 41 91 57)(font "Arial" (font_size 8)))
 		(line (pt 96 48)(pt 112 48)(line_width 3))
 	)
 	(parameter
@@ -673,9 +673,71 @@ agreement for further details.
 	(annotation_block (parameter)(rect 152 -536 478 -296))
 )
 (symbol
-	(rect 816 376 1024 520)
+	(rect 1232 -448 1472 -336)
+	(text "DisplayMux" (rect 5 0 78 15)(font "Arial" ))
+	(text "inst10" (rect 8 96 48 111)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "RGBBackground[7..0]" (rect 0 0 139 15)(font "Arial" ))
+		(text "RGBBackground[7..0]" (rect 21 27 160 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "levelDR" (rect 0 0 50 15)(font "Arial" ))
+		(text "levelDR" (rect 21 43 71 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "levelRGB[7..0]" (rect 0 0 90 15)(font "Arial" ))
+		(text "levelRGB[7..0]" (rect 21 59 111 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "RGBout[7..0]" (rect 0 0 81 15)(font "Arial" ))
+		(text "RGBout[7..0]" (rect 151 27 219 42)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 224 96))
+	)
+)
+(symbol
+	(rect 1024 80 1184 160)
+	(text "MyConstant" (rect 5 0 80 15)(font "Arial" ))
+	(text "inst11" (rect 8 64 48 79)(font "Arial" ))
+	(port
+		(pt 160 32)
+		(output)
+		(text "value[size-1..0]" (rect 0 0 95 15)(font "Arial" ))
+		(text "value[size-1..0]" (rect 59 27 139 42)(font "Arial" ))
+		(line (pt 160 32)(pt 144 32)(line_width 3))
+	)
+	(parameter
+		"size"
+		"10"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MyValue"
+		"1"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 144 64))
+	)
+	(annotation_block (parameter)(rect 824 80 1022 140))
+)
+(symbol
+	(rect 816 376 1032 552)
 	(text "LevelController" (rect 5 0 102 15)(font "Arial" ))
-	(text "inst2" (rect 8 128 39 143)(font "Arial" ))
+	(text "inst2" (rect 8 160 39 175)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -719,98 +781,57 @@ agreement for further details.
 		(line (pt 0 112)(pt 16 112))
 	)
 	(port
-		(pt 208 32)
+		(pt 0 128)
+		(input)
+		(text "oneSecPulse" (rect 0 0 87 15)(font "Arial" ))
+		(text "oneSecPulse" (rect 21 123 108 138)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "startOfFrame" (rect 0 0 84 15)(font "Arial" ))
+		(text "startOfFrame" (rect 21 139 105 154)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 216 32)
 		(output)
 		(text "levelDR" (rect 0 0 50 15)(font "Arial" ))
-		(text "levelDR" (rect 145 27 187 42)(font "Arial" ))
-		(line (pt 208 32)(pt 192 32))
+		(text "levelDR" (rect 153 27 195 42)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32))
 	)
 	(port
-		(pt 208 48)
+		(pt 216 48)
 		(output)
 		(text "RGBout[7..0]" (rect 0 0 81 15)(font "Arial" ))
-		(text "RGBout[7..0]" (rect 119 43 187 58)(font "Arial" ))
-		(line (pt 208 48)(pt 192 48)(line_width 3))
+		(text "RGBout[7..0]" (rect 127 43 195 58)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 3))
 	)
 	(port
-		(pt 208 64)
+		(pt 216 64)
 		(output)
-		(text "stageEnded" (rect 0 0 79 15)(font "Arial" ))
-		(text "stageEnded" (rect 121 59 187 74)(font "Arial" ))
-		(line (pt 208 64)(pt 192 64))
+		(text "stageFailed" (rect 0 0 76 15)(font "Arial" ))
+		(text "stageFailed" (rect 131 59 195 74)(font "Arial" ))
+		(line (pt 216 64)(pt 200 64))
 	)
 	(port
-		(pt 208 80)
+		(pt 216 80)
+		(output)
+		(text "stagePassed" (rect 0 0 87 15)(font "Arial" ))
+		(text "stagePassed" (rect 122 75 195 90)(font "Arial" ))
+		(line (pt 216 80)(pt 200 80))
+	)
+	(port
+		(pt 216 96)
 		(output)
 		(text "lastLevelEnded" (rect 0 0 100 15)(font "Arial" ))
-		(text "lastLevelEnded" (rect 103 75 187 90)(font "Arial" ))
-		(line (pt 208 80)(pt 192 80))
+		(text "lastLevelEnded" (rect 111 91 195 106)(font "Arial" ))
+		(line (pt 216 96)(pt 200 96))
 	)
 	(drawing
-		(rectangle (rect 16 16 192 128))
+		(rectangle (rect 16 16 200 160))
 	)
-)
-(symbol
-	(rect 1232 -448 1472 -336)
-	(text "DisplayMux" (rect 5 0 78 15)(font "Arial" ))
-	(text "inst10" (rect 8 96 48 111)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "RGBBackground[7..0]" (rect 0 0 139 15)(font "Arial" ))
-		(text "RGBBackground[7..0]" (rect 21 27 160 42)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "levelDR" (rect 0 0 50 15)(font "Arial" ))
-		(text "levelDR" (rect 21 43 71 58)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "levelRGB[7..0]" (rect 0 0 90 15)(font "Arial" ))
-		(text "levelRGB[7..0]" (rect 21 59 111 74)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 240 32)
-		(output)
-		(text "RGBout[7..0]" (rect 0 0 81 15)(font "Arial" ))
-		(text "RGBout[7..0]" (rect 151 27 219 42)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 224 96))
-	)
-)
-(symbol
-	(rect 1024 80 1184 160)
-	(text "MyConstant" (rect 5 0 80 15)(font "Arial" ))
-	(text "inst11" (rect 8 64 48 83)(font "Intel Clear" ))
-	(port
-		(pt 160 32)
-		(output)
-		(text "value[size-1..0]" (rect 0 0 95 15)(font "Arial" ))
-		(text "value[size-1..0]" (rect 59 27 154 42)(font "Arial" ))
-		(line (pt 160 32)(pt 144 32)(line_width 3))
-	)
-	(parameter
-		"size"
-		"10"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"MyValue"
-		"1"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 144 64))
-	)
-	(annotation_block (parameter)(rect 824 80 1022 140))
 )
 (connector
 	(pt 296 -40)
@@ -968,22 +989,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "levelRGB[7..0]" (rect 1034 408 1121 427)(font "Intel Clear" ))
-	(pt 1024 424)
-	(pt 1152 424)
-	(bus)
-)
-(connector
-	(text "levelDR" (rect 1034 392 1080 411)(font "Intel Clear" ))
-	(pt 1152 408)
-	(pt 1024 408)
-)
-(connector
-	(text "anyKeyPressed" (rect 720 488 815 507)(font "Intel Clear" ))
-	(pt 720 488)
-	(pt 816 488)
-)
-(connector
 	(text "ZERO[10..0]" (rect 1184 8 1260 27)(font "Intel Clear" ))
 	(pt 1184 32)
 	(pt 1224 32)
@@ -1055,6 +1060,27 @@ agreement for further details.
 	(text "levelDR" (rect 1114 -416 1160 -397)(font "Intel Clear" ))
 	(pt 1232 -400)
 	(pt 1104 -400)
+)
+(connector
+	(text "levelRGB[7..0]" (rect 1034 408 1121 427)(font "Intel Clear" ))
+	(pt 1032 424)
+	(pt 1152 424)
+	(bus)
+)
+(connector
+	(text "levelDR" (rect 1058 392 1104 411)(font "Intel Clear" ))
+	(pt 1032 408)
+	(pt 1128 408)
+)
+(connector
+	(text "CONST_ONE[0]" (rect 720 488 819 507)(font "Intel Clear" ))
+	(pt 720 488)
+	(pt 816 488)
+)
+(connector
+	(text "startOfFrame" (rect 712 504 795 523)(font "Intel Clear" ))
+	(pt 696 520)
+	(pt 816 520)
 )
 (text "31.5 MHz Clock generator" (rect 136 -168 419 -141)(font "Intel Clear" (font_size 12)(bold)))
 (text "MIF Tilemap" (rect 192 -584 327 -557)(font "Intel Clear" (font_size 12)(bold)))

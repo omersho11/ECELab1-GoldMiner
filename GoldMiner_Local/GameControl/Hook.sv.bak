@@ -1,0 +1,56 @@
+module HookDemo
+(
+    input logic clk,
+    input logic resetN,
+    input logic enable,
+    output logic [10:0] x,
+    output logic [10:0] y
+);
+
+localparam int ANGULAR_VELOCITY = 1;
+localparam int SAMPLE_DELAY = 1000;
+localparam int LENGTH = 1;
+localparam int ONE_PI = 128;
+localparam int ONE_AND_A_HALF_PI = 192;
+localparam int TWO_PI = 255;
+
+int timeSinceLastSample = 0;
+logic [7:0] angle = ONE_AND_A_HALF_PI;
+int sign = 1;
+logic signed [15:0] currentAngleSin;
+logic signed [15:0] currentAngleCos;
+
+RotationSintable trigTable (
+    .Angle(angle),
+    .Sin(currentAngleSin),
+    .Cos(currentAngleCos)
+);
+
+//
+always_ff@(posedge clk or negedge resetN) begin
+    if(!resetN) begin
+        angle <= ONE_AND_A_HALF_PI;
+        timeSinceLastSample <= 0;
+        sign <= 1;
+        x <= 0;
+        y <= 0;
+    end
+    else if (enable) begin
+        if (timeSinceLastSample > SAMPLE_DELAY) begin
+            timeSinceLastSample <= 0;
+
+            if (angle > TWO_PI || angle < ONE_PI) begin
+                sign <= -sign;
+            end
+            angle <= angle + ANGULAR_VELOCITY * sign;
+
+            x <= currentAngleCos * LENGTH;
+            y <= currentAngleSin * LENGTH;
+        end
+        else begin
+            timeSinceLastSample <= timeSinceLastSample + 1;
+        end
+    end
+end
+
+endmodule
