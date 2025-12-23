@@ -30,11 +30,23 @@ module DrawLine (
 	assign c = signed_x2 - signed_x1;
 	assign d = signed_y2 - signed_y1;
 
-	assign ineq_1 = ((c * b > (d * a - signed_width)) && (c * b < (d * a + signed_width)));
-	assign ineq_2 = ((a * d > (b * c - signed_width)) && (a * d < (b * c + signed_width)));
+	// Manhattan length approximation
+	int abs_dx, abs_dy, lengthAprox;
+	assign abs_dx = (c < 0) ? -c : c;
+	assign abs_dy = (d < 0) ? -d : d;
+	assign lengthAprox = abs_dx + abs_dy;
+	// End of manhattan length approximation
+	
+	
+	int scaledWidth;
+	assign scaledWidth = signed_width * lengthAprox;
+	
+	assign ineq_1 = ((c * b > (d * a - scaledWidth)) && (c * b < (d * a + scaledWidth)));
+	assign ineq_2 = ((a * d > (b * c - scaledWidth)) && (a * d < (b * c + scaledWidth)));
+	assign yBound = (signed_py >= signed_y1 && signed_py <= signed_y2);
 	
 	always_comb begin
-		if ((ineq_1 || ineq_2) && signed_py >= signed_y1 && signed_py <= signed_y2) begin //  && pixelY > y1 && pixelY < y2
+		if ((ineq_1 || ineq_2) && yBound) begin //  && pixelY > y1 && pixelY < y2
 			lineDR = 1'b1;
 			lineRGB = lineColor;
 		end else begin
