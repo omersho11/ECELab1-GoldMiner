@@ -55,15 +55,15 @@ agreement for further details.
 	(port
 		(pt 216 32)
 		(output)
-		(text "drLevel" (rect 0 0 30 12)(font "Arial" ))
-		(text "drLevel" (rect 165 27 195 39)(font "Arial" ))
+		(text "drStage" (rect 0 0 30 12)(font "Arial" ))
+		(text "drStage" (rect 165 27 195 39)(font "Arial" ))
 		(line (pt 216 32)(pt 200 32)(line_width 1))
 	)
 	(port
 		(pt 216 48)
 		(output)
-		(text "stateEnded" (rect 0 0 44 12)(font "Arial" ))
-		(text "stateEnded" (rect 151 43 195 55)(font "Arial" ))
+		(text "stageEnded" (rect 0 0 47 12)(font "Arial" ))
+		(text "stageEnded" (rect 148 43 195 55)(font "Arial" ))
 		(line (pt 216 48)(pt 200 48)(line_width 1))
 	)
 	(drawing

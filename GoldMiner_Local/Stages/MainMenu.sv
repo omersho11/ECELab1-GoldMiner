@@ -3,13 +3,14 @@ module	MainMenu	(
 			input	logic	resetN,
 			input logic enable,
 			input logic anyKeyPressed,
-			output logic drLevel,
-			output logic stateEnded
+			output logic drStage,
+			output logic stageEnded
 );
 
 
 always_ff@(posedge clk or negedge resetN)
 begin
-	stateEnded = (enable && anyKeyPressed);
+	stageEnded <= 0;
+	stageEnded <= (enable && anyKeyPressed);
 end
 endmodule

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab1Demo
-Tue Dec 23 13:57:29 2025
+Thu Dec 25 16:43:57 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -18,44 +18,45 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
  10. Analysis & Synthesis IP Cores Summary
  11. State Machine - |main|StageController:inst1|stageSM
  12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for TOP_KBD:inst5|KBDINTF:inst
- 18. Source assignments for LPM_ROM:inst9|altrom:srom|altsyncram:rom_block|altsyncram_o371:auto_generated
- 19. Parameter Settings for User Entity Instance: CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i
- 20. Parameter Settings for User Entity Instance: LevelController:inst2|Hook:hook
- 21. Parameter Settings for User Entity Instance: LevelController:inst2|Hook:hook|RotationTable:trigTable
- 22. Parameter Settings for User Entity Instance: MyConstant:inst11
- 23. Parameter Settings for User Entity Instance: LPM_ROM:inst9
- 24. Parameter Settings for User Entity Instance: Decoder:inst4
- 25. Parameter Settings for User Entity Instance: MyConstant:inst6
- 26. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[19].obj_inst"
- 27. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[18].obj_inst"
- 28. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[17].obj_inst"
- 29. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[16].obj_inst"
- 30. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[15].obj_inst"
- 31. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[14].obj_inst"
- 32. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[13].obj_inst"
- 33. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[12].obj_inst"
- 34. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[11].obj_inst"
- 35. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[10].obj_inst"
- 36. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[9].obj_inst"
- 37. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[8].obj_inst"
- 38. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[7].obj_inst"
- 39. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[6].obj_inst"
- 40. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[5].obj_inst"
- 41. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[4].obj_inst"
- 42. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[3].obj_inst"
- 43. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst"
- 44. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst"
- 45. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst"
- 46. Port Connectivity Checks: "LevelController:inst2|DrawLine:lineDrawer"
- 47. Post-Synthesis Netlist Statistics for Top Partition
- 48. Elapsed Time Per Partition
- 49. Analysis & Synthesis Messages
- 50. Analysis & Synthesis Suppressed Messages
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for TOP_KBD:inst5|KBDINTF:inst
+ 17. Source assignments for LPM_ROM:inst9|altrom:srom|altsyncram:rom_block|altsyncram_o371:auto_generated
+ 18. Parameter Settings for User Entity Instance: CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i
+ 19. Parameter Settings for User Entity Instance: VectorOr:inst17
+ 20. Parameter Settings for User Entity Instance: Decoder:inst4
+ 21. Parameter Settings for User Entity Instance: VectorOr:inst18
+ 22. Parameter Settings for User Entity Instance: LevelController:inst2|Hook:hook
+ 23. Parameter Settings for User Entity Instance: LevelController:inst2|Hook:hook|RotationTable:trigTable
+ 24. Parameter Settings for User Entity Instance: LPM_ROM:inst9
+ 25. Parameter Settings for User Entity Instance: MyConstant:inst11
+ 26. Parameter Settings for User Entity Instance: MyConstant:inst6
+ 27. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[19].obj_inst"
+ 28. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[18].obj_inst"
+ 29. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[17].obj_inst"
+ 30. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[16].obj_inst"
+ 31. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[15].obj_inst"
+ 32. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[14].obj_inst"
+ 33. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[13].obj_inst"
+ 34. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[12].obj_inst"
+ 35. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[11].obj_inst"
+ 36. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[10].obj_inst"
+ 37. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[9].obj_inst"
+ 38. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[8].obj_inst"
+ 39. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[7].obj_inst"
+ 40. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[6].obj_inst"
+ 41. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[5].obj_inst"
+ 42. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[4].obj_inst"
+ 43. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[3].obj_inst"
+ 44. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst"
+ 45. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst"
+ 46. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst"
+ 47. Port Connectivity Checks: "LevelController:inst2|DrawLine:lineDrawer"
+ 48. Post-Synthesis Netlist Statistics for Top Partition
+ 49. Elapsed Time Per Partition
+ 50. Analysis & Synthesis Messages
+ 51. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -82,13 +83,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Dec 23 13:57:29 2025       ;
+; Analysis & Synthesis Status     ; Successful - Thu Dec 25 16:43:57 2025       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 47                                          ;
+; Total registers                 ; 129                                         ;
 ; Total pins                      ; 33                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 131,072                                     ;
@@ -209,9 +210,7 @@ Parallel compilation attempted to use more processors than were available, which
 ;     Processor 4                 ;   0.0%      ;
 ;     Processor 5                 ;   0.0%      ;
 ;     Processor 6                 ;   0.0%      ;
-;     Processor 7                 ;   0.0%      ;
-;     Processor 8                 ;   0.0%      ;
-;     Processors 9-12             ;   0.0%      ;
+;     Processors 7-12             ;   0.0%      ;
 ;     Processors 13-16 (overused) ;   0.0%      ;
 +---------------------------------+-------------+
 
@@ -241,6 +240,11 @@ Parallel compilation attempted to use more processors than were available, which
 ; Utilities/RotationTable.sv                                 ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/RotationTable.sv                                 ;          ;
 ; GameControl/Hook.sv                                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv                                        ;          ;
 ; Utilities/DrawLine.sv                                      ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/DrawLine.sv                                      ;          ;
+; Stages/WinMenu.sv                                          ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv                                          ;          ;
+; Stages/LossMenu.sv                                         ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LossMenu.sv                                         ;          ;
+; Stages/GameEndMenu.sv                                      ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/GameEndMenu.sv                                      ;          ;
+; Utilities/VectorOr.sv                                      ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/VectorOr.sv                                      ;          ;
+; Utilities/OneSecPulse.sv                                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/OneSecPulse.sv                                   ;          ;
 ; stages/all_stages.txt                                      ; yes             ; Auto-Found File                    ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/all_stages.txt                                      ;          ;
 ; stages/level_data.txt                                      ; yes             ; Auto-Found File                    ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/level_data.txt                                      ;          ;
 ; altera_pll.v                                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altera_pll.v                                                          ;          ;
@@ -268,16 +272,16 @@ Parallel compilation attempted to use more processors than were available, which
 +---------------------------------------------+----------------------------------+
 ; Resource                                    ; Usage                            ;
 +---------------------------------------------+----------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 728                              ;
+; Estimate of Logic utilization (ALMs needed) ; 823                              ;
 ;                                             ;                                  ;
-; Combinational ALUT usage for logic          ; 1075                             ;
-;     -- 7 input functions                    ; 21                               ;
-;     -- 6 input functions                    ; 359                              ;
-;     -- 5 input functions                    ; 169                              ;
-;     -- 4 input functions                    ; 141                              ;
-;     -- <=3 input functions                  ; 385                              ;
+; Combinational ALUT usage for logic          ; 1220                             ;
+;     -- 7 input functions                    ; 28                               ;
+;     -- 6 input functions                    ; 394                              ;
+;     -- 5 input functions                    ; 208                              ;
+;     -- 4 input functions                    ; 158                              ;
+;     -- <=3 input functions                  ; 432                              ;
 ;                                             ;                                  ;
-; Dedicated logic registers                   ; 47                               ;
+; Dedicated logic registers                   ; 129                              ;
 ;                                             ;                                  ;
 ; I/O pins                                    ; 33                               ;
 ; Total MLAB memory bits                      ; 0                                ;
@@ -288,10 +292,10 @@ Parallel compilation attempted to use more processors than were available, which
 ; Total PLLs                                  ; 1                                ;
 ;     -- PLLs                                 ; 1                                ;
 ;                                             ;                                  ;
-; Maximum fan-out node                        ; VGA_Controller:inst8|PixelX[1]~3 ;
-; Maximum fan-out                             ; 184                              ;
-; Total fan-out                               ; 5280                             ;
-; Average fan-out                             ; 4.35                             ;
+; Maximum fan-out node                        ; VGA_Controller:inst8|PixelX[1]~2 ;
+; Maximum fan-out                             ; 174                              ;
+; Total fan-out                               ; 6148                             ;
+; Average fan-out                             ; 4.27                             ;
 +---------------------------------------------+----------------------------------+
 
 
@@ -300,23 +304,30 @@ Parallel compilation attempted to use more processors than were available, which
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                 ; Entity Name     ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------+-----------------+--------------+
-; |main                                                   ; 1075 (0)            ; 47 (0)                    ; 131072            ; 9          ; 33   ; 0            ; |main                                                                               ; main            ; work         ;
+; |main                                                   ; 1220 (0)            ; 129 (0)                   ; 131072            ; 9          ; 33   ; 0            ; |main                                                                               ; main            ; work         ;
 ;    |CLK_31P5:inst7|                                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|CLK_31P5:inst7                                                                ; CLK_31P5        ; CLK_31P5     ;
 ;       |CLK_31P5_0002:clk_31p5_inst|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst                                    ; CLK_31P5_0002   ; CLK_31P5     ;
 ;          |altera_pll:altera_pll_i|                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i            ; altera_pll      ; work         ;
+;    |Decoder:inst4|                                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|Decoder:inst4                                                                 ; Decoder         ; work         ;
 ;    |DisplayMux:inst10|                                  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|DisplayMux:inst10                                                             ; DisplayMux      ; work         ;
-;    |LevelController:inst2|                              ; 946 (20)            ; 20 (9)                    ; 0                 ; 8          ; 0    ; 0            ; |main|LevelController:inst2                                                         ; LevelController ; work         ;
-;       |DrawLine:lineDrawer|                             ; 392 (392)           ; 0 (0)                     ; 0                 ; 6          ; 0    ; 0            ; |main|LevelController:inst2|DrawLine:lineDrawer                                     ; DrawLine        ; work         ;
-;       |GrabbableObject:GrabbableObject_GEN[0].obj_inst| ; 169 (169)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst         ; GrabbableObject ; work         ;
-;       |GrabbableObject:GrabbableObject_GEN[1].obj_inst| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst         ; GrabbableObject ; work         ;
-;       |GrabbableObject:GrabbableObject_GEN[2].obj_inst| ; 273 (273)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst         ; GrabbableObject ; work         ;
+;    |LevelController:inst2|                              ; 972 (41)            ; 31 (20)                   ; 0                 ; 8          ; 0    ; 0            ; |main|LevelController:inst2                                                         ; LevelController ; work         ;
+;       |DrawLine:lineDrawer|                             ; 388 (388)           ; 0 (0)                     ; 0                 ; 6          ; 0    ; 0            ; |main|LevelController:inst2|DrawLine:lineDrawer                                     ; DrawLine        ; work         ;
+;       |GrabbableObject:GrabbableObject_GEN[0].obj_inst| ; 174 (174)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst         ; GrabbableObject ; work         ;
+;       |GrabbableObject:GrabbableObject_GEN[1].obj_inst| ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst         ; GrabbableObject ; work         ;
+;       |GrabbableObject:GrabbableObject_GEN[2].obj_inst| ; 277 (277)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst         ; GrabbableObject ; work         ;
 ;       |GrabbableObject:GrabbableObject_GEN[3].obj_inst| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[3].obj_inst         ; GrabbableObject ; work         ;
-;       |Hook:hook|                                       ; 84 (35)             ; 11 (11)                   ; 0                 ; 2          ; 0    ; 0            ; |main|LevelController:inst2|Hook:hook                                               ; Hook            ; work         ;
-;          |RotationTable:trigTable|                      ; 49 (49)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|Hook:hook|RotationTable:trigTable                       ; RotationTable   ; work         ;
-;    |TOP_KBD:inst5|                                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5                                                                 ; TOP_KBD         ; work         ;
-;       |KBDINTF:inst|                                    ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst                                                    ; KBDINTF         ; work         ;
-;    |Tilemap:inst13|                                     ; 56 (56)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |main|Tilemap:inst13                                                                ; Tilemap         ; work         ;
+;       |Hook:hook|                                       ; 83 (36)             ; 11 (11)                   ; 0                 ; 2          ; 0    ; 0            ; |main|LevelController:inst2|Hook:hook                                               ; Hook            ; work         ;
+;          |RotationTable:trigTable|                      ; 47 (47)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|Hook:hook|RotationTable:trigTable                       ; RotationTable   ; work         ;
+;    |OneSecPulse:inst20|                                 ; 32 (32)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |main|OneSecPulse:inst20                                                            ; OneSecPulse     ; work         ;
+;    |StageController:inst1|                              ; 2 (2)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |main|StageController:inst1                                                         ; StageController ; work         ;
+;    |TOP_KBD:inst5|                                      ; 37 (0)              ; 42 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5                                                                 ; TOP_KBD         ; work         ;
+;       |KBDINTF:inst|                                    ; 37 (0)              ; 42 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst                                                    ; KBDINTF         ; work         ;
+;          |bitrec:inst4|                                 ; 16 (16)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4                                       ; bitrec          ; work         ;
+;          |byterec:inst3|                                ; 16 (16)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst|byterec:inst3                                      ; byterec         ; work         ;
+;          |lpf:inst5|                                    ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst|lpf:inst5                                          ; lpf             ; work         ;
+;    |Tilemap:inst13|                                     ; 102 (102)           ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |main|Tilemap:inst13                                                                ; Tilemap         ; work         ;
 ;    |VGA_Controller:inst8|                               ; 65 (65)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |main|VGA_Controller:inst8                                                          ; VGA_Controller  ; work         ;
+;    |VectorOr:inst18|                                    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|VectorOr:inst18                                                               ; VectorOr        ; work         ;
 ;    |lpm_rom:inst9|                                      ; 0 (0)               ; 1 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9                                                                 ; lpm_rom         ; work         ;
 ;       |altrom:srom|                                     ; 0 (0)               ; 1 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9|altrom:srom                                                     ; altrom          ; work         ;
 ;          |altsyncram:rom_block|                         ; 0 (0)               ; 1 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9|altrom:srom|altsyncram:rom_block                                ; altsyncram      ; work         ;
@@ -817,7 +828,6 @@ Encoding Type:  One-Hot
 ; LevelController:inst2|activeLevelData[59][2]                                                      ; Stuck at GND due to stuck port data_in                   ;
 ; LevelController:inst2|activeLevelData[59][1]                                                      ; Stuck at GND due to stuck port data_in                   ;
 ; LevelController:inst2|activeLevelData[59][0]                                                      ; Stuck at GND due to stuck port data_in                   ;
-; LevelController:inst2|enable_d                                                                    ; Lost fanout                                              ;
 ; LevelController:inst2|Hook:hook|direction[8..31]                                                  ; Lost fanout                                              ;
 ; LevelController:inst2|Hook:hook|direction[2..7]                                                   ; Merged with LevelController:inst2|Hook:hook|direction[1] ;
 ; lpm_rom:inst9|altrom:srom|altsyncram:rom_block|altsyncram_o371:auto_generated|address_reg_a[1..5] ; Stuck at GND due to stuck port data_in                   ;
@@ -825,25 +835,10 @@ Encoding Type:  One-Hot
 ; StageController:inst1|stageSM~4                                                                   ; Lost fanout                                              ;
 ; StageController:inst1|stageSM~5                                                                   ; Lost fanout                                              ;
 ; StageController:inst1|stageSM~7                                                                   ; Lost fanout                                              ;
-; StageController:inst1|stageSM.S_MAIN_MENU                                                         ; Lost fanout                                              ;
-; StageController:inst1|stageSM.S_SHOP                                                              ; Lost fanout                                              ;
-; StageController:inst1|stageSM.S_WIN_MENU                                                          ; Lost fanout                                              ;
-; StageController:inst1|stageSM.S_LOSS_MENU                                                         ; Lost fanout                                              ;
-; StageController:inst1|stageSM.S_LEVEL                                                             ; Lost fanout                                              ;
-; Total Number of Removed Registers = 485                                                           ;                                                          ;
+; StageController:inst1|stageSM.S_WIN_MENU                                                          ; Stuck at GND due to stuck port data_in                   ;
+; StageController:inst1|stageSM.S_SHOP                                                              ; Stuck at GND due to stuck port data_in                   ;
+; Total Number of Removed Registers = 481                                                           ;                                                          ;
 +---------------------------------------------------------------------------------------------------+----------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                               ;
-+---------------------------------------------+---------------------------+---------------------------------------------------------------------------------+
-; Register name                               ; Reason for Removal        ; Registers Removed due to This Register                                          ;
-+---------------------------------------------+---------------------------+---------------------------------------------------------------------------------+
-; StageController:inst1|stageSM~4             ; Lost Fanouts              ; StageController:inst1|stageSM.S_SHOP, StageController:inst1|stageSM.S_LOSS_MENU ;
-; LevelController:inst2|activeLevelData[0][8] ; Stuck at GND              ; LevelController:inst2|enable_d                                                  ;
-;                                             ; due to stuck port data_in ;                                                                                 ;
-; StageController:inst1|stageSM~5             ; Lost Fanouts              ; StageController:inst1|stageSM.S_WIN_MENU                                        ;
-+---------------------------------------------+---------------------------+---------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -851,28 +846,31 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 47    ;
-; Number of registers using Synchronous Clear  ; 22    ;
+; Total registers                              ; 129   ;
+; Number of registers using Synchronous Clear  ; 57    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 46    ;
+; Number of registers using Asynchronous Clear ; 127   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 19    ;
+; Number of registers using Clock Enable       ; 61    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------+
-; Inverted Register Statistics                       ;
-+------------------------------------------+---------+
-; Inverted Register                        ; Fan out ;
-+------------------------------------------+---------+
-; VGA_Controller:inst8|oVGA_VS             ; 6       ;
-; VGA_Controller:inst8|oVGA_HS             ; 4       ;
-; VGA_Controller:inst8|oVGA_HS_d           ; 1       ;
-; LevelController:inst2|Hook:hook|angle[7] ; 21      ;
-; LevelController:inst2|Hook:hook|angle[6] ; 49      ;
-; Total number of inverted registers = 5   ;         ;
-+------------------------------------------+---------+
++-------------------------------------------------------+
+; Inverted Register Statistics                          ;
++---------------------------------------------+---------+
+; Inverted Register                           ; Fan out ;
++---------------------------------------------+---------+
+; VGA_Controller:inst8|oVGA_VS                ; 6       ;
+; VGA_Controller:inst8|oVGA_HS                ; 4       ;
+; VGA_Controller:inst8|oVGA_HS_d              ; 1       ;
+; LevelController:inst2|Hook:hook|angle[7]    ; 21      ;
+; LevelController:inst2|Hook:hook|angle[6]    ; 49      ;
+; LevelController:inst2|timer[2]              ; 2       ;
+; LevelController:inst2|timer[0]              ; 2       ;
+; TOP_KBD:inst5|KBDINTF:inst|lpf:inst5|SM_LPF ; 9       ;
+; Total number of inverted registers = 8      ;         ;
++---------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -880,11 +878,13 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
-; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |main|LevelController:inst2|RGBout[5]                                              ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main|DisplayMux:inst10|RGBout[6]                                                  ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|LevelController:inst2|timer[1]                                               ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |main|LevelController:inst2|RGBout[1]                                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|LevelController:inst2|timer[0]                                               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main|DisplayMux:inst10|RGBout[5]                                                  ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst|Mux355 ;
 ; 30:1               ; 2 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst|Mux224 ;
-; 30:1               ; 2 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst|Mux227 ;
+; 30:1               ; 2 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst|Mux223 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
 
 
@@ -1454,6 +1454,36 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VectorOr:inst17 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; SIZE           ; 5     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Decoder:inst4 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; SIZE           ; 4     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VectorOr:inst18 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; SIZE           ; 5     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: LevelController:inst2|Hook:hook ;
 +----------------+-------------+-----------------------------------------------+
@@ -1473,17 +1503,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-----------------------------------------------------------------------------+
 ; COUNT_SIZE     ; 8     ; Signed Integer                                                              ;
 +----------------+-------+-----------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MyConstant:inst11 ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; size           ; 10    ; Signed Integer                        ;
-; MyValue        ; 1     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1507,13 +1526,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Decoder:inst4 ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; SIZE           ; 4     ; Signed Integer                    ;
-+----------------+-------+-----------------------------------+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MyConstant:inst11 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; size           ; 10    ; Signed Integer                        ;
+; MyValue        ; 1     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1773,29 +1793,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 47                          ;
-;     CLR               ; 16                          ;
-;     CLR SCLR          ; 11                          ;
-;     ENA CLR           ; 8                           ;
+; arriav_ff             ; 87                          ;
+;     CLR               ; 10                          ;
+;     CLR SCLR          ; 36                          ;
+;     ENA CLR           ; 29                          ;
 ;     ENA CLR SCLR      ; 11                          ;
 ;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 1080                        ;
-;     arith             ; 235                         ;
+; arriav_lcell_comb     ; 1188                        ;
+;     arith             ; 269                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 64                          ;
+;         1 data inputs ; 98                          ;
 ;         2 data inputs ; 122                         ;
 ;         4 data inputs ; 38                          ;
 ;         5 data inputs ; 9                           ;
-;     extend            ; 21                          ;
-;         7 data inputs ; 21                          ;
-;     normal            ; 760                         ;
+;     extend            ; 28                          ;
+;         7 data inputs ; 28                          ;
+;     normal            ; 827                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 68                          ;
-;         3 data inputs ; 62                          ;
-;         4 data inputs ; 103                         ;
-;         5 data inputs ; 160                         ;
-;         6 data inputs ; 359                         ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 57                          ;
+;         3 data inputs ; 77                          ;
+;         4 data inputs ; 112                         ;
+;         5 data inputs ; 186                         ;
+;         6 data inputs ; 384                         ;
 ;     shared            ; 64                          ;
 ;         2 data inputs ; 64                          ;
 ; arriav_mac            ; 9                           ;
@@ -1805,8 +1825,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.40                       ;
-; Average LUT depth     ; 7.67                        ;
+; Max LUT depth         ; 10.90                       ;
+; Average LUT depth     ; 7.49                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1815,7 +1835,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -1825,7 +1845,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Dec 23 13:57:04 2025
+    Info: Processing started: Thu Dec 25 16:43:42 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
 Info (20032): Parallel compilation is enabled and will use up to 16 processors
 Warning (20031): Parallel compilation is enabled for 16 processors, but there are only 10 processors in the system. Runtime may increase due to over usage of the processor space.
@@ -1931,8 +1951,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file gamecon
     Info (12023): Found entity 1: Hook File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file utilities/drawline.sv
     Info (12023): Found entity 1: DrawLine File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/DrawLine.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file stages/winmenu.sv
+    Info (12023): Found entity 1: WinMenu File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file stages/lossmenu.sv
+    Info (12023): Found entity 1: LossMenu File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LossMenu.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file stages/gameendmenu.sv
+    Info (12023): Found entity 1: GameEndMenu File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/GameEndMenu.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file utilities/vectoror.sv
+    Info (12023): Found entity 1: VectorOr File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/VectorOr.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file utilities/onesecpulse.sv
+    Info (12023): Found entity 1: OneSecPulse File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/OneSecPulse.sv Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at audio_codec_controller.sv(61): created implicit net for "CLOCK_500_ena" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 61
 Warning (10236): Verilog HDL Implicit Net warning at audio_codec_controller.sv(63): created implicit net for "CLOCK_SDAT_ena" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 63
+Warning (10236): Verilog HDL Implicit Net warning at LevelController.sv(37): created implicit net for "startingNewLevel" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 37
 Warning (10236): Verilog HDL Implicit Net warning at GrabbableObject.sv(20): created implicit net for "insideBoundingBox" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/GrabbableObject.sv Line: 20
 Warning (10236): Verilog HDL Implicit Net warning at DrawLine.sv(44): created implicit net for "ineq_1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/DrawLine.sv Line: 44
 Warning (10236): Verilog HDL Implicit Net warning at DrawLine.sv(45): created implicit net for "ineq_2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/DrawLine.sv Line: 45
@@ -1947,6 +1978,24 @@ Warning (275004): Undeclared parameter OFF
 Warning (275006): Can't find a definition for parameter IGNORE_CARRY_BUFFERS -- assuming OFF was intended to be a quoted string
 Warning (275004): Undeclared parameter OFF
 Warning (275006): Can't find a definition for parameter IGNORE_CASCADE_BUFFERS -- assuming OFF was intended to be a quoted string
+Warning (275085): Found inconsistent dimensions for element "stageDR"
+Warning (275085): Found inconsistent dimensions for element "StageEnded"
+Warning (275085): Found inconsistent dimensions for element "stageDR"
+Warning (275085): Found inconsistent dimensions for element "stageEnded"
+Warning (275080): Converted elements in bus name "stageDR" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "stageDR[1]" to "stageDR1"
+    Warning (275081): Converted element name(s) from "stageDR[2]" to "stageDR2"
+    Warning (275081): Converted element name(s) from "stageDR[3]" to "stageDR3"
+    Warning (275081): Converted element name(s) from "stageDR[4]" to "stageDR4"
+    Warning (275081): Converted element name(s) from "stageDR[0]" to "stageDR0"
+    Warning (275081): Converted element name(s) from "stageDR[4..0]" to "stageDR4..0"
+Warning (275080): Converted elements in bus name "stageEnded" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "stageEnded[1]" to "stageEnded1"
+    Warning (275081): Converted element name(s) from "stageEnded[2]" to "stageEnded2"
+    Warning (275081): Converted element name(s) from "stageEnded[3]" to "stageEnded3"
+    Warning (275081): Converted element name(s) from "stageEnded[4]" to "stageEnded4"
+    Warning (275081): Converted element name(s) from "stageEnded[4..0]" to "stageEnded4..0"
+    Warning (275081): Converted element name(s) from "stageEnded[0]" to "stageEnded0"
 Info (12128): Elaborating entity "VGA_Controller" for hierarchy "VGA_Controller:inst8"
 Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(61): truncated value with size 32 to match size of target (11) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/VGA_Controller.sv Line: 61
 Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(62): truncated value with size 32 to match size of target (11) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/VGA_Controller.sv Line: 62
@@ -2019,9 +2068,33 @@ Info (12133): Instantiated megafunction "CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_i
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
 Info (12128): Elaborating entity "DisplayMux" for hierarchy "DisplayMux:inst10"
+Info (12128): Elaborating entity "VectorOr" for hierarchy "VectorOr:inst17"
+Info (12128): Elaborating entity "GameEndMenu" for hierarchy "GameEndMenu:inst15"
+Critical Warning (10237): Verilog HDL warning at GameEndMenu.sv(13): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/GameEndMenu.sv Line: 13
+Critical Warning (10237): Verilog HDL warning at GameEndMenu.sv(14): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/GameEndMenu.sv Line: 14
+Warning (10034): Output port "drStage" at GameEndMenu.sv(6) has no driver File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/GameEndMenu.sv Line: 6
+Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:inst4"
+Info (12128): Elaborating entity "StageController" for hierarchy "StageController:inst1"
+Warning (10036): Verilog HDL or VHDL warning at StageController.sv(13): object "incrementLevel" assigned a value but never read File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/StageController.sv Line: 13
+Info (10264): Verilog HDL Case Statement information at StageController.sv(29): all case item expressions in this case statement are onehot File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/StageController.sv Line: 29
+Info (12128): Elaborating entity "MainMenu" for hierarchy "MainMenu:inst"
+Critical Warning (10237): Verilog HDL warning at MainMenu.sv(13): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/MainMenu.sv Line: 13
+Critical Warning (10237): Verilog HDL warning at MainMenu.sv(14): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/MainMenu.sv Line: 14
+Warning (10034): Output port "drStage" at MainMenu.sv(6) has no driver File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/MainMenu.sv Line: 6
+Info (12128): Elaborating entity "TOP_KBD" for hierarchy "TOP_KBD:inst5"
+Info (12128): Elaborating entity "keyPad_decoder" for hierarchy "TOP_KBD:inst5|keyPad_decoder:inst2"
+Warning (10230): Verilog HDL assignment warning at keyPad_decoder.sv(47): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/KEYBOARDX/keyPad_decoder.sv Line: 47
+Info (12128): Elaborating entity "KBDINTF" for hierarchy "TOP_KBD:inst5|KBDINTF:inst"
+Info (12128): Elaborating entity "LossMenu" for hierarchy "LossMenu:inst14"
+Critical Warning (10237): Verilog HDL warning at LossMenu.sv(13): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LossMenu.sv Line: 13
+Critical Warning (10237): Verilog HDL warning at LossMenu.sv(14): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LossMenu.sv Line: 14
+Warning (10034): Output port "drStage" at LossMenu.sv(6) has no driver File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LossMenu.sv Line: 6
+Info (12128): Elaborating entity "WinMenu" for hierarchy "WinMenu:inst12"
+Critical Warning (10237): Verilog HDL warning at WinMenu.sv(13): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv Line: 13
+Critical Warning (10237): Verilog HDL warning at WinMenu.sv(14): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv Line: 14
+Warning (10034): Output port "drStage" at WinMenu.sv(6) has no driver File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv Line: 6
 Info (12128): Elaborating entity "LevelController" for hierarchy "LevelController:inst2"
-Warning (10036): Verilog HDL or VHDL warning at LevelController.sv(24): object "timer" assigned a value but never read File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 24
-Warning (10850): Verilog HDL warning at LevelController.sv(43): number of words (180) in memory file does not match the number of elements in the address range [0:59] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 43
+Warning (10850): Verilog HDL warning at LevelController.sv(45): number of words (180) in memory file does not match the number of elements in the address range [0:59] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 45
 Warning (10230): Verilog HDL assignment warning at level_data.txt(2): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 2
 Warning (10230): Verilog HDL assignment warning at level_data.txt(3): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 3
 Warning (10230): Verilog HDL assignment warning at level_data.txt(4): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 4
@@ -2030,44 +2103,44 @@ Warning (10230): Verilog HDL assignment warning at level_data.txt(7): truncated 
 Warning (10230): Verilog HDL assignment warning at level_data.txt(8): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 8
 Warning (10230): Verilog HDL assignment warning at level_data.txt(9): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 9
 Warning (10230): Verilog HDL assignment warning at level_data.txt(10): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 10
-Warning (10240): Verilog HDL Always Construct warning at LevelController.sv(115): inferring latch(es) for variable "currentLevel", which holds its previous value in one or more paths through the always construct File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Warning (10240): Verilog HDL Always Construct warning at LevelController.sv(115): inferring latch(es) for variable "lastLevelEnded", which holds its previous value in one or more paths through the always construct File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
+Warning (10230): Verilog HDL assignment warning at LevelController.sv(146): truncated value with size 32 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 146
+Warning (10240): Verilog HDL Always Construct warning at LevelController.sv(116): inferring latch(es) for variable "currentLevel", which holds its previous value in one or more paths through the always construct File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Warning (10240): Verilog HDL Always Construct warning at LevelController.sv(116): inferring latch(es) for variable "lastLevelEnded", which holds its previous value in one or more paths through the always construct File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
 Warning (10034): Output port "stageFailed" at LevelController.sv(13) has no driver File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 13
-Warning (10034): Output port "stagePassed" at LevelController.sv(14) has no driver File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 14
-Info (10041): Inferred latch for "lastLevelEnded" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[0]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[1]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[2]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[3]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[4]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[5]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[6]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[7]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[8]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[9]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[10]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[11]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[12]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[13]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[14]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[15]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[16]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[17]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[18]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[19]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[20]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[21]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[22]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[23]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[24]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[25]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[26]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[27]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[28]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[29]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[30]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (10041): Inferred latch for "currentLevel[31]" at LevelController.sv(115) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 115
-Info (12128): Elaborating entity "Hook" for hierarchy "LevelController:inst2|Hook:hook" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 80
+Info (10041): Inferred latch for "lastLevelEnded" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[0]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[1]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[2]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[3]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[4]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[5]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[6]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[7]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[8]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[9]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[10]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[11]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[12]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[13]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[14]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[15]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[16]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[17]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[18]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[19]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[20]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[21]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[22]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[23]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[24]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[25]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[26]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[27]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[28]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[29]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[30]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (10041): Inferred latch for "currentLevel[31]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Info (12128): Elaborating entity "Hook" for hierarchy "LevelController:inst2|Hook:hook" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 81
 Warning (10230): Verilog HDL assignment warning at Hook.sv(47): truncated value with size 32 to match size of target (2) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 47
 Warning (10230): Verilog HDL assignment warning at Hook.sv(58): truncated value with size 32 to match size of target (8) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 58
 Warning (10230): Verilog HDL assignment warning at Hook.sv(67): truncated value with size 32 to match size of target (16) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 67
@@ -2077,11 +2150,11 @@ Warning (10230): Verilog HDL assignment warning at Hook.sv(71): truncated value 
 Info (12128): Elaborating entity "RotationTable" for hierarchy "LevelController:inst2|Hook:hook|RotationTable:trigTable" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 36
 Warning (10230): Verilog HDL assignment warning at RotationTable.sv(19): truncated value with size 32 to match size of target (8) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/RotationTable.sv Line: 19
 Warning (10230): Verilog HDL assignment warning at RotationTable.sv(22): truncated value with size 2048 to match size of target (2040) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/RotationTable.sv Line: 22
-Info (12128): Elaborating entity "DrawLine" for hierarchy "LevelController:inst2|DrawLine:lineDrawer" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 94
-Info (12128): Elaborating entity "GrabbableObject" for hierarchy "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 110
+Info (12128): Elaborating entity "DrawLine" for hierarchy "LevelController:inst2|DrawLine:lineDrawer" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 95
+Info (12128): Elaborating entity "GrabbableObject" for hierarchy "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 111
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "objectsBitmap" into its bus
-Info (12128): Elaborating entity "MyConstant" for hierarchy "MyConstant:inst11"
-Warning (10230): Verilog HDL assignment warning at MyConstant.sv(14): truncated value with size 32 to match size of target (10) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/MyConstant.sv Line: 14
+Info (12128): Elaborating entity "OneSecPulse" for hierarchy "OneSecPulse:inst20"
+Warning (10230): Verilog HDL assignment warning at OneSecPulse.sv(20): truncated value with size 32 to match size of target (25) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/OneSecPulse.sv Line: 20
 Info (12128): Elaborating entity "LPM_ROM" for hierarchy "LPM_ROM:inst9"
 Info (12130): Elaborated megafunction instantiation "LPM_ROM:inst9"
 Info (12133): Instantiated megafunction "LPM_ROM:inst9" with the following parameter:
@@ -2109,21 +2182,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mux_
     Info (12023): Found entity 1: mux_jhb File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/mux_jhb.tdf Line: 23
 Info (12128): Elaborating entity "mux_jhb" for hierarchy "LPM_ROM:inst9|altrom:srom|altsyncram:rom_block|altsyncram_o371:auto_generated|mux_jhb:mux2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/altsyncram_o371.tdf Line: 41
 Info (12128): Elaborating entity "Tilemap" for hierarchy "Tilemap:inst13"
-Warning (10850): Verilog HDL warning at Tilemap.sv(26): number of words (300) in memory file does not match the number of elements in the address range [0:4799] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Tilemap/Tilemap.sv Line: 26
+Warning (10850): Verilog HDL warning at Tilemap.sv(26): number of words (1800) in memory file does not match the number of elements in the address range [0:4799] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Tilemap/Tilemap.sv Line: 26
 Warning (10230): Verilog HDL assignment warning at Tilemap.sv(46): truncated value with size 20 to match size of target (19) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Tilemap/Tilemap.sv Line: 46
 Warning (10030): Net "tilemaps.data_a" at Tilemap.sv(23) has no driver or initial value, using a default initial value '0' File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Tilemap/Tilemap.sv Line: 23
 Warning (10030): Net "tilemaps.waddr_a" at Tilemap.sv(23) has no driver or initial value, using a default initial value '0' File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Tilemap/Tilemap.sv Line: 23
 Warning (10030): Net "tilemaps.we_a" at Tilemap.sv(23) has no driver or initial value, using a default initial value '0' File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Tilemap/Tilemap.sv Line: 23
-Info (12128): Elaborating entity "MainMenu" for hierarchy "MainMenu:inst"
-Warning (10034): Output port "drLevel" at MainMenu.sv(6) has no driver File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/MainMenu.sv Line: 6
-Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:inst4"
-Info (12128): Elaborating entity "StageController" for hierarchy "StageController:inst1"
-Warning (10036): Verilog HDL or VHDL warning at StageController.sv(13): object "incrementLevel" assigned a value but never read File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/StageController.sv Line: 13
-Info (10264): Verilog HDL Case Statement information at StageController.sv(29): all case item expressions in this case statement are onehot File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/StageController.sv Line: 29
-Info (12128): Elaborating entity "TOP_KBD" for hierarchy "TOP_KBD:inst5"
-Info (12128): Elaborating entity "keyPad_decoder" for hierarchy "TOP_KBD:inst5|keyPad_decoder:inst2"
-Warning (10230): Verilog HDL assignment warning at keyPad_decoder.sv(47): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/KEYBOARDX/keyPad_decoder.sv Line: 47
-Info (12128): Elaborating entity "KBDINTF" for hierarchy "TOP_KBD:inst5|KBDINTF:inst"
+Info (12128): Elaborating entity "MyConstant" for hierarchy "MyConstant:inst11"
+Warning (10230): Verilog HDL assignment warning at MyConstant.sv(14): truncated value with size 32 to match size of target (10) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/MyConstant.sv Line: 14
 Info (12128): Elaborating entity "MyConstant" for hierarchy "MyConstant:inst6"
 Warning (10230): Verilog HDL assignment warning at MyConstant.sv(14): truncated value with size 32 to match size of target (11) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/MyConstant.sv Line: 14
 Warning (12240): Synthesis found one or more imported partitions that will be treated as black boxes for timing analysis during synthesis
@@ -2434,7 +2499,10 @@ Warning (12241): 20 hierarchies have connectivity warnings - see the Connectivit
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "OVGA[26]" is stuck at VCC
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (17049): 33 registers lost all their fanouts during netlist optimizations.
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register LevelController:inst2|timer[2] will power up to High File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 125
+    Critical Warning (18010): Register LevelController:inst2|timer[0] will power up to High File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 125
+Info (17049): 27 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/Lab1Demo.map.smsg
 Info (35026): Attempting to remove 26 I/O cell(s) that do not connect to top-level pins or have illegal connectivity
     Info (35027): Removed I/O cell "TOP_KBD:inst5|KBDINTF:inst|make~output"
@@ -2465,18 +2533,7 @@ Info (35026): Attempting to remove 26 I/O cell(s) that do not connect to top-lev
     Info (35027): Removed I/O cell "TOP_KBD:inst5|KBDINTF:inst|resetN"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (35003): Optimize away 97 nodes that do not fanout to OUTPUT or BIDIR pins
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|shift_reg[7]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|shift_reg[3]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|shift_reg[8]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|shift_reg[6]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|shift_reg[5]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|shift_reg[4]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|shift_reg[2]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|shift_reg[1]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|shift_reg[0]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|shift_reg[9]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|make" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
+Info (35003): Optimize away 18 nodes that do not fanout to OUTPUT or BIDIR pins
     Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|brakk" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
     Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|keyCode[8]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
     Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|keyCode[7]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
@@ -2487,53 +2544,19 @@ Info (35003): Optimize away 97 nodes that do not fanout to OUTPUT or BIDIR pins
     Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|keyCode[2]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
     Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|keyCode[1]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
     Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|keyCode[0]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|SM_BYTEREC.idle_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|SM_BYTEREC.normal_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|SM_BYTEREC.extended_normal_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|SM_BYTEREC.break_normal_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|SM_BYTEREC.extended_break_normal_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|SM_BYTEREC.break_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|SM_BYTEREC.extended_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|SM_BYTEREC.extended_break_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
     Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|WideOr3" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|dout[7]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|dout[6]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|dout[5]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|dout[4]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|dout[3]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|dout[2]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|dout[1]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|dout[0]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|dout_new" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|SM_BITREC.CHK_DATA_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|SM_BITREC.IDLE_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|SM_BITREC.NEW_DATA_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|SM_BITREC.LOW_CLK_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|lpf:inst5|SM_LPF" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|cntr[3]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|cntr[2]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|cntr[1]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|SM_BITREC.HI_CLK_ST" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|lpf:inst5|cntr[3]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|lpf:inst5|cntr[0]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|lpf:inst5|cntr[2]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|lpf:inst5|cntr[1]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-    Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4|cntr[0]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "PS2_DAT"
-    Warning (15610): No output dependent on input pin "PS2_CLK"
-Info (21057): Implemented 1136 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1303 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 1077 logic cells
+    Info (21061): Implemented 1244 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 9 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 360 warnings
-    Info: Peak virtual memory: 5007 megabytes
-    Info: Processing ended: Tue Dec 23 13:57:29 2025
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:36
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 390 warnings
+    Info: Peak virtual memory: 4997 megabytes
+    Info: Processing ended: Thu Dec 25 16:43:57 2025
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:25
 
 
 +------------------------------------------+

@@ -105,7 +105,7 @@ always_comb begin
 	RGBout = TRANSPARENT_ENCODING;
 	if(insideBoundingBox && objectType != FILLER) begin
 		logic [7:0] pixelColor;
-		pixelColor = objectsBitmap[objectType][offsetY][offsetX];
+		pixelColor = objectsBitmap[objectType][OBJECT_HEIGHT - 1 - offsetY][OBJECT_WIDTH - 1 - offsetX];
 		if (pixelColor != TRANSPARENT_ENCODING) begin
 			dr = 1;
 			RGBout = pixelColor;

@@ -11,17 +11,17 @@ module LevelController (
     output logic levelDR,
     output logic [7:0] RGBout,
     output logic stageFailed,
-	 output logic stagePassed,
+	 output logic stageEnded,
     output logic lastLevelEnded
 );
 
 localparam MAX_LEVEL = 1;
 localparam OBJECTS_COUNT = 20;
-localparam MAX_TIME = 60;
+localparam [8:0] MAX_TIME = 5; //=========================== set to 5 for debugging ==================
 
 int score;
 int money;
-int timer;
+logic [8:0] timer = 0;
 int currentLevel;
 logic enable_d; // Delayed version of enable to detect the edge
 
@@ -33,6 +33,8 @@ localparam [7:0] LINE_COLOR = 8'hFE;
 logic [10:0] hookPosX, hookPosY;
 wire hookDR;
 logic [7:0] hookRGB;
+
+assign startingNewLevel = (enable && !enable_d);
 
 
 // location and type of objects on screen
@@ -56,8 +58,7 @@ always_ff @(posedge clk or negedge resetN) begin
         enable_d <= enable; // Store previous state
         
         // Detect rising edge: enable is high now, but was low last cycle
-        if (enable && !enable_d) begin
-				timer <= MAX_TIME;
+        if (startingNewLevel) begin
             for (int k = 0; k < OBJECTS_COUNT*3; k++) begin
                 activeLevelData[k] <= levelData[(currentLevel * OBJECTS_COUNT * 3) + k];
             end
@@ -118,9 +119,11 @@ always_ff @(posedge clk or negedge resetN) begin
 		lastLevelEnded <= 0;
 		levelDR <= 0;
 		RGBout <= 8'h00;
-	end 
+		timer <= MAX_TIME;
+		stageEnded <= 0;
+	end
    else if(enable) begin
-      // Combinational-like defaults within the FF
+      stageEnded <= 0;
       levelDR <= 0;
       RGBout <= 8'hFF;
 		
@@ -136,13 +139,18 @@ always_ff @(posedge clk or negedge resetN) begin
 			RGBout <= hookRGB;
 		end
 		  
-		  
-		  
-//		timer <= timer - 1;
-//		if (timer <= 0) stageEnded = 1;
-		  
+		if (startingNewLevel) begin
+			timer <= MAX_TIME;
+		end
+		else if (oneSecPulse) begin	
+			timer <= timer - 1;
+			if (timer == 0) stageEnded <= 1;
+		end		  
 		  
     end	
+	 else begin
+		stageEnded <= 0;
+	 end
 end
 
 endmodule

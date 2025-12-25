@@ -104,8 +104,8 @@ agreement for further details.
 	(port
 		(pt 216 80)
 		(output)
-		(text "stagePassed" (rect 0 0 50 12)(font "Arial" ))
-		(text "stagePassed" (rect 145 75 195 87)(font "Arial" ))
+		(text "stageEnded" (rect 0 0 47 12)(font "Arial" ))
+		(text "stageEnded" (rect 148 75 195 87)(font "Arial" ))
 		(line (pt 216 80)(pt 200 80)(line_width 1))
 	)
 	(port

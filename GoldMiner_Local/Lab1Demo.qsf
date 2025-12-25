@@ -289,5 +289,10 @@ set_global_assignment -name SYSTEMVERILOG_FILE GameControl/GrabbableObject.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/RotationTable.sv
 set_global_assignment -name SYSTEMVERILOG_FILE GameControl/Hook.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/DrawLine.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Stages/WinMenu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Stages/LossMenu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Stages/GameEndMenu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Utilities/VectorOr.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Utilities/OneSecPulse.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/RANDOM_SIGNAL_TAP_auto_stripped.stp
