@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab1Demo
-Thu Dec 25 16:43:57 2025
+Sat Dec 27 15:26:20 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -29,34 +29,43 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
  21. Parameter Settings for User Entity Instance: VectorOr:inst18
  22. Parameter Settings for User Entity Instance: LevelController:inst2|Hook:hook
  23. Parameter Settings for User Entity Instance: LevelController:inst2|Hook:hook|RotationTable:trigTable
- 24. Parameter Settings for User Entity Instance: LPM_ROM:inst9
- 25. Parameter Settings for User Entity Instance: MyConstant:inst11
- 26. Parameter Settings for User Entity Instance: MyConstant:inst6
- 27. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[19].obj_inst"
- 28. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[18].obj_inst"
- 29. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[17].obj_inst"
- 30. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[16].obj_inst"
- 31. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[15].obj_inst"
- 32. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[14].obj_inst"
- 33. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[13].obj_inst"
- 34. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[12].obj_inst"
- 35. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[11].obj_inst"
- 36. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[10].obj_inst"
- 37. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[9].obj_inst"
- 38. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[8].obj_inst"
- 39. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[7].obj_inst"
- 40. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[6].obj_inst"
- 41. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[5].obj_inst"
- 42. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[4].obj_inst"
- 43. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[3].obj_inst"
- 44. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst"
- 45. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst"
- 46. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst"
- 47. Port Connectivity Checks: "LevelController:inst2|DrawLine:lineDrawer"
- 48. Post-Synthesis Netlist Statistics for Top Partition
- 49. Elapsed Time Per Partition
- 50. Analysis & Synthesis Messages
- 51. Analysis & Synthesis Suppressed Messages
+ 24. Parameter Settings for User Entity Instance: LevelController:inst2|square_object:timeDisplaySquareObject
+ 25. Parameter Settings for User Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay
+ 26. Parameter Settings for User Entity Instance: LPM_ROM:inst9
+ 27. Parameter Settings for User Entity Instance: MyConstant:inst11
+ 28. Parameter Settings for User Entity Instance: MyConstant:inst6
+ 29. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1
+ 30. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2
+ 31. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1
+ 32. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0
+ 33. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2
+ 34. Port Connectivity Checks: "LevelController:inst2|TimeDisplay:timeDisplay"
+ 35. Port Connectivity Checks: "LevelController:inst2|square_object:timeDisplaySquareObject"
+ 36. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[19].obj_inst"
+ 37. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[18].obj_inst"
+ 38. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[17].obj_inst"
+ 39. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[16].obj_inst"
+ 40. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[15].obj_inst"
+ 41. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[14].obj_inst"
+ 42. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[13].obj_inst"
+ 43. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[12].obj_inst"
+ 44. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[11].obj_inst"
+ 45. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[10].obj_inst"
+ 46. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[9].obj_inst"
+ 47. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[8].obj_inst"
+ 48. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[7].obj_inst"
+ 49. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[6].obj_inst"
+ 50. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[5].obj_inst"
+ 51. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[4].obj_inst"
+ 52. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[3].obj_inst"
+ 53. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst"
+ 54. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst"
+ 55. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst"
+ 56. Port Connectivity Checks: "LevelController:inst2|DrawLine:lineDrawer"
+ 57. Post-Synthesis Netlist Statistics for Top Partition
+ 58. Elapsed Time Per Partition
+ 59. Analysis & Synthesis Messages
+ 60. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -83,13 +92,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Dec 25 16:43:57 2025       ;
+; Analysis & Synthesis Status     ; Successful - Sat Dec 27 15:26:20 2025       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 129                                         ;
+; Total registers                 ; 142                                         ;
 ; Total pins                      ; 33                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 131,072                                     ;
@@ -220,6 +229,7 @@ Parallel compilation attempted to use more processors than were available, which
 +------------------------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------------------------+----------+
 ; File Name with User-Entered Path                           ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                                 ; Library  ;
 +------------------------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------------------------+----------+
+; RTL/VGA/square_object.sv                                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/square_object.sv                                   ;          ;
 ; RTL/VGA/VGA_Controller.sv                                  ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/VGA_Controller.sv                                  ;          ;
 ; RTL/KEYBOARDX/TOP_KBD.bdf                                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/KEYBOARDX/TOP_KBD.bdf                                  ;          ;
 ; RTL/KEYBOARDX/keyPad_decoder.sv                            ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/KEYBOARDX/keyPad_decoder.sv                            ;          ;
@@ -245,6 +255,7 @@ Parallel compilation attempted to use more processors than were available, which
 ; Stages/GameEndMenu.sv                                      ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/GameEndMenu.sv                                      ;          ;
 ; Utilities/VectorOr.sv                                      ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/VectorOr.sv                                      ;          ;
 ; Utilities/OneSecPulse.sv                                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/OneSecPulse.sv                                   ;          ;
+; Graphics/TimeDisplay.sv                                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv                                    ;          ;
 ; stages/all_stages.txt                                      ; yes             ; Auto-Found File                    ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/all_stages.txt                                      ;          ;
 ; stages/level_data.txt                                      ; yes             ; Auto-Found File                    ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/level_data.txt                                      ;          ;
 ; altera_pll.v                                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altera_pll.v                                                          ;          ;
@@ -264,6 +275,20 @@ Parallel compilation attempted to use more processors than were available, which
 ; db/altsyncram_o371.tdf                                     ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/altsyncram_o371.tdf                                     ;          ;
 ; db/decode_s2a.tdf                                          ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/decode_s2a.tdf                                          ;          ;
 ; db/mux_jhb.tdf                                             ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/mux_jhb.tdf                                             ;          ;
+; lpm_divide.tdf                                             ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_divide.tdf                                                        ;          ;
+; abs_divider.inc                                            ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/abs_divider.inc                                                       ;          ;
+; sign_div_unsign.inc                                        ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sign_div_unsign.inc                                                   ;          ;
+; db/lpm_divide_k3m.tdf                                      ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_k3m.tdf                                      ;          ;
+; db/sign_div_unsign_nlh.tdf                                 ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/sign_div_unsign_nlh.tdf                                 ;          ;
+; db/alt_u_div_kve.tdf                                       ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_kve.tdf                                       ;          ;
+; db/lpm_divide_3am.tdf                                      ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_3am.tdf                                      ;          ;
+; db/sign_div_unsign_9kh.tdf                                 ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/sign_div_unsign_9kh.tdf                                 ;          ;
+; db/alt_u_div_ose.tdf                                       ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_ose.tdf                                       ;          ;
+; db/lpm_divide_hbm.tdf                                      ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_hbm.tdf                                      ;          ;
+; db/lpm_divide_i3m.tdf                                      ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_i3m.tdf                                      ;          ;
+; db/sign_div_unsign_llh.tdf                                 ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/sign_div_unsign_llh.tdf                                 ;          ;
+; db/alt_u_div_gve.tdf                                       ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_gve.tdf                                       ;          ;
+; db/lpm_divide_62m.tdf                                      ; yes             ; Auto-Generated Megafunction        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_62m.tdf                                      ;          ;
 +------------------------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------------------------+----------+
 
 
@@ -272,16 +297,16 @@ Parallel compilation attempted to use more processors than were available, which
 +---------------------------------------------+----------------------------------+
 ; Resource                                    ; Usage                            ;
 +---------------------------------------------+----------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 823                              ;
+; Estimate of Logic utilization (ALMs needed) ; 1018                             ;
 ;                                             ;                                  ;
-; Combinational ALUT usage for logic          ; 1220                             ;
-;     -- 7 input functions                    ; 28                               ;
-;     -- 6 input functions                    ; 394                              ;
-;     -- 5 input functions                    ; 208                              ;
-;     -- 4 input functions                    ; 158                              ;
-;     -- <=3 input functions                  ; 432                              ;
+; Combinational ALUT usage for logic          ; 1556                             ;
+;     -- 7 input functions                    ; 45                               ;
+;     -- 6 input functions                    ; 432                              ;
+;     -- 5 input functions                    ; 207                              ;
+;     -- 4 input functions                    ; 225                              ;
+;     -- <=3 input functions                  ; 647                              ;
 ;                                             ;                                  ;
-; Dedicated logic registers                   ; 129                              ;
+; Dedicated logic registers                   ; 142                              ;
 ;                                             ;                                  ;
 ; I/O pins                                    ; 33                               ;
 ; Total MLAB memory bits                      ; 0                                ;
@@ -292,47 +317,69 @@ Parallel compilation attempted to use more processors than were available, which
 ; Total PLLs                                  ; 1                                ;
 ;     -- PLLs                                 ; 1                                ;
 ;                                             ;                                  ;
-; Maximum fan-out node                        ; VGA_Controller:inst8|PixelX[1]~2 ;
-; Maximum fan-out                             ; 174                              ;
-; Total fan-out                               ; 6148                             ;
-; Average fan-out                             ; 4.27                             ;
+; Maximum fan-out node                        ; VGA_Controller:inst8|PixelX[1]~3 ;
+; Maximum fan-out                             ; 177                              ;
+; Total fan-out                               ; 7349                             ;
+; Average fan-out                             ; 4.11                             ;
 +---------------------------------------------+----------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                     ;
-+---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                 ; Entity Name     ; Library Name ;
-+---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------+-----------------+--------------+
-; |main                                                   ; 1220 (0)            ; 129 (0)                   ; 131072            ; 9          ; 33   ; 0            ; |main                                                                               ; main            ; work         ;
-;    |CLK_31P5:inst7|                                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|CLK_31P5:inst7                                                                ; CLK_31P5        ; CLK_31P5     ;
-;       |CLK_31P5_0002:clk_31p5_inst|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst                                    ; CLK_31P5_0002   ; CLK_31P5     ;
-;          |altera_pll:altera_pll_i|                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i            ; altera_pll      ; work         ;
-;    |Decoder:inst4|                                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|Decoder:inst4                                                                 ; Decoder         ; work         ;
-;    |DisplayMux:inst10|                                  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|DisplayMux:inst10                                                             ; DisplayMux      ; work         ;
-;    |LevelController:inst2|                              ; 972 (41)            ; 31 (20)                   ; 0                 ; 8          ; 0    ; 0            ; |main|LevelController:inst2                                                         ; LevelController ; work         ;
-;       |DrawLine:lineDrawer|                             ; 388 (388)           ; 0 (0)                     ; 0                 ; 6          ; 0    ; 0            ; |main|LevelController:inst2|DrawLine:lineDrawer                                     ; DrawLine        ; work         ;
-;       |GrabbableObject:GrabbableObject_GEN[0].obj_inst| ; 174 (174)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst         ; GrabbableObject ; work         ;
-;       |GrabbableObject:GrabbableObject_GEN[1].obj_inst| ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst         ; GrabbableObject ; work         ;
-;       |GrabbableObject:GrabbableObject_GEN[2].obj_inst| ; 277 (277)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst         ; GrabbableObject ; work         ;
-;       |GrabbableObject:GrabbableObject_GEN[3].obj_inst| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[3].obj_inst         ; GrabbableObject ; work         ;
-;       |Hook:hook|                                       ; 83 (36)             ; 11 (11)                   ; 0                 ; 2          ; 0    ; 0            ; |main|LevelController:inst2|Hook:hook                                               ; Hook            ; work         ;
-;          |RotationTable:trigTable|                      ; 47 (47)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|Hook:hook|RotationTable:trigTable                       ; RotationTable   ; work         ;
-;    |OneSecPulse:inst20|                                 ; 32 (32)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |main|OneSecPulse:inst20                                                            ; OneSecPulse     ; work         ;
-;    |StageController:inst1|                              ; 2 (2)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |main|StageController:inst1                                                         ; StageController ; work         ;
-;    |TOP_KBD:inst5|                                      ; 37 (0)              ; 42 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5                                                                 ; TOP_KBD         ; work         ;
-;       |KBDINTF:inst|                                    ; 37 (0)              ; 42 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst                                                    ; KBDINTF         ; work         ;
-;          |bitrec:inst4|                                 ; 16 (16)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4                                       ; bitrec          ; work         ;
-;          |byterec:inst3|                                ; 16 (16)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst|byterec:inst3                                      ; byterec         ; work         ;
-;          |lpf:inst5|                                    ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst|lpf:inst5                                          ; lpf             ; work         ;
-;    |Tilemap:inst13|                                     ; 102 (102)           ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |main|Tilemap:inst13                                                                ; Tilemap         ; work         ;
-;    |VGA_Controller:inst8|                               ; 65 (65)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |main|VGA_Controller:inst8                                                          ; VGA_Controller  ; work         ;
-;    |VectorOr:inst18|                                    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|VectorOr:inst18                                                               ; VectorOr        ; work         ;
-;    |lpm_rom:inst9|                                      ; 0 (0)               ; 1 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9                                                                 ; lpm_rom         ; work         ;
-;       |altrom:srom|                                     ; 0 (0)               ; 1 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9|altrom:srom                                                     ; altrom          ; work         ;
-;          |altsyncram:rom_block|                         ; 0 (0)               ; 1 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9|altrom:srom|altsyncram:rom_block                                ; altsyncram      ; work         ;
-;             |altsyncram_o371:auto_generated|            ; 0 (0)               ; 1 (1)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9|altrom:srom|altsyncram:rom_block|altsyncram_o371:auto_generated ; altsyncram_o371 ; work         ;
-+---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------+-----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                         ;
++---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                 ; Entity Name         ; Library Name ;
++---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |main                                                   ; 1556 (0)            ; 142 (0)                   ; 131072            ; 9          ; 33   ; 0            ; |main                                                                                                                                               ; main                ; work         ;
+;    |CLK_31P5:inst7|                                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|CLK_31P5:inst7                                                                                                                                ; CLK_31P5            ; CLK_31P5     ;
+;       |CLK_31P5_0002:clk_31p5_inst|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst                                                                                                    ; CLK_31P5_0002       ; CLK_31P5     ;
+;          |altera_pll:altera_pll_i|                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i                                                                            ; altera_pll          ; work         ;
+;    |Decoder:inst4|                                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|Decoder:inst4                                                                                                                                 ; Decoder             ; work         ;
+;    |DisplayMux:inst10|                                  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|DisplayMux:inst10                                                                                                                             ; DisplayMux          ; work         ;
+;    |LevelController:inst2|                              ; 1308 (44)           ; 44 (20)                   ; 0                 ; 8          ; 0    ; 0            ; |main|LevelController:inst2                                                                                                                         ; LevelController     ; work         ;
+;       |DrawLine:lineDrawer|                             ; 340 (340)           ; 0 (0)                     ; 0                 ; 6          ; 0    ; 0            ; |main|LevelController:inst2|DrawLine:lineDrawer                                                                                                     ; DrawLine            ; work         ;
+;       |GrabbableObject:GrabbableObject_GEN[0].obj_inst| ; 166 (166)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst                                                                         ; GrabbableObject     ; work         ;
+;       |GrabbableObject:GrabbableObject_GEN[1].obj_inst| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst                                                                         ; GrabbableObject     ; work         ;
+;       |GrabbableObject:GrabbableObject_GEN[2].obj_inst| ; 269 (269)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst                                                                         ; GrabbableObject     ; work         ;
+;       |GrabbableObject:GrabbableObject_GEN[3].obj_inst| ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[3].obj_inst                                                                         ; GrabbableObject     ; work         ;
+;       |Hook:hook|                                       ; 83 (36)             ; 11 (11)                   ; 0                 ; 2          ; 0    ; 0            ; |main|LevelController:inst2|Hook:hook                                                                                                               ; Hook                ; work         ;
+;          |RotationTable:trigTable|                      ; 47 (47)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|Hook:hook|RotationTable:trigTable                                                                                       ; RotationTable       ; work         ;
+;       |TimeDisplay:timeDisplay|                         ; 393 (118)           ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay                                                                                                 ; TimeDisplay         ; work         ;
+;          |lpm_divide:Div1|                              ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_hbm:auto_generated|             ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1|lpm_divide_hbm:auto_generated                                                   ; lpm_divide_hbm      ; work         ;
+;                |sign_div_unsign_nlh:divider|            ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1|lpm_divide_hbm:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;                   |alt_u_div_kve:divider|               ; 82 (82)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1|lpm_divide_hbm:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_kve:divider ; alt_u_div_kve       ; work         ;
+;          |lpm_divide:Div2|                              ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_3am:auto_generated|             ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2|lpm_divide_3am:auto_generated                                                   ; lpm_divide_3am      ; work         ;
+;                |sign_div_unsign_9kh:divider|            ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;                   |alt_u_div_ose:divider|               ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
+;          |lpm_divide:Mod0|                              ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_i3m:auto_generated|             ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0|lpm_divide_i3m:auto_generated                                                   ; lpm_divide_i3m      ; work         ;
+;                |sign_div_unsign_llh:divider|            ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0|lpm_divide_i3m:auto_generated|sign_div_unsign_llh:divider                       ; sign_div_unsign_llh ; work         ;
+;                   |alt_u_div_gve:divider|               ; 45 (45)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0|lpm_divide_i3m:auto_generated|sign_div_unsign_llh:divider|alt_u_div_gve:divider ; alt_u_div_gve       ; work         ;
+;          |lpm_divide:Mod1|                              ; 98 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_k3m:auto_generated|             ; 98 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1|lpm_divide_k3m:auto_generated                                                   ; lpm_divide_k3m      ; work         ;
+;                |sign_div_unsign_nlh:divider|            ; 98 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1|lpm_divide_k3m:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;                   |alt_u_div_kve:divider|               ; 98 (98)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1|lpm_divide_k3m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_kve:divider ; alt_u_div_kve       ; work         ;
+;          |lpm_divide:Mod2|                              ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_62m:auto_generated|             ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2|lpm_divide_62m:auto_generated                                                   ; lpm_divide_62m      ; work         ;
+;                |sign_div_unsign_9kh:divider|            ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;                   |alt_u_div_ose:divider|               ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
+;       |square_object:timeDisplaySquareObject|           ; 4 (4)               ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|square_object:timeDisplaySquareObject                                                                                   ; square_object       ; work         ;
+;    |OneSecPulse:inst20|                                 ; 32 (32)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |main|OneSecPulse:inst20                                                                                                                            ; OneSecPulse         ; work         ;
+;    |StageController:inst1|                              ; 2 (2)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |main|StageController:inst1                                                                                                                         ; StageController     ; work         ;
+;    |TOP_KBD:inst5|                                      ; 37 (0)              ; 42 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5                                                                                                                                 ; TOP_KBD             ; work         ;
+;       |KBDINTF:inst|                                    ; 37 (0)              ; 42 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst                                                                                                                    ; KBDINTF             ; work         ;
+;          |bitrec:inst4|                                 ; 16 (16)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst|bitrec:inst4                                                                                                       ; bitrec              ; work         ;
+;          |byterec:inst3|                                ; 16 (16)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst|byterec:inst3                                                                                                      ; byterec             ; work         ;
+;          |lpf:inst5|                                    ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |main|TOP_KBD:inst5|KBDINTF:inst|lpf:inst5                                                                                                          ; lpf                 ; work         ;
+;    |Tilemap:inst13|                                     ; 99 (99)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |main|Tilemap:inst13                                                                                                                                ; Tilemap             ; work         ;
+;    |VGA_Controller:inst8|                               ; 68 (68)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |main|VGA_Controller:inst8                                                                                                                          ; VGA_Controller      ; work         ;
+;    |VectorOr:inst18|                                    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|VectorOr:inst18                                                                                                                               ; VectorOr            ; work         ;
+;    |lpm_rom:inst9|                                      ; 0 (0)               ; 1 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9                                                                                                                                 ; lpm_rom             ; work         ;
+;       |altrom:srom|                                     ; 0 (0)               ; 1 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9|altrom:srom                                                                                                                     ; altrom              ; work         ;
+;          |altsyncram:rom_block|                         ; 0 (0)               ; 1 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9|altrom:srom|altsyncram:rom_block                                                                                                ; altsyncram          ; work         ;
+;             |altsyncram_o371:auto_generated|            ; 0 (0)               ; 1 (1)                     ; 131072            ; 0          ; 0    ; 0            ; |main|lpm_rom:inst9|altrom:srom|altsyncram:rom_block|altsyncram_o371:auto_generated                                                                 ; altsyncram_o371     ; work         ;
++---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -846,12 +893,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 129   ;
-; Number of registers using Synchronous Clear  ; 57    ;
+; Total registers                              ; 142   ;
+; Number of registers using Synchronous Clear  ; 68    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 127   ;
+; Number of registers using Asynchronous Clear ; 129   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 61    ;
+; Number of registers using Clock Enable       ; 72    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -864,10 +911,10 @@ Encoding Type:  One-Hot
 ; VGA_Controller:inst8|oVGA_VS                ; 6       ;
 ; VGA_Controller:inst8|oVGA_HS                ; 4       ;
 ; VGA_Controller:inst8|oVGA_HS_d              ; 1       ;
+; LevelController:inst2|timer[0]              ; 7       ;
+; LevelController:inst2|timer[2]              ; 8       ;
 ; LevelController:inst2|Hook:hook|angle[7]    ; 21      ;
 ; LevelController:inst2|Hook:hook|angle[6]    ; 49      ;
-; LevelController:inst2|timer[2]              ; 2       ;
-; LevelController:inst2|timer[0]              ; 2       ;
 ; TOP_KBD:inst5|KBDINTF:inst|lpf:inst5|SM_LPF ; 9       ;
 ; Total number of inverted registers = 8      ;         ;
 +---------------------------------------------+---------+
@@ -878,12 +925,14 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|LevelController:inst2|timer[1]                                               ;
-; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |main|LevelController:inst2|RGBout[1]                                              ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|LevelController:inst2|timer[6]                                               ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; Yes        ; |main|LevelController:inst2|RGBout[7]                                              ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; Yes        ; |main|LevelController:inst2|RGBout[2]                                              ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|LevelController:inst2|timer[0]                                               ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main|DisplayMux:inst10|RGBout[5]                                                  ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst|Mux355 ;
-; 30:1               ; 2 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst|Mux224 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main|LevelController:inst2|TimeDisplay:timeDisplay|Mux1                           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst|Mux354 ;
+; 30:1               ; 2 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst|Mux226 ;
 ; 30:1               ; 2 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst|Mux223 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
 
@@ -1506,6 +1555,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LevelController:inst2|square_object:timeDisplaySquareObject ;
++-----------------+-------------+--------------------------------------------------------------------------+
+; Parameter Name  ; Value       ; Type                                                                     ;
++-----------------+-------------+--------------------------------------------------------------------------+
+; OBJECT_WIDTH_X  ; 00001000000 ; Unsigned Binary                                                          ;
+; OBJECT_HEIGHT_Y ; 00000100000 ; Unsigned Binary                                                          ;
+; OBJECT_COLOR    ; 00000011    ; Unsigned Binary                                                          ;
++-----------------+-------------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay ;
++----------------+----------+----------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                           ;
++----------------+----------+----------------------------------------------------------------+
+; color          ; 11100000 ; Unsigned Binary                                                ;
++----------------+----------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: LPM_ROM:inst9 ;
 +------------------------+-----------------+-----------------+
@@ -1546,6 +1617,145 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; MyValue        ; 0     ; Signed Integer                       ;
 +----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 11             ; Untyped                                                              ;
+; LPM_WIDTHD             ; 6              ; Untyped                                                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                              ;
+; CBXI_PARAMETER         ; lpm_divide_k3m ; Untyped                                                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                       ;
++------------------------+----------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                                              ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                              ;
+; CBXI_PARAMETER         ; lpm_divide_3am ; Untyped                                                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                       ;
++------------------------+----------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 11             ; Untyped                                                              ;
+; LPM_WIDTHD             ; 6              ; Untyped                                                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                              ;
+; CBXI_PARAMETER         ; lpm_divide_hbm ; Untyped                                                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                       ;
++------------------------+----------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 11             ; Untyped                                                              ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                              ;
+; CBXI_PARAMETER         ; lpm_divide_i3m ; Untyped                                                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                       ;
++------------------------+----------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                                              ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                              ;
+; CBXI_PARAMETER         ; lpm_divide_62m ; Untyped                                                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                       ;
++------------------------+----------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "LevelController:inst2|TimeDisplay:timeDisplay" ;
++----------------------+-------+----------+---------------------------------+
+; Port                 ; Type  ; Severity ; Details                         ;
++----------------------+-------+----------+---------------------------------+
+; timeInSeconds[10..9] ; Input ; Info     ; Stuck at GND                    ;
++----------------------+-------+----------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LevelController:inst2|square_object:timeDisplaySquareObject"                                   ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; topLeftX[10..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; topLeftX[4..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; topLeftX[5]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; topLeftY[10..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; topLeftY[4..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; topLeftY[5]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; RGBout          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1793,30 +2003,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 87                          ;
-;     CLR               ; 10                          ;
+; arriav_ff             ; 100                         ;
+;     CLR               ; 12                          ;
 ;     CLR SCLR          ; 36                          ;
 ;     ENA CLR           ; 29                          ;
 ;     ENA CLR SCLR      ; 11                          ;
+;     ENA SCLR          ; 11                          ;
 ;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 1188                        ;
-;     arith             ; 269                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 98                          ;
-;         2 data inputs ; 122                         ;
-;         4 data inputs ; 38                          ;
+; arriav_lcell_comb     ; 1524                        ;
+;     arith             ; 427                         ;
+;         0 data inputs ; 42                          ;
+;         1 data inputs ; 116                         ;
+;         2 data inputs ; 133                         ;
+;         3 data inputs ; 54                          ;
+;         4 data inputs ; 73                          ;
 ;         5 data inputs ; 9                           ;
-;     extend            ; 28                          ;
-;         7 data inputs ; 28                          ;
-;     normal            ; 827                         ;
+;     extend            ; 45                          ;
+;         7 data inputs ; 45                          ;
+;     normal            ; 969                         ;
 ;         0 data inputs ; 1                           ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 96                          ;
+;         3 data inputs ; 110                         ;
+;         4 data inputs ; 144                         ;
+;         5 data inputs ; 185                         ;
+;         6 data inputs ; 422                         ;
+;     shared            ; 83                          ;
+;         0 data inputs ; 9                           ;
 ;         1 data inputs ; 10                          ;
-;         2 data inputs ; 57                          ;
-;         3 data inputs ; 77                          ;
-;         4 data inputs ; 112                         ;
-;         5 data inputs ; 186                         ;
-;         6 data inputs ; 384                         ;
-;     shared            ; 64                          ;
 ;         2 data inputs ; 64                          ;
 ; arriav_mac            ; 9                           ;
 ; blackbox              ; 1                           ;
@@ -1825,8 +2039,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.90                       ;
-; Average LUT depth     ; 7.49                        ;
+; Max LUT depth         ; 19.70                       ;
+; Average LUT depth     ; 9.42                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1835,7 +2049,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:07     ;
 +----------------+--------------+
 
 
@@ -1845,7 +2059,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Dec 25 16:43:42 2025
+    Info: Processing started: Sat Dec 27 15:26:03 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
 Info (20032): Parallel compilation is enabled and will use up to 16 processors
 Warning (20031): Parallel compilation is enabled for 16 processors, but there are only 10 processors in the system. Runtime may increase due to over usage of the processor space.
@@ -1961,9 +2175,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file utiliti
     Info (12023): Found entity 1: VectorOr File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/VectorOr.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file utilities/onesecpulse.sv
     Info (12023): Found entity 1: OneSecPulse File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/OneSecPulse.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file graphics/timedisplay.sv
+    Info (12023): Found entity 1: TimeDisplay File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 3
 Warning (10236): Verilog HDL Implicit Net warning at audio_codec_controller.sv(61): created implicit net for "CLOCK_500_ena" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 61
 Warning (10236): Verilog HDL Implicit Net warning at audio_codec_controller.sv(63): created implicit net for "CLOCK_SDAT_ena" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 63
-Warning (10236): Verilog HDL Implicit Net warning at LevelController.sv(37): created implicit net for "startingNewLevel" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at LevelController.sv(49): created implicit net for "startingNewLevel" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 49
 Warning (10236): Verilog HDL Implicit Net warning at GrabbableObject.sv(20): created implicit net for "insideBoundingBox" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/GrabbableObject.sv Line: 20
 Warning (10236): Verilog HDL Implicit Net warning at DrawLine.sv(44): created implicit net for "ineq_1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/DrawLine.sv Line: 44
 Warning (10236): Verilog HDL Implicit Net warning at DrawLine.sv(45): created implicit net for "ineq_2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/DrawLine.sv Line: 45
@@ -2094,7 +2310,7 @@ Critical Warning (10237): Verilog HDL warning at WinMenu.sv(13): can't infer reg
 Critical Warning (10237): Verilog HDL warning at WinMenu.sv(14): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv Line: 14
 Warning (10034): Output port "drStage" at WinMenu.sv(6) has no driver File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv Line: 6
 Info (12128): Elaborating entity "LevelController" for hierarchy "LevelController:inst2"
-Warning (10850): Verilog HDL warning at LevelController.sv(45): number of words (180) in memory file does not match the number of elements in the address range [0:59] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 45
+Warning (10850): Verilog HDL warning at LevelController.sv(57): number of words (180) in memory file does not match the number of elements in the address range [0:59] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 57
 Warning (10230): Verilog HDL assignment warning at level_data.txt(2): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 2
 Warning (10230): Verilog HDL assignment warning at level_data.txt(3): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 3
 Warning (10230): Verilog HDL assignment warning at level_data.txt(4): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 4
@@ -2103,44 +2319,44 @@ Warning (10230): Verilog HDL assignment warning at level_data.txt(7): truncated 
 Warning (10230): Verilog HDL assignment warning at level_data.txt(8): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 8
 Warning (10230): Verilog HDL assignment warning at level_data.txt(9): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 9
 Warning (10230): Verilog HDL assignment warning at level_data.txt(10): truncated value with size 12 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/level_data.txt Line: 10
-Warning (10230): Verilog HDL assignment warning at LevelController.sv(146): truncated value with size 32 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 146
-Warning (10240): Verilog HDL Always Construct warning at LevelController.sv(116): inferring latch(es) for variable "currentLevel", which holds its previous value in one or more paths through the always construct File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Warning (10240): Verilog HDL Always Construct warning at LevelController.sv(116): inferring latch(es) for variable "lastLevelEnded", which holds its previous value in one or more paths through the always construct File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
+Warning (10230): Verilog HDL assignment warning at LevelController.sv(204): truncated value with size 32 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 204
+Warning (10240): Verilog HDL Always Construct warning at LevelController.sv(166): inferring latch(es) for variable "currentLevel", which holds its previous value in one or more paths through the always construct File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Warning (10240): Verilog HDL Always Construct warning at LevelController.sv(166): inferring latch(es) for variable "lastLevelEnded", which holds its previous value in one or more paths through the always construct File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
 Warning (10034): Output port "stageFailed" at LevelController.sv(13) has no driver File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 13
-Info (10041): Inferred latch for "lastLevelEnded" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[0]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[1]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[2]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[3]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[4]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[5]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[6]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[7]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[8]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[9]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[10]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[11]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[12]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[13]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[14]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[15]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[16]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[17]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[18]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[19]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[20]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[21]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[22]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[23]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[24]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[25]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[26]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[27]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[28]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[29]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[30]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (10041): Inferred latch for "currentLevel[31]" at LevelController.sv(116) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 116
-Info (12128): Elaborating entity "Hook" for hierarchy "LevelController:inst2|Hook:hook" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 81
+Info (10041): Inferred latch for "lastLevelEnded" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[0]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[1]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[2]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[3]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[4]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[5]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[6]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[7]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[8]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[9]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[10]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[11]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[12]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[13]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[14]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[15]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[16]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[17]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[18]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[19]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[20]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[21]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[22]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[23]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[24]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[25]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[26]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[27]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[28]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[29]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[30]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (10041): Inferred latch for "currentLevel[31]" at LevelController.sv(166) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 166
+Info (12128): Elaborating entity "Hook" for hierarchy "LevelController:inst2|Hook:hook" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 93
 Warning (10230): Verilog HDL assignment warning at Hook.sv(47): truncated value with size 32 to match size of target (2) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 47
 Warning (10230): Verilog HDL assignment warning at Hook.sv(58): truncated value with size 32 to match size of target (8) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 58
 Warning (10230): Verilog HDL assignment warning at Hook.sv(67): truncated value with size 32 to match size of target (16) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 67
@@ -2150,9 +2366,18 @@ Warning (10230): Verilog HDL assignment warning at Hook.sv(71): truncated value 
 Info (12128): Elaborating entity "RotationTable" for hierarchy "LevelController:inst2|Hook:hook|RotationTable:trigTable" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 36
 Warning (10230): Verilog HDL assignment warning at RotationTable.sv(19): truncated value with size 32 to match size of target (8) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/RotationTable.sv Line: 19
 Warning (10230): Verilog HDL assignment warning at RotationTable.sv(22): truncated value with size 2048 to match size of target (2040) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/RotationTable.sv Line: 22
-Info (12128): Elaborating entity "DrawLine" for hierarchy "LevelController:inst2|DrawLine:lineDrawer" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 95
-Info (12128): Elaborating entity "GrabbableObject" for hierarchy "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 111
+Info (12128): Elaborating entity "DrawLine" for hierarchy "LevelController:inst2|DrawLine:lineDrawer" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 107
+Info (12128): Elaborating entity "GrabbableObject" for hierarchy "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 123
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "objectsBitmap" into its bus
+Info (12128): Elaborating entity "square_object" for hierarchy "LevelController:inst2|square_object:timeDisplaySquareObject" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 144
+Info (12128): Elaborating entity "TimeDisplay" for hierarchy "LevelController:inst2|TimeDisplay:timeDisplay" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 159
+Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(23): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 23
+Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(24): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
+Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(25): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(26): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(369): truncated value with size 32 to match size of target (2) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 369
+Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(371): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 371
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "number_bitmap" into its bus
 Info (12128): Elaborating entity "OneSecPulse" for hierarchy "OneSecPulse:inst20"
 Warning (10230): Verilog HDL assignment warning at OneSecPulse.sv(20): truncated value with size 32 to match size of target (25) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/OneSecPulse.sv Line: 20
 Info (12128): Elaborating entity "LPM_ROM" for hierarchy "LPM_ROM:inst9"
@@ -2495,13 +2720,71 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "lpm_rom:inst9|altrom:srom|altsyncram:rom_block|altsyncram_o371:auto_generated|ram_block1a285" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/altsyncram_o371.tdf Line: 6027
         Warning (14320): Synthesized away node "lpm_rom:inst9|altrom:srom|altsyncram:rom_block|altsyncram_o371:auto_generated|ram_block1a293" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/altsyncram_o371.tdf Line: 6195
         Warning (14320): Synthesized away node "lpm_rom:inst9|altrom:srom|altsyncram:rom_block|altsyncram_o371:auto_generated|ram_block1a301" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/altsyncram_o371.tdf Line: 6363
+Info (278001): Inferred 5 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Mod1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Div2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Div1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Mod0" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Mod2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+    Info (12134): Parameter "LPM_WIDTHN" = "11"
+    Info (12134): Parameter "LPM_WIDTHD" = "6"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_k3m.tdf
+    Info (12023): Found entity 1: lpm_divide_k3m File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_k3m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/sign_div_unsign_nlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kve.tdf
+    Info (12023): Found entity 1: alt_u_div_kve File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_kve.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 25
+Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 25
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3am.tdf
+    Info (12023): Found entity 1: lpm_divide_3am File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_3am.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/sign_div_unsign_9kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ose.tdf
+    Info (12023): Found entity 1: alt_u_div_ose File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_ose.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
+Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHN" = "11"
+    Info (12134): Parameter "LPM_WIDTHD" = "6"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hbm.tdf
+    Info (12023): Found entity 1: lpm_divide_hbm File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_hbm.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
+Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHN" = "11"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_i3m.tdf
+    Info (12023): Found entity 1: lpm_divide_i3m File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_i3m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_llh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_llh File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/sign_div_unsign_llh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_gve.tdf
+    Info (12023): Found entity 1: alt_u_div_gve File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_gve.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_62m.tdf
+    Info (12023): Found entity 1: lpm_divide_62m File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_62m.tdf Line: 25
 Warning (12241): 20 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "OVGA[26]" is stuck at VCC
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register LevelController:inst2|timer[2] will power up to High File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 125
-    Critical Warning (18010): Register LevelController:inst2|timer[0] will power up to High File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 125
+    Critical Warning (18010): Register LevelController:inst2|timer[0] will power up to High File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 175
+    Critical Warning (18010): Register LevelController:inst2|timer[2] will power up to High File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 175
 Info (17049): 27 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/Lab1Demo.map.smsg
 Info (35026): Attempting to remove 26 I/O cell(s) that do not connect to top-level pins or have illegal connectivity
@@ -2545,18 +2828,18 @@ Info (35003): Optimize away 18 nodes that do not fanout to OUTPUT or BIDIR pins
     Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|keyCode[1]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
     Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|keyCode[0]" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
     Info (35004): Node: "TOP_KBD:inst5|KBDINTF:inst|byterec:inst3|WideOr3" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp Line: -1
-Info (21057): Implemented 1303 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1650 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 1244 logic cells
+    Info (21061): Implemented 1591 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 9 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 390 warnings
-    Info: Peak virtual memory: 4997 megabytes
-    Info: Processing ended: Thu Dec 25 16:43:57 2025
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:25
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 396 warnings
+    Info: Peak virtual memory: 4996 megabytes
+    Info: Processing ended: Sat Dec 27 15:26:20 2025
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+

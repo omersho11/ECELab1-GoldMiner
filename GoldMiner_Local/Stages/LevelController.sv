@@ -25,7 +25,7 @@ logic [8:0] timer = 0;
 int currentLevel;
 logic enable_d; // Delayed version of enable to detect the edge
 
-
+// hook params
 localparam [10:0] HOOK_ORIGIN_X = 320;
 localparam [10:0] HOOK_ORIGIN_Y = 96;
 localparam [4:0] LINE_THICKNESS = 1;
@@ -33,6 +33,18 @@ localparam [7:0] LINE_COLOR = 8'hFE;
 logic [10:0] hookPosX, hookPosY;
 wire hookDR;
 logic [7:0] hookRGB;
+
+// timeDisplay params
+localparam [10:0] TIMEDISPLAY_WIDTH_X = 64; 	//16 * 4
+localparam [10:0] TIMEDISPLAY_HEIGHT_Y = 32; //32 * 1
+localparam [10:0] TIMEDISPLAY_POS_LEFT = 32;
+localparam [10:0] TIMEDISPLAY_POS_TOP = 32;
+logic [10:0] timeDisplayOffsetX;
+logic [10:0] timeDisplayOffsetY;
+wire timeDisplayInsideRectangle;
+wire timeDisplayDR;
+logic [7:0] timeDisplayRGB;
+
 
 assign startingNewLevel = (enable && !enable_d);
 
@@ -112,7 +124,45 @@ generate
 	end
 endgenerate
 
+
+// TIMEDISPLAY INSTANTIATION
+square_object #(
+	.OBJECT_WIDTH_X(TIMEDISPLAY_WIDTH_X),
+	.OBJECT_HEIGHT_Y(TIMEDISPLAY_HEIGHT_Y)
+) timeDisplaySquareObject (
+	.clk(clk),
+   .resetN(resetN),
+	.pixelX(pixelX),
+	.pixelY(pixelY),
+	.topLeftX(TIMEDISPLAY_POS_LEFT),
+	.topLeftY(TIMEDISPLAY_POS_TOP),
+	
+	.offsetX(timeDisplayOffsetX),
+	.offsetY(timeDisplayOffsetY),
+	.drawingRequest(timeDisplayInsideRectangle),
+	.RGBout(8'b0)
+);
+
+TimeDisplay #(
+	.color(8'b11100000)
+) timeDisplay (
+	.clk(clk),
+   .resetN(resetN),
+   .enable(enable),
+	.offsetX(timeDisplayOffsetX),
+	.offsetY(timeDisplayOffsetY),
+	.InsideRectangle(timeDisplayInsideRectangle),
+	.timeInSeconds(timer),
+	
+	.drawingRequest(timeDisplayDR),
+	.RGBout(timeDisplayRGB)
+);
+
+
+
 // --- 3. OUTPUT MULTIPLEXING ---
+
+
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin  
 		currentLevel <= 0;
@@ -127,6 +177,7 @@ always_ff @(posedge clk or negedge resetN) begin
       levelDR <= 0;
       RGBout <= 8'hFF;
 		
+		// MUX all drawing requests:
       for(int j = 0; j < OBJECTS_COUNT; j = j + 1) begin
           if(drBus[j]) begin
               levelDR <= 1;
@@ -138,7 +189,14 @@ always_ff @(posedge clk or negedge resetN) begin
 			levelDR <= 1;
 			RGBout <= hookRGB;
 		end
-		  
+		
+		if (timeDisplayDR) begin
+			levelDR <= 1;
+			RGBout <= timeDisplayRGB;
+		end
+		
+		
+		// Timer managment:
 		if (startingNewLevel) begin
 			timer <= MAX_TIME;
 		end
