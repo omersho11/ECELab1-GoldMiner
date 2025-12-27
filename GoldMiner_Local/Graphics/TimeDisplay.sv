@@ -19,14 +19,15 @@ localparam DIGIT_WIDTH = 16;
 
 assign RGBout = color ; // this is a fixed color
 
-logic [3:0] [3:0] digits; // 01:23
+logic [4:0] [3:0] digits; // 01:23
 assign digits[0] = (timeInSeconds / 60) / 10;   // tens of minutes
 assign digits[1] = (timeInSeconds / 60) % 10;   // ones of minutes
-assign digits[2] = (timeInSeconds % 60) / 10;   // tens of seconds
-assign digits[3] = (timeInSeconds % 60) % 10;   // ones of seconds
+assign digits[2] = 10; // ':'
+assign digits[3] = (timeInSeconds % 60) / 10;   // tens of seconds
+assign digits[4] = (timeInSeconds % 60) % 10;   // ones of seconds
 
 
-bit [0:9] [0:31] [0:15] number_bitmap = {
+bit [0:10] [0:31] [0:15] number_bitmap = {
 {16'b	0000001111100000,
 16'b	0000111111111000,
 16'b	0000111111111000,
@@ -357,7 +358,40 @@ bit [0:9] [0:31] [0:15] number_bitmap = {
 16'b	1111111111111000,
 16'b	1111111111110000,
 16'b	1111111111100000,
-16'b	0011111100000000}
+16'b	0011111100000000},
+
+{16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000001111000000,
+16'b	0000011111100000,
+16'b	0000111111110000,
+16'b	0000011111100000,
+16'b	0000001111000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000001111000000,
+16'b	0000011111100000,   
+16'b	0000111111110000,
+16'b	0000011111100000,
+16'b	0000001111000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000,
+16'b	0000000000000000}
 } ; 
 																	
 	
@@ -365,7 +399,7 @@ bit [0:9] [0:31] [0:15] number_bitmap = {
 
 // pipeline (ff) to get the pixel color from the array
 
-logic [1:0] currentDigit;
+logic [2:0] currentDigit;
 assign currentDigit = offsetX / DIGIT_WIDTH;
 logic [3:0] localOffsetX;
 assign localOffsetX = offsetX % DIGIT_WIDTH;

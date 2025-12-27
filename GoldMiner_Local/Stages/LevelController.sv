@@ -35,7 +35,7 @@ wire hookDR;
 logic [7:0] hookRGB;
 
 // timeDisplay params
-localparam [10:0] TIMEDISPLAY_WIDTH_X = 64; 	//16 * 4
+localparam [10:0] TIMEDISPLAY_WIDTH_X = 80; 	//16 * 5
 localparam [10:0] TIMEDISPLAY_HEIGHT_Y = 32; //32 * 1
 localparam [10:0] TIMEDISPLAY_POS_LEFT = 32;
 localparam [10:0] TIMEDISPLAY_POS_TOP = 32;
