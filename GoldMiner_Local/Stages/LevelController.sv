@@ -17,7 +17,7 @@ module LevelController (
 
 localparam MAX_LEVEL = 1;
 localparam OBJECTS_COUNT = 20;
-localparam [8:0] MAX_TIME = 5; //=========================== set to 5 for debugging ==================
+localparam [8:0] MAX_TIME = 83;
 
 int score;
 int money;
