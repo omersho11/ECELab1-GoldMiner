@@ -118,6 +118,10 @@
 				{
 					"name" : "OVGA[0]",
 					"strict" : false
+				},
+				{
+					"name" : "skipStageKey",
+					"strict" : false
 				}
 			]
 		}

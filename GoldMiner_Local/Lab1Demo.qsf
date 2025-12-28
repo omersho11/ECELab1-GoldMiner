@@ -47,7 +47,6 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name SMART_RECOMPILE ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 16
 set_location_assignment PIN_AF14 -to CLOCK_50
-set_location_assignment PIN_AK4 -to KEY[1]
 set_location_assignment PIN_AA14 -to KEY[2]
 set_location_assignment PIN_AA15 -to KEY[3]
 set_location_assignment PIN_AB30 -to SW[0]
@@ -165,8 +164,6 @@ set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION OFF
 set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING OFF
 set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT FAST
 set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
-set_global_assignment -name ENABLE_SIGNALTAP ON
-set_global_assignment -name USE_SIGNALTAP_FILE RANDOM_SIGNAL_TAP.stp
 set_global_assignment -name BDF_FILE RTL/VGA/TOP_VGA_DEMO_KBD.bdf
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/game_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/smiley_move.sv
@@ -213,35 +210,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE GameControl/StageController.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Stages/MainMenu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Stages/LevelController.sv
 set_global_assignment -name BDF_FILE RTL/GameLoop/main.bdf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_ADCDAT
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUDOUT[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUDOUT[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUDOUT[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUDOUT[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUDOUT[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUDOUT[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUDOUT[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUDOUT[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BG_RGB[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BG_RGB[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BG_RGB[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BG_RGB[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BG_RGB[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BG_RGB[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BG_RGB[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BG_RGB[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to boardersDrawReq
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[2]
@@ -273,11 +242,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[27]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[28]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to greenLight
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to redLight
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to yellowLight
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to resetN_pin
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[3]
 set_global_assignment -name SYSTEMVERILOG_FILE Decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Bitmaps/MainMenuBitmap.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Bitmaps/GameLoopBitmap.sv
@@ -295,5 +260,9 @@ set_global_assignment -name SYSTEMVERILOG_FILE Stages/GameEndMenu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/VectorOr.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/OneSecPulse.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Graphics/TimeDisplay.sv
+set_location_assignment PIN_AK4 -to skipStageKey
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE Utilities/Pulsinator.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SLD_FILE db/RANDOM_SIGNAL_TAP_auto_stripped.stp

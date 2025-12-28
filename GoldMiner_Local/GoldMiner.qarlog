@@ -1,7 +1,7 @@
 Quartus Prime Archive log --	C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GoldMiner.qarlog
 
 Archive:	C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GoldMiner.qar
-Date:		Mon Dec 22 22:45:37 2025
+Date:		Sun Dec 28 12:43:35 2025
 Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 	=========== Files Selected: ===========
@@ -22,6 +22,7 @@ C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hoo
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/StageController.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/BackgroundMux.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/DisplayMux.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/KBDINTF.qxp
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Lab1Demo.qpf
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Lab1Demo.qsf
@@ -67,20 +68,25 @@ C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/valX.qi
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/valX.v
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/valX_bb.v
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/VGA/valX_inst.v
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/GameEndMenu.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LossMenu.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/MainMenu.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Tilemap/Tilemap.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/DrawLine.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/OneSecPulse.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/Pulsinator.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/RotationTable.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/VectorOr.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/assignment_defaults.qdf
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/constraints/DE10_Standard_Audio.sdc
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/constraints/pin.tcl
-C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/RANDOM_SIGNAL_TAP_auto_stripped.stp
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/Chain1.cdf
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/Chain2.cdf
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/all_stages.txt
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/level_data.txt
-	======= Total: 75 files to archive =======
+	======= Total: 81 files to archive =======
 
 	================ Status: ===============
 All files archived successfully.

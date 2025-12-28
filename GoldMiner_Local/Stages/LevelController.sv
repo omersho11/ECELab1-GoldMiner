@@ -7,6 +7,7 @@ module LevelController (
     input logic enable,
 	 input logic oneSecPulse,
 	 input logic startOfFrame,
+	 input logic sendHook,
 	 
     output logic levelDR,
     output logic [7:0] RGBout,
@@ -81,12 +82,15 @@ end
 // --- 2. OBJECT INSTANTIATION ---
 Hook #(
 		.OFFSET_X(HOOK_ORIGIN_X),
-		.OFFSET_Y(HOOK_ORIGIN_Y)
+		.OFFSET_Y(HOOK_ORIGIN_Y),
+		.EXTENTION_SPEED(5),
+		.ROTATION_SPEED(2)
 ) hook (
     .clk(clk),
     .resetN(resetN),
     .enable(enable),
 	 .startOfFrame(startOfFrame),
+	 .sendHook(sendHook),
 	 
 	 .x(hookPosX),
 	 .y(hookPosY)
@@ -181,7 +185,7 @@ always_ff @(posedge clk or negedge resetN) begin
       for(int j = 0; j < OBJECTS_COUNT; j = j + 1) begin
           if(drBus[j]) begin
               levelDR <= 1;
-              RGBout <= RGBBus[j*8 +: 8]; // Corrected indexing syntax
+              RGBout <= RGBBus[j*8 +: 8];
           end
       end
 		
