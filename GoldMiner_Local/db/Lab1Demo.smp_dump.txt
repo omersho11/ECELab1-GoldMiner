@@ -1,4 +1,124 @@
 
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[19].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[18].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[17].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[16].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[15].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[14].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[13].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[12].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[11].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[10].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[9].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[8].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[7].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[6].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[5].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[4].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[3].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
+State Machine - |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst|state
+Name state.STATE_IDLE state.STATE_DESTROYED state.STATE_GRABBED 
+state.STATE_IDLE 0 0 0 
+state.STATE_GRABBED 1 0 1 
+state.STATE_DESTROYED 1 1 0 
+
 State Machine - |main|StageController:inst1|stageSM
 Name stageSM.S_LEVEL stageSM.S_LOSS_MENU stageSM.S_WIN_MENU stageSM.S_SHOP stageSM.S_MAIN_MENU 
 stageSM.S_MAIN_MENU 0 0 0 0 0 

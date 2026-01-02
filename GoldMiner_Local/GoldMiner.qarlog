@@ -1,7 +1,7 @@
 Quartus Prime Archive log --	C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GoldMiner.qarlog
 
 Archive:	C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GoldMiner.qar
-Date:		Sun Dec 28 12:43:35 2025
+Date:		Fri Jan 02 16:11:52 2026
 Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 	=========== Files Selected: ===========
@@ -74,6 +74,7 @@ C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LossMenu
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/MainMenu.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Tilemap/Tilemap.sv
+C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/Counter.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/DrawLine.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/OneSecPulse.sv
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/Pulsinator.sv
@@ -86,7 +87,7 @@ C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/Ch
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/Chain2.cdf
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/all_stages.txt
 C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/level_data.txt
-	======= Total: 81 files to archive =======
+	======= Total: 82 files to archive =======
 
 	================ Status: ===============
 All files archived successfully.

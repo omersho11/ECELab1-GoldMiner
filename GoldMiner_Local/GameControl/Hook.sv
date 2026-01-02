@@ -2,9 +2,7 @@ module Hook #(
     parameter OFFSET_X = 320,
     parameter OFFSET_Y = 96,
     parameter MIN_LENGTH = 100,
-	 parameter MAX_LENGTH = 600,
-	 parameter EXTENTION_SPEED = 1,
-	 parameter ROTATION_SPEED = 1
+	 parameter MAX_LENGTH = 600
 )
 (
     input  logic clk,
@@ -12,9 +10,14 @@ module Hook #(
     input  logic enable,
     input  logic startOfFrame,
 	 input  logic sendHook,
+	 input  logic forceReturn,
+	 
+	 input logic [8:0] extentionSpeed,
+	 input logic [8:0] rotationSpeed,
 	 
     output logic [10:0] x,
-    output logic [10:0] y
+    output logic [10:0] y,
+	 output logic hookReturnedPulse
 );
 
     // 8-bit angle constants
@@ -23,15 +26,20 @@ module Hook #(
     localparam [7:0] ANGLE_TWO_PI      = 8'd255; 
     
     logic [7:0] angle;
+	 logic [7:0] maxAngle;
+	 logic [7:0] minAngle;
 	 logic [7:0] startingPosition = ANGLE_ONE_HALF_PI;
     int direction; // Using 32-bit signed for 'sign' logic
 	 
 	 logic isHookOut;
 	 int length;
 	 logic isHookRetracting;
-	 assign isNotInBoundingBox = (x <= EXTENTION_SPEED || x >= 640-EXTENTION_SPEED || y <= EXTENTION_SPEED || y >= 480-EXTENTION_SPEED);
+	 assign isNotInBoundingBox = (x <= extentionSpeed || x >= 640-extentionSpeed || y <= extentionSpeed || y >= 480-extentionSpeed);
 	 
-
+	 assign maxAngle = ANGLE_TWO_PI - 2*rotationSpeed;
+	 assign minAngle = ANGLE_PI + 2*rotationSpeed;
+	 
+	 
     // Trig Table Outputs (Q8.7 format from your specific module)
     logic [7:0] rawSin;
     logic [7:0] rawCos;
@@ -60,21 +68,23 @@ module Hook #(
 				
             frame_divider <= 0;
         end else if (enable && startOfFrame) begin
+//				isHookOut_d <= isHookOut;
+				hookReturnedPulse <= 0;
             frame_divider <= frame_divider + 1;
             // Only update angle every 4th frame to prevent "too fast" rotation
-				
 				isHookOut <= isHookOut || sendHook;
-				
+			   isHookRetracting <= isHookRetracting || forceReturn;
+
             if (frame_divider == 0) begin
-                if (angle >= 250) begin
+                if (angle >= maxAngle) begin
                     direction <= -1;
 					 end
-					 if (angle <= 132) begin
+					 if (angle <= minAngle) begin
 						  direction <= 1;
                 end
 					 if (isHookOut) begin
 						  angle <= angle;
-						  length <= (isHookRetracting) ? length - EXTENTION_SPEED : length + EXTENTION_SPEED;
+						  length <= (isHookRetracting) ? length - extentionSpeed : length + extentionSpeed;
 
 						  if (length >= MAX_LENGTH) begin
 								isHookRetracting <= 1;
@@ -83,14 +93,16 @@ module Hook #(
 						  if (length < MIN_LENGTH && isHookRetracting) begin
 								isHookRetracting <= 0;
 								isHookOut <= 0;
+								hookReturnedPulse <= 1;
 								length <= MIN_LENGTH;
 						  end
 						  if (isNotInBoundingBox) isHookRetracting <= 1;
 						  
 						  
 					 end else begin
-						  angle <= angle + ROTATION_SPEED*direction; 
+						  angle <= angle + rotationSpeed*direction; 
 					 end
+
             end
         end
 		  else if(!enable) begin

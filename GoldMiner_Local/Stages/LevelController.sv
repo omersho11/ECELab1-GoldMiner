@@ -9,19 +9,24 @@ module LevelController (
 	 input logic startOfFrame,
 	 input logic sendHook,
 	 
+	 input logic [8:0] extentionSpeed,
+	 input logic [8:0] rotationSpeed,
+	 
+	 input logic [19:0] score,
+	 input logic [19:0] money,
+	 
     output logic levelDR,
     output logic [7:0] RGBout,
-    output logic stageFailed,
+    output logic stagePassed,
 	 output logic stageEnded,
-    output logic lastLevelEnded
+    output logic lastLevelEnded,
+	 output logic [19:0] scoreIncrease
 );
 
 localparam MAX_LEVEL = 1;
 localparam OBJECTS_COUNT = 20;
-localparam [8:0] MAX_TIME = 83;
+localparam [8:0] MAX_TIME = 20;
 
-int score;
-int money;
 logic [8:0] timer = 0;
 int currentLevel;
 logic enable_d; // Delayed version of enable to detect the edge
@@ -33,7 +38,13 @@ localparam [4:0] LINE_THICKNESS = 1;
 localparam [7:0] LINE_COLOR = 8'hFE;
 logic [10:0] hookPosX, hookPosY;
 wire hookDR;
+logic hookDRLatch;
 logic [7:0] hookRGB;
+wire hookReturned;
+
+wire collisionOccurred;
+logic remainingObjects;
+
 
 // timeDisplay params
 localparam [10:0] TIMEDISPLAY_WIDTH_X = 80; 	//16 * 5
@@ -60,6 +71,10 @@ end
 
 logic [8:0] activeLevelData [0:(OBJECTS_COUNT*3-1)];
 logic [OBJECTS_COUNT-1:0] drBus;
+logic [OBJECTS_COUNT-1:0] drBusLatch;
+
+logic [OBJECTS_COUNT-1:0] [10:0] valueBus;
+logic [OBJECTS_COUNT-1:0] destroyedBus;
 logic [(OBJECTS_COUNT*8)-1:0] RGBBus;
 
 // --- 1. EDGE DETECTION & MEMORY LOADING ---
@@ -82,18 +97,22 @@ end
 // --- 2. OBJECT INSTANTIATION ---
 Hook #(
 		.OFFSET_X(HOOK_ORIGIN_X),
-		.OFFSET_Y(HOOK_ORIGIN_Y),
-		.EXTENTION_SPEED(5),
-		.ROTATION_SPEED(2)
+		.OFFSET_Y(HOOK_ORIGIN_Y)
 ) hook (
     .clk(clk),
     .resetN(resetN),
     .enable(enable),
 	 .startOfFrame(startOfFrame),
 	 .sendHook(sendHook),
+	 .forceReturn(collisionOccurred),
+	 
+	 .extentionSpeed(extentionSpeed),
+	 .rotationSpeed(rotationSpeed),
 	 
 	 .x(hookPosX),
-	 .y(hookPosY)
+	 .y(hookPosY),
+	 .hookReturnedPulse(hookReturned)
+
 );
 
 DrawLine lineDrawer (
@@ -107,23 +126,33 @@ DrawLine lineDrawer (
 	.lineColor(LINE_COLOR),
 	
 	.lineDR(hookDR),
-	.lineRGB(hookRGB)
+	.lineRGB(hookRGB),
 );
 
 
 
 genvar i;
 generate 
-	for(i=0; i<OBJECTS_COUNT; i=i+1) begin: GrabbableObject_GEN
+	for(i=0; i<OBJECTS_COUNT; i=i+1) begin:
+		GrabbableObject_GEN
 		GrabbableObject obj_inst (
-			.topLeftX(activeLevelData[3*i]),
-			.topLeftY(activeLevelData[3*i + 1]),
+			.clk(clk),
+			.resetN(resetN),
+			.manualReset(startingNewLevel),
+			.idleX(activeLevelData[3*i]),
+			.idleY(activeLevelData[3*i + 1]),
 			.objectType(activeLevelData[3*i + 2]),
 			.pixelX(pixelX),
 			.pixelY(pixelY),
-
+			.hookX(hookPosX),
+			.hookY(hookPosY),
+			.isHooked(drBusLatch[i] && hookDRLatch),
+			.hookReturned(hookReturned),
+			
+			.value(valueBus[i]),
+			.destroyed(destroyedBus[i]),
 			.dr(drBus[i]),
-			.RGBout(RGBBus[i*8 +: 8]) // Corrected indexing syntax
+			.RGBout(RGBBus[i*8 +: 8])
 		);
 	end
 endgenerate
@@ -167,26 +196,62 @@ TimeDisplay #(
 // --- 3. OUTPUT MULTIPLEXING ---
 
 
+
+always_ff @(posedge clk or negedge resetN) begin
+    if (!resetN) begin
+        collisionOccurred <= 1'b0;
+		  drBusLatch <= 0;
+		  hookDRLatch <= 0;
+		  remainingObjects <= 0;
+    end else begin
+        if (startOfFrame) begin
+				remainingObjects <= 0;
+            collisionOccurred <= 1'b0; // Reset at the top of every frame
+				drBusLatch <= 0;
+				hookDRLatch<= 0;
+        end else if (hookDR && (|drBus)) begin
+            collisionOccurred <= 1'b1; // Latch the collision if signals overlap
+				drBusLatch <= drBus;
+				hookDRLatch <= hookDR;
+        end
+		  else begin 
+				remainingObjects <= remainingObjects || (|drBus);
+		  end
+		  
+    end
+end
+
+
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin  
 		currentLevel <= 0;
 		lastLevelEnded <= 0;
+		
 		levelDR <= 0;
 		RGBout <= 8'h00;
-		timer <= MAX_TIME;
+		
 		stageEnded <= 0;
+		stagePassed <= 0;
+		
+		timer <= MAX_TIME;
+		scoreIncrease <= 0;
+		
 	end
    else if(enable) begin
       stageEnded <= 0;
+		stagePassed <= 0;
       levelDR <= 0;
       RGBout <= 8'hFF;
-		
+		scoreIncrease <= 0;
 		// MUX all drawing requests:
       for(int j = 0; j < OBJECTS_COUNT; j = j + 1) begin
           if(drBus[j]) begin
               levelDR <= 1;
               RGBout <= RGBBus[j*8 +: 8];
           end
+			 if (valueBus[j] != 0) begin
+				scoreIncrease <= valueBus[j];
+			 end;
       end
 		
 		if (hookDR) begin
@@ -199,10 +264,15 @@ always_ff @(posedge clk or negedge resetN) begin
 			RGBout <= timeDisplayRGB;
 		end
 		
-		
+		if (&destroyedBus) begin 
+			stageEnded <= 1;
+			stagePassed <= 1;
+			
+		end
 		// Timer managment:
 		if (startingNewLevel) begin
 			timer <= MAX_TIME;
+			scoreIncrease <= 0;
 		end
 		else if (oneSecPulse) begin	
 			timer <= timer - 1;
