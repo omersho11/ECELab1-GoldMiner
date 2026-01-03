@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSXFC6D6F31) Path("C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/") File("Lab1Demo.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSXFC6D6F31) Path("C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/output_files/") File("Lab1Demo.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

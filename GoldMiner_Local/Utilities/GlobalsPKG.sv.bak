@@ -1,0 +1,16 @@
+package game_pkg;
+    // Define your object types here
+	typedef enum logic [2:0] {
+		FILLER      = 3'd0,
+		VALUABLE_1  = 3'd1,
+		VALUABLE_2  = 3'd2,
+		VALUABLE_3  = 3'd3,
+		ROCK_1      = 3'd4
+	} LEVEL_ELEMENTS; 
+
+
+	// You can also define level parameters here
+	parameter int MAX_OBJECTS = 20;
+	parameter int GRID_ROWS = 20;
+	parameter int GRID_COLS = 15;
+endpackage

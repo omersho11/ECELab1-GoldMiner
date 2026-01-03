@@ -1,3 +1,8 @@
+import GlobalsPKG::LEVEL_ELEMENTS;
+import GlobalsPKG::MAX_OBJECTS;
+import GlobalsPKG::GRABBABLE_OBJECT_METADATA;
+
+
 module LevelController (	
     input logic clk,
     input logic resetN,
@@ -14,6 +19,7 @@ module LevelController (
 	 
 	 input logic [19:0] score,
 	 input logic [19:0] money,
+	 input logic [3:0] playerLuckStat,
 	 
     output logic levelDR,
     output logic [7:0] RGBout,
@@ -24,12 +30,17 @@ module LevelController (
 );
 
 localparam MAX_LEVEL = 1;
-localparam OBJECTS_COUNT = 20;
 localparam [8:0] MAX_TIME = 20;
 
 logic [8:0] timer = 0;
 int currentLevel;
 logic enable_d; // Delayed version of enable to detect the edge
+
+// level creation params
+logic generateNewLevel;
+logic [19:0] levelValue;
+logic finishedGenerating;
+logic currentLevelGenerated;
 
 // hook params
 localparam [10:0] HOOK_ORIGIN_X = 320;
@@ -63,36 +74,24 @@ assign startingNewLevel = (enable && !enable_d);
 
 // location and type of objects on screen
 // Using a 1D array for memory, indexed as [level * offset + object_index]
-(* ramstyle = "M9K" *) logic [8:0] levelData [0:(OBJECTS_COUNT*3*MAX_LEVEL)-1];
 
-initial begin
-    $readmemh("Stages/level_data.txt", levelData);
-end
+									//(* ramstyle = "M9K" *) logic [8:0] levelData [0:(OBJECTS_COUNT*3*MAX_LEVEL)-1];
+									//
+									//initial begin
+									//    $readmemh("Stages/level_data.txt", levelData);
+									//end
+									//logic [8:0] activeLevelData [0:(OBJECTS_COUNT*3-1)];
+									
+									
+GRABBABLE_OBJECT_METADATA activeLevelData [MAX_OBJECTS - 1:0];
+logic [MAX_OBJECTS-1:0] drBus;
+logic [MAX_OBJECTS-1:0] drBusLatch;
 
-logic [8:0] activeLevelData [0:(OBJECTS_COUNT*3-1)];
-logic [OBJECTS_COUNT-1:0] drBus;
-logic [OBJECTS_COUNT-1:0] drBusLatch;
+logic [MAX_OBJECTS-1:0] [10:0] valueBus;
+logic [MAX_OBJECTS-1:0] destroyedBus;
+logic [(MAX_OBJECTS*8)-1:0] RGBBus;
 
-logic [OBJECTS_COUNT-1:0] [10:0] valueBus;
-logic [OBJECTS_COUNT-1:0] destroyedBus;
-logic [(OBJECTS_COUNT*8)-1:0] RGBBus;
 
-// --- 1. EDGE DETECTION & MEMORY LOADING ---
-// We use a synchronous clock and check for the rising edge of 'enable'
-always_ff @(posedge clk or negedge resetN) begin
-    if (!resetN) begin
-        enable_d <= 1'b0;
-    end else begin
-        enable_d <= enable; // Store previous state
-        
-        // Detect rising edge: enable is high now, but was low last cycle
-        if (startingNewLevel) begin
-            for (int k = 0; k < OBJECTS_COUNT*3; k++) begin
-                activeLevelData[k] <= levelData[(currentLevel * OBJECTS_COUNT * 3) + k];
-            end
-        end
-    end
-end
 
 // --- 2. OBJECT INSTANTIATION ---
 Hook #(
@@ -133,15 +132,19 @@ DrawLine lineDrawer (
 
 genvar i;
 generate 
-	for(i=0; i<OBJECTS_COUNT; i=i+1) begin:
-		GrabbableObject_GEN
+	for(i=0; i < MAX_OBJECTS; i=i+1) begin : GrabbableObject_GEN
+		logic [4:0] row, col;
+		assign col = (activeLevelData[i].index % 15);
+		assign row = (activeLevelData[i].index % 20);
+		
+	
 		GrabbableObject obj_inst (
 			.clk(clk),
 			.resetN(resetN),
 			.manualReset(startingNewLevel),
-			.idleX(activeLevelData[3*i]),
-			.idleY(activeLevelData[3*i + 1]),
-			.objectType(activeLevelData[3*i + 2]),
+			.idleX(row * 32),
+			.idleY(96 + col * 32),
+			.objectType(activeLevelData[i].elementType),
 			.pixelX(pixelX),
 			.pixelY(pixelY),
 			.hookX(hookPosX),
@@ -193,9 +196,42 @@ TimeDisplay #(
 
 
 
+
+// LEVELMAKER INSTANTIATION
+LevelMaker levelMaker (
+	.clk(clk),
+	.resetN(resetN),
+	.levelIndex(currentLevel),
+	.playerLuckStat(playerLuckStat),
+	.generateNewLevel(generateNewLevel),
+	
+	.elementsData(activeLevelData),
+	.levelValue(levelValue),
+	.finishedGenerating(finishedGenerating)
+);
+
 // --- 3. OUTPUT MULTIPLEXING ---
 
+// EDGE DETECTION & MEMORY LOADING 
+// We use a synchronous clock and check for the rising edge of 'enable'
+always_ff @(posedge clk or negedge resetN) begin
+	if (!resetN) begin
+		enable_d <= 1'b0;
+		generateNewLevel <= 0;
+		currentLevelGenerated <= 0;
+	end else begin
+		enable_d <= enable; // Store previous state
+		generateNewLevel <= 0;
+		
+		if (startingNewLevel) begin
+			generateNewLevel <= 1;
+			currentLevelGenerated <= 0;
 
+		end else if (finishedGenerating) begin
+			currentLevelGenerated <= 1;
+		end
+	end
+end
 
 always_ff @(posedge clk or negedge resetN) begin
     if (!resetN) begin
@@ -237,14 +273,14 @@ always_ff @(posedge clk or negedge resetN) begin
 		scoreIncrease <= 0;
 		
 	end
-   else if(enable) begin
+   else if(enable && currentLevelGenerated) begin
       stageEnded <= 0;
 		stagePassed <= 0;
       levelDR <= 0;
       RGBout <= 8'hFF;
 		scoreIncrease <= 0;
 		// MUX all drawing requests:
-      for(int j = 0; j < OBJECTS_COUNT; j = j + 1) begin
+      for(int j = 0; j < MAX_OBJECTS; j = j + 1) begin
           if(drBus[j]) begin
               levelDR <= 1;
               RGBout <= RGBBus[j*8 +: 8];

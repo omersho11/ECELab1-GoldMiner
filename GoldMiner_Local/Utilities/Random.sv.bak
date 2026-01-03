@@ -1,0 +1,24 @@
+module Random (
+	input logic clk,
+	input logic resetN,
+	input logic [15:0] seedIn,
+	input logic storeValue,
+	
+	output logic [15:0] random,
+	output logic [15:0] randomLatch
+);
+
+//logic [15:0] seed;
+
+
+always_ff @(posedge clk or negedge rst_n) begin
+	if (!resetN) begin
+		random <= seedIn;
+		randomLatch <= seedIn;
+		
+	end else begin
+		random <= {random[14:0], random[15] ^ random[13] ^ random[12] ^ random[10]};
+	end
+end
+
+endmodule
