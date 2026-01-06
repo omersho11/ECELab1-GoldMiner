@@ -10,12 +10,14 @@ package GlobalsPKG;
 
 	typedef struct packed {
 		LEVEL_ELEMENTS elementType;
-		logic [8:0] index;
+		logic [4:0] row;
+		logic [5:0] col;
 	} GRABBABLE_OBJECT_METADATA;
 	
 	
 	// You can also define level parameters here
 	parameter int MAX_OBJECTS = 20;
-	parameter int GRID_ROWS = 15;
-	parameter int GRID_COLS = 20;
+   parameter logic [5:0] MAX_LEVEL = 10;
+	parameter logic [7:0] MIN_LEVEL_TIME = 20;
+	parameter logic [7:0] EXTRA_TIME_PER_LEVEL = 10;
 endpackage

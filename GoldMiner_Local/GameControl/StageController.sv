@@ -1,16 +1,17 @@
 module	StageController	(	
-			input	logic	clk,
-			input	logic	resetN,
-			input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
-			input logic stageEnded,
-			input logic playerWon,
-			output logic [3:0] stage									
+	input	logic	clk,
+	input	logic	resetN,
+	input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
+	input logic stageEnded,
+	input logic playerWon,
+
+	output logic [3:0] stage,
+	output logic startingNewGame
 );
 
 	//                    0        1        2            3            4             5
 	enum  logic [3:0] {S_LEVEL, S_SHOP, S_WIN_MENU ,S_LOSS_MENU, S_MAIN_MENU, S_GAME_END} stageSM;
 	
-	logic incrementLevel;
 	
 	assign stage = stageSM;
 	
@@ -19,22 +20,21 @@ module	StageController	(
 		if(!resetN)
 		begin  
 				stageSM <= S_MAIN_MENU;
-				incrementLevel = 0;
+				startingNewGame <= 1;
 		end
 		
 		else begin 
-			incrementLevel = 0;
+			startingNewGame <= 0;
 			
 			if(stageEnded) begin
 				case (stageSM) 
 					S_MAIN_MENU: begin
 						stageSM <= S_LEVEL;
+						startingNewGame <= 1;
 					end
 					
 					S_LEVEL: begin
-						if(playerWon) begin
-							incrementLevel = 1;
-						
+						if(playerWon) begin						
 							stageSM <= S_SHOP;
 						end
 						else begin

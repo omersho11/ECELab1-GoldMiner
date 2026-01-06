@@ -1,12 +1,8 @@
-import GlobalsPKG::LEVEL_ELEMENTS;
-import GlobalsPKG::MAX_OBJECTS;
-import GlobalsPKG::GRABBABLE_OBJECT_METADATA;
-
 
 module LevelController (	
     input logic clk,
     input logic resetN,
-    input logic cycleLevel,
+    input logic debugAlwaysWin,
     input logic [10:0] pixelX,
     input logic [10:0] pixelY,
     input logic enable,
@@ -20,6 +16,9 @@ module LevelController (
 	 input logic [19:0] score,
 	 input logic [19:0] money,
 	 input logic [3:0] playerLuckStat,
+	 input logic debugSkipLevel,
+	 input logic startingNewGame,
+	 
 	 
     output logic levelDR,
     output logic [7:0] RGBout,
@@ -27,13 +26,13 @@ module LevelController (
 	 output logic stageEnded,
     output logic lastLevelEnded,
 	 output logic [19:0] scoreIncrease
+	 
 );
 
-localparam MAX_LEVEL = 1;
-localparam [8:0] MAX_TIME = 20;
+import GlobalsPKG::*;
 
-logic [8:0] timer = 0;
-int currentLevel;
+logic [8:0] timer = MIN_LEVEL_TIME;
+int currentLevel = 0;
 logic enable_d; // Delayed version of enable to detect the edge
 
 // level creation params
@@ -53,7 +52,7 @@ logic hookDRLatch;
 logic [7:0] hookRGB;
 wire hookReturned;
 
-wire collisionOccurred;
+logic collisionOccurred;
 logic remainingObjects;
 
 
@@ -70,17 +69,6 @@ logic [7:0] timeDisplayRGB;
 
 
 assign startingNewLevel = (enable && !enable_d);
-
-
-// location and type of objects on screen
-// Using a 1D array for memory, indexed as [level * offset + object_index]
-
-									//(* ramstyle = "M9K" *) logic [8:0] levelData [0:(OBJECTS_COUNT*3*MAX_LEVEL)-1];
-									//
-									//initial begin
-									//    $readmemh("Stages/level_data.txt", levelData);
-									//end
-									//logic [8:0] activeLevelData [0:(OBJECTS_COUNT*3-1)];
 									
 									
 GRABBABLE_OBJECT_METADATA activeLevelData [MAX_OBJECTS - 1:0];
@@ -132,18 +120,13 @@ DrawLine lineDrawer (
 
 genvar i;
 generate 
-	for(i=0; i < MAX_OBJECTS; i=i+1) begin : GrabbableObject_GEN
-		logic [4:0] row, col;
-		assign col = (activeLevelData[i].index % 15);
-		assign row = (activeLevelData[i].index % 20);
-		
-	
+	for(i=0; i < MAX_OBJECTS; i=i+1) begin : GrabbableObject_GEN	
 		GrabbableObject obj_inst (
 			.clk(clk),
 			.resetN(resetN),
 			.manualReset(startingNewLevel),
-			.idleX(row * 32),
-			.idleY(96 + col * 32),
+			.idleX(activeLevelData[i].col * 32),
+			.idleY(96 + (activeLevelData[i].row *32)),
 			.objectType(activeLevelData[i].elementType),
 			.pixelX(pixelX),
 			.pixelY(pixelY),
@@ -212,6 +195,22 @@ LevelMaker levelMaker (
 
 // --- 3. OUTPUT MULTIPLEXING ---
 
+//logic [$clog2(MAX_OBJECTS)-1:0] activeObj;
+//logic anyObj;
+
+//always_comb begin
+//    anyObj = 0;
+//    activeObj = 0;
+//    for (int j=0; j<MAX_OBJECTS; j++) begin
+//        if (drBus[j] && !anyObj) begin
+//            activeObj = j;
+//            anyObj = 1;
+//        end
+//    end
+//end
+
+
+
 // EDGE DETECTION & MEMORY LOADING 
 // We use a synchronous clock and check for the rising edge of 'enable'
 always_ff @(posedge clk or negedge resetN) begin
@@ -226,7 +225,7 @@ always_ff @(posedge clk or negedge resetN) begin
 		if (startingNewLevel) begin
 			generateNewLevel <= 1;
 			currentLevelGenerated <= 0;
-
+			
 		end else if (finishedGenerating) begin
 			currentLevelGenerated <= 1;
 		end
@@ -260,26 +259,31 @@ end
 
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin  
-		currentLevel <= 0;
 		lastLevelEnded <= 0;
-		
+		currentLevel <= 0;
+
 		levelDR <= 0;
 		RGBout <= 8'h00;
 		
 		stageEnded <= 0;
 		stagePassed <= 0;
 		
-		timer <= MAX_TIME;
-		scoreIncrease <= 0;
+		timer <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
+		scoreIncrease <= 0;		
 		
 	end
    else if(enable && currentLevelGenerated) begin
       stageEnded <= 0;
-		stagePassed <= 0;
+		stagePassed <= debugAlwaysWin;
       levelDR <= 0;
       RGBout <= 8'hFF;
 		scoreIncrease <= 0;
 		// MUX all drawing requests:
+//		if (anyObj) begin
+//			levelDR <= 1;
+//			RGBout <= RGBBus[activeObj*8 +: 8];
+//		end
+		
       for(int j = 0; j < MAX_OBJECTS; j = j + 1) begin
           if(drBus[j]) begin
               levelDR <= 1;
@@ -300,19 +304,22 @@ always_ff @(posedge clk or negedge resetN) begin
 			RGBout <= timeDisplayRGB;
 		end
 		
-		if (&destroyedBus) begin 
+		if ((&destroyedBus) === 1'b1) begin 
 			stageEnded <= 1;
 			stagePassed <= 1;
-			
+			currentLevel <= currentLevel + 1;
 		end
 		// Timer managment:
 		if (startingNewLevel) begin
-			timer <= MAX_TIME;
+			timer <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
 			scoreIncrease <= 0;
 		end
 		else if (oneSecPulse) begin	
 			timer <= timer - 1;
-			if (timer == 0) stageEnded <= 1;
+			if (timer == 1 || debugSkipLevel) begin // == 1 and not 0 to avoid timer == 0 race condition
+				stageEnded <= 1;
+				currentLevel <= currentLevel + 1;
+			end;
 		end		  
 		  
     end	
@@ -322,3 +329,4 @@ always_ff @(posedge clk or negedge resetN) begin
 end
 
 endmodule
+
