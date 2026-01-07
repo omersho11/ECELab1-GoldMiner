@@ -145,22 +145,37 @@ endgenerate
 
 
 // TIMEDISPLAY INSTANTIATION
-square_object #(
-	.OBJECT_WIDTH_X(TIMEDISPLAY_WIDTH_X),
-	.OBJECT_HEIGHT_Y(TIMEDISPLAY_HEIGHT_Y)
-) timeDisplaySquareObject (
-	.clk(clk),
-   .resetN(resetN),
-	.pixelX(pixelX),
-	.pixelY(pixelY),
-	.topLeftX(TIMEDISPLAY_POS_LEFT),
-	.topLeftY(TIMEDISPLAY_POS_TOP),
-	
-	.offsetX(timeDisplayOffsetX),
-	.offsetY(timeDisplayOffsetY),
-	.drawingRequest(timeDisplayInsideRectangle),
-	.RGBout(8'b0)
-);
+//square_object #(
+//	.OBJECT_WIDTH_X(TIMEDISPLAY_WIDTH_X),
+//	.OBJECT_HEIGHT_Y(TIMEDISPLAY_HEIGHT_Y)
+//) timeDisplaySquareObject (
+//	.clk(clk),
+//   .resetN(resetN),
+//	.pixelX(pixelX),
+//	.pixelY(pixelY),
+//	.topLeftX(TIMEDISPLAY_POS_LEFT),
+//	.topLeftY(TIMEDISPLAY_POS_TOP),
+//	
+//	.offsetX(timeDisplayOffsetX),
+//	.offsetY(timeDisplayOffsetY),
+//	.drawingRequest(timeDisplayInsideRectangle),
+//	.RGBout(8'b0)
+//);
+//
+//TimeDisplay #(
+//	.color(8'b11100000)
+//) timeDisplay (
+//	.clk(clk),
+//   .resetN(resetN),
+//   .enable(enable),
+//	.offsetX(timeDisplayOffsetX),
+//	.offsetY(timeDisplayOffsetY),
+//	.InsideRectangle(timeDisplayInsideRectangle),
+//	.timeInSeconds(timer),
+//	
+//	.drawingRequest(timeDisplayDR),
+//	.RGBout(timeDisplayRGB)
+//);
 
 TimeDisplay #(
 	.color(8'b11100000)
@@ -168,16 +183,15 @@ TimeDisplay #(
 	.clk(clk),
    .resetN(resetN),
    .enable(enable),
-	.offsetX(timeDisplayOffsetX),
-	.offsetY(timeDisplayOffsetY),
-	.InsideRectangle(timeDisplayInsideRectangle),
+	.topLeftX(TIMEDISPLAY_POS_LEFT),
+	.topLeftY(TIMEDISPLAY_POS_TOP),
+	.pixelX(pixelX),
+	.pixelY(pixelY),
 	.timeInSeconds(timer),
 	
 	.drawingRequest(timeDisplayDR),
 	.RGBout(timeDisplayRGB)
 );
-
-
 
 
 // LEVELMAKER INSTANTIATION

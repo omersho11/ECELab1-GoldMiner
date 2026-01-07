@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab1Demo
-Tue Jan 06 22:11:17 2026
+Wed Jan 07 18:31:43 2026
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -50,50 +50,52 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
  42. Parameter Settings for User Entity Instance: VectorOr:inst18
  43. Parameter Settings for User Entity Instance: LevelController:inst2|Hook:hook
  44. Parameter Settings for User Entity Instance: LevelController:inst2|Hook:hook|RotationTable:trigTable
- 45. Parameter Settings for User Entity Instance: LevelController:inst2|square_object:timeDisplaySquareObject
- 46. Parameter Settings for User Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay
- 47. Parameter Settings for User Entity Instance: LevelController:inst2|LevelMaker:levelMaker|Random:random
- 48. Parameter Settings for User Entity Instance: MyConstant:inst16
- 49. Parameter Settings for User Entity Instance: MyConstant:inst23
- 50. Parameter Settings for User Entity Instance: LPM_ROM:inst9
- 51. Parameter Settings for User Entity Instance: MyConstant:inst11
- 52. Parameter Settings for User Entity Instance: MyConstant:inst6
- 53. Parameter Settings for Inferred Entity Instance: LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod0
- 54. Parameter Settings for Inferred Entity Instance: LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod1
- 55. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1
+ 45. Parameter Settings for User Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay
+ 46. Parameter Settings for User Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display
+ 47. Parameter Settings for User Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display|square_object:timeDisplaySquareObject
+ 48. Parameter Settings for User Entity Instance: LevelController:inst2|LevelMaker:levelMaker|Random:random
+ 49. Parameter Settings for User Entity Instance: MyConstant:inst16
+ 50. Parameter Settings for User Entity Instance: MyConstant:inst23
+ 51. Parameter Settings for User Entity Instance: LPM_ROM:inst9
+ 52. Parameter Settings for User Entity Instance: MyConstant:inst11
+ 53. Parameter Settings for User Entity Instance: MyConstant:inst6
+ 54. Parameter Settings for Inferred Entity Instance: LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod0
+ 55. Parameter Settings for Inferred Entity Instance: LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod1
  56. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2
- 57. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1
- 58. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0
- 59. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2
- 60. Parameter Settings for Inferred Entity Instance: LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod2
- 61. Port Connectivity Checks: "LevelController:inst2|LevelMaker:levelMaker|Random:random"
- 62. Port Connectivity Checks: "LevelController:inst2|LevelMaker:levelMaker"
- 63. Port Connectivity Checks: "LevelController:inst2|TimeDisplay:timeDisplay"
- 64. Port Connectivity Checks: "LevelController:inst2|square_object:timeDisplaySquareObject"
- 65. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[19].obj_inst"
- 66. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[18].obj_inst"
- 67. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[17].obj_inst"
- 68. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[16].obj_inst"
- 69. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[15].obj_inst"
- 70. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[14].obj_inst"
- 71. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[13].obj_inst"
- 72. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[12].obj_inst"
- 73. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[11].obj_inst"
- 74. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[10].obj_inst"
- 75. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[9].obj_inst"
- 76. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[8].obj_inst"
- 77. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[7].obj_inst"
- 78. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[6].obj_inst"
- 79. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[5].obj_inst"
- 80. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[4].obj_inst"
- 81. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[3].obj_inst"
- 82. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst"
- 83. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst"
- 84. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst"
- 85. Port Connectivity Checks: "LevelController:inst2|DrawLine:lineDrawer"
- 86. Post-Synthesis Netlist Statistics for Top Partition
- 87. Elapsed Time Per Partition
- 88. Analysis & Synthesis Messages
+ 57. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod3
+ 58. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2
+ 59. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0
+ 60. Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div3
+ 61. Parameter Settings for Inferred Entity Instance: LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod2
+ 62. Port Connectivity Checks: "LevelController:inst2|LevelMaker:levelMaker|Random:random"
+ 63. Port Connectivity Checks: "LevelController:inst2|LevelMaker:levelMaker"
+ 64. Port Connectivity Checks: "LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display|square_object:timeDisplaySquareObject"
+ 65. Port Connectivity Checks: "LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display"
+ 66. Port Connectivity Checks: "LevelController:inst2|TimeDisplay:timeDisplay"
+ 67. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[19].obj_inst"
+ 68. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[18].obj_inst"
+ 69. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[17].obj_inst"
+ 70. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[16].obj_inst"
+ 71. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[15].obj_inst"
+ 72. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[14].obj_inst"
+ 73. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[13].obj_inst"
+ 74. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[12].obj_inst"
+ 75. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[11].obj_inst"
+ 76. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[10].obj_inst"
+ 77. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[9].obj_inst"
+ 78. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[8].obj_inst"
+ 79. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[7].obj_inst"
+ 80. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[6].obj_inst"
+ 81. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[5].obj_inst"
+ 82. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[4].obj_inst"
+ 83. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[3].obj_inst"
+ 84. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst"
+ 85. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst"
+ 86. Port Connectivity Checks: "LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst"
+ 87. Port Connectivity Checks: "LevelController:inst2|DrawLine:lineDrawer"
+ 88. Post-Synthesis Netlist Statistics for Top Partition
+ 89. Elapsed Time Per Partition
+ 90. Analysis & Synthesis Messages
 
 
 
@@ -120,7 +122,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jan 06 22:11:17 2026       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jan 07 18:31:43 2026       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; main                                        ;
@@ -291,6 +293,7 @@ Parallel compilation attempted to use more processors than were available, which
 ; Utilities/Random.sv                                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/Random.sv                                        ;          ;
 ; GameControl/LevelMaker.sv                                  ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/LevelMaker.sv                                  ;          ;
 ; Utilities/GlobalsPKG.sv                                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/GlobalsPKG.sv                                    ;          ;
+; Utilities/FiveDigitDisplay.sv                              ; yes             ; User SystemVerilog HDL File        ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/FiveDigitDisplay.sv                              ;          ;
 ; stages/all_stages.txt                                      ; yes             ; Auto-Found File                    ; C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/stages/all_stages.txt                                      ;          ;
 ; altera_pll.v                                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altera_pll.v                                                          ;          ;
 ; lpm_rom.tdf                                                ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_rom.tdf                                                           ;          ;
@@ -416,28 +419,29 @@ Parallel compilation attempted to use more processors than were available, which
 ;             |lpm_divide_n3m:auto_generated|              ; 141 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod2|lpm_divide_n3m:auto_generated                                                     ; lpm_divide_n3m      ; work         ;
 ;                |sign_div_unsign_qlh:divider|             ; 141 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod2|lpm_divide_n3m:auto_generated|sign_div_unsign_qlh:divider                         ; sign_div_unsign_qlh ; work         ;
 ;                   |alt_u_div_qve:divider|                ; 141 (141)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod2|lpm_divide_n3m:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_qve:divider   ; alt_u_div_qve       ; work         ;
-;       |TimeDisplay:timeDisplay|                          ; 401 (126)           ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay                                                                                                 ; TimeDisplay         ; work         ;
-;          |lpm_divide:Div1|                               ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
-;             |lpm_divide_hbm:auto_generated|              ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1|lpm_divide_hbm:auto_generated                                                   ; lpm_divide_hbm      ; work         ;
-;                |sign_div_unsign_nlh:divider|             ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1|lpm_divide_hbm:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
-;                   |alt_u_div_kve:divider|                ; 82 (82)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1|lpm_divide_hbm:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_kve:divider ; alt_u_div_kve       ; work         ;
-;          |lpm_divide:Div2|                               ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
-;             |lpm_divide_3am:auto_generated|              ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2|lpm_divide_3am:auto_generated                                                   ; lpm_divide_3am      ; work         ;
-;                |sign_div_unsign_9kh:divider|             ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
-;                   |alt_u_div_ose:divider|                ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
+;       |TimeDisplay:timeDisplay|                          ; 406 (0)             ; 14 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay                                                                                                 ; TimeDisplay         ; work         ;
+;          |FiveDigitDisplay:display|                      ; 131 (126)           ; 14 (1)                    ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display                                                                        ; FiveDigitDisplay    ; work         ;
+;             |square_object:timeDisplaySquareObject|      ; 5 (5)               ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display|square_object:timeDisplaySquareObject                                  ; square_object       ; work         ;
+;          |lpm_divide:Div2|                               ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_hbm:auto_generated|              ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2|lpm_divide_hbm:auto_generated                                                   ; lpm_divide_hbm      ; work         ;
+;                |sign_div_unsign_nlh:divider|             ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2|lpm_divide_hbm:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;                   |alt_u_div_kve:divider|                ; 82 (82)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2|lpm_divide_hbm:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_kve:divider ; alt_u_div_kve       ; work         ;
+;          |lpm_divide:Div3|                               ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div3                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_3am:auto_generated|              ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div3|lpm_divide_3am:auto_generated                                                   ; lpm_divide_3am      ; work         ;
+;                |sign_div_unsign_9kh:divider|             ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div3|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;                   |alt_u_div_ose:divider|                ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div3|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
 ;          |lpm_divide:Mod0|                               ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
 ;             |lpm_divide_i3m:auto_generated|              ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0|lpm_divide_i3m:auto_generated                                                   ; lpm_divide_i3m      ; work         ;
 ;                |sign_div_unsign_llh:divider|             ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0|lpm_divide_i3m:auto_generated|sign_div_unsign_llh:divider                       ; sign_div_unsign_llh ; work         ;
 ;                   |alt_u_div_gve:divider|                ; 45 (45)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0|lpm_divide_i3m:auto_generated|sign_div_unsign_llh:divider|alt_u_div_gve:divider ; alt_u_div_gve       ; work         ;
-;          |lpm_divide:Mod1|                               ; 98 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
-;             |lpm_divide_k3m:auto_generated|              ; 98 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1|lpm_divide_k3m:auto_generated                                                   ; lpm_divide_k3m      ; work         ;
-;                |sign_div_unsign_nlh:divider|             ; 98 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1|lpm_divide_k3m:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
-;                   |alt_u_div_kve:divider|                ; 98 (98)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1|lpm_divide_k3m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_kve:divider ; alt_u_div_kve       ; work         ;
-;          |lpm_divide:Mod2|                               ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;             |lpm_divide_62m:auto_generated|              ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2|lpm_divide_62m:auto_generated                                                   ; lpm_divide_62m      ; work         ;
-;                |sign_div_unsign_9kh:divider|             ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
-;                   |alt_u_div_ose:divider|                ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
-;       |square_object:timeDisplaySquareObject|            ; 5 (5)               ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|square_object:timeDisplaySquareObject                                                                                   ; square_object       ; work         ;
+;          |lpm_divide:Mod2|                               ; 98 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_k3m:auto_generated|              ; 98 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2|lpm_divide_k3m:auto_generated                                                   ; lpm_divide_k3m      ; work         ;
+;                |sign_div_unsign_nlh:divider|             ; 98 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2|lpm_divide_k3m:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;                   |alt_u_div_kve:divider|                ; 98 (98)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2|lpm_divide_k3m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_kve:divider ; alt_u_div_kve       ; work         ;
+;          |lpm_divide:Mod3|                               ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_62m:auto_generated|              ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod3|lpm_divide_62m:auto_generated                                                   ; lpm_divide_62m      ; work         ;
+;                |sign_div_unsign_9kh:divider|             ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod3|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;                   |alt_u_div_ose:divider|                ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod3|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
 ;    |OneSecPulse:inst20|                                  ; 31 (31)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |main|OneSecPulse:inst20                                                                                                                            ; OneSecPulse         ; work         ;
 ;    |Pulsinator:inst22|                                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |main|Pulsinator:inst22                                                                                                                             ; Pulsinator          ; work         ;
 ;    |StageController:inst1|                               ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|StageController:inst1                                                                                                                         ; StageController     ; work         ;
@@ -948,7 +952,7 @@ Encoding Type:  One-Hot
 ; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[2].obj_inst|Selector16  ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[1].obj_inst|Selector1   ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[0].obj_inst|Selector16  ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |main|LevelController:inst2|TimeDisplay:timeDisplay|Mux3                                ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |main|LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display|Mux3       ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[19].obj_inst|state      ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[18].obj_inst|state      ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |main|LevelController:inst2|GrabbableObject:GrabbableObject_GEN[17].obj_inst|state      ;
@@ -1591,18 +1595,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LevelController:inst2|square_object:timeDisplaySquareObject ;
-+-----------------+-------------+--------------------------------------------------------------------------+
-; Parameter Name  ; Value       ; Type                                                                     ;
-+-----------------+-------------+--------------------------------------------------------------------------+
-; OBJECT_WIDTH_X  ; 00001010000 ; Unsigned Binary                                                          ;
-; OBJECT_HEIGHT_Y ; 00000100000 ; Unsigned Binary                                                          ;
-; OBJECT_COLOR    ; 00000011    ; Unsigned Binary                                                          ;
-+-----------------+-------------+--------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +--------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay ;
 +----------------+----------+----------------------------------------------------------------+
@@ -1610,6 +1602,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+----------+----------------------------------------------------------------+
 ; color          ; 11100000 ; Unsigned Binary                                                ;
 +----------------+----------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display ;
++----------------+----------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                    ;
++----------------+----------+-----------------------------------------------------------------------------------------+
+; color          ; 11111111 ; Unsigned Binary                                                                         ;
++----------------+----------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display|square_object:timeDisplaySquareObject ;
++-----------------+----------+------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name  ; Value    ; Type                                                                                                                         ;
++-----------------+----------+------------------------------------------------------------------------------------------------------------------------------+
+; OBJECT_WIDTH_X  ; 80       ; Signed Integer                                                                                                               ;
+; OBJECT_HEIGHT_Y ; 32       ; Signed Integer                                                                                                               ;
+; OBJECT_COLOR    ; 00000011 ; Unsigned Binary                                                                                                              ;
++-----------------+----------+------------------------------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1734,7 +1748,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1 ;
+; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2 ;
 +------------------------+----------------+----------------------------------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                                                 ;
 +------------------------+----------------+----------------------------------------------------------------------+
@@ -1757,7 +1771,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2 ;
+; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod3 ;
 +------------------------+----------------+----------------------------------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                                                 ;
 +------------------------+----------------+----------------------------------------------------------------------+
@@ -1780,7 +1794,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1 ;
+; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2 ;
 +------------------------+----------------+----------------------------------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                                                 ;
 +------------------------+----------------+----------------------------------------------------------------------+
@@ -1826,7 +1840,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2 ;
+; Parameter Settings for Inferred Entity Instance: LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div3 ;
 +------------------------+----------------+----------------------------------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                                                 ;
 +------------------------+----------------+----------------------------------------------------------------------+
@@ -1891,28 +1905,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display|square_object:timeDisplaySquareObject" ;
++----------------+--------+----------+-----------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                             ;
++----------------+--------+----------+-----------------------------------------------------------------------------------------------------+
+; offsetX[10..7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                 ;
+; offsetY[10..5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                 ;
+; RGBout         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                 ;
++----------------+--------+----------+-----------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display" ;
++--------------+-------+----------+------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                          ;
++--------------+-------+----------+------------------------------------------------------------------+
+; digits[2][3] ; Input ; Info     ; Stuck at VCC                                                     ;
+; digits[2][2] ; Input ; Info     ; Stuck at GND                                                     ;
+; digits[2][1] ; Input ; Info     ; Stuck at VCC                                                     ;
+; digits[2][0] ; Input ; Info     ; Stuck at GND                                                     ;
++--------------+-------+----------+------------------------------------------------------------------+
+
+
 +---------------------------------------------------------------------------+
 ; Port Connectivity Checks: "LevelController:inst2|TimeDisplay:timeDisplay" ;
 +----------------------+-------+----------+---------------------------------+
 ; Port                 ; Type  ; Severity ; Details                         ;
 +----------------------+-------+----------+---------------------------------+
+; topLeftX[10..6]      ; Input ; Info     ; Stuck at GND                    ;
+; topLeftX[4..0]       ; Input ; Info     ; Stuck at GND                    ;
+; topLeftX[5]          ; Input ; Info     ; Stuck at VCC                    ;
+; topLeftY[10..6]      ; Input ; Info     ; Stuck at GND                    ;
+; topLeftY[4..0]       ; Input ; Info     ; Stuck at GND                    ;
+; topLeftY[5]          ; Input ; Info     ; Stuck at VCC                    ;
 ; timeInSeconds[10..9] ; Input ; Info     ; Stuck at GND                    ;
 +----------------------+-------+----------+---------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "LevelController:inst2|square_object:timeDisplaySquareObject"                                   ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                             ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; topLeftX[10..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; topLeftX[4..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; topLeftX[5]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; topLeftY[10..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; topLeftY[4..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; topLeftY[5]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; RGBout          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2247,7 +2275,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:38     ;
+; Top            ; 00:01:39     ;
 +----------------+--------------+
 
 
@@ -2257,7 +2285,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Jan 06 22:09:19 2026
+    Info: Processing started: Wed Jan 07 18:29:42 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
 Info (20032): Parallel compilation is enabled and will use up to 16 processors
 Warning (20031): Parallel compilation is enabled for 16 processors, but there are only 10 processors in the system. Runtime may increase due to over usage of the processor space.
@@ -2374,6 +2402,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file utiliti
     Info (12023): Found entity 1: VectorOr File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/VectorOr.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file utilities/onesecpulse.sv
     Info (12023): Found entity 1: OneSecPulse File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/OneSecPulse.sv Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at TimeDisplay.sv(39): ignored dangling comma in List of Port Connections File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file graphics/timedisplay.sv
     Info (12023): Found entity 1: TimeDisplay File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file utilities/pulsinator.sv
@@ -2386,6 +2415,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file gamecon
     Info (12023): Found entity 1: LevelMaker File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/LevelMaker.sv Line: 1
 Info (12021): Found 1 design units, including 0 entities, in source file utilities/globalspkg.sv
     Info (12022): Found design unit 1: GlobalsPKG (SystemVerilog) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/GlobalsPKG.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file utilities/fivedigitdisplay.sv
+    Info (12023): Found entity 1: FiveDigitDisplay File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/FiveDigitDisplay.sv Line: 2
 Warning (10236): Verilog HDL Implicit Net warning at audio_codec_controller.sv(61): created implicit net for "CLOCK_500_ena" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 61
 Warning (10236): Verilog HDL Implicit Net warning at audio_codec_controller.sv(63): created implicit net for "CLOCK_SDAT_ena" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 63
 Warning (10236): Verilog HDL Implicit Net warning at LevelController.sv(71): created implicit net for "startingNewLevel" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 71
@@ -2516,11 +2547,11 @@ Critical Warning (10237): Verilog HDL warning at WinMenu.sv(13): can't infer reg
 Critical Warning (10237): Verilog HDL warning at WinMenu.sv(14): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv Line: 14
 Warning (10034): Output port "drStage" at WinMenu.sv(6) has no driver File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/WinMenu.sv Line: 6
 Info (12128): Elaborating entity "LevelController" for hierarchy "LevelController:inst2"
-Warning (10230): Verilog HDL assignment warning at LevelController.sv(271): truncated value with size 32 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 271
-Warning (10230): Verilog HDL assignment warning at LevelController.sv(314): truncated value with size 32 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 314
-Warning (10230): Verilog HDL assignment warning at LevelController.sv(318): truncated value with size 32 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 318
-Warning (10240): Verilog HDL Always Construct warning at LevelController.sv(260): inferring latch(es) for variable "lastLevelEnded", which holds its previous value in one or more paths through the always construct File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 260
-Info (10041): Inferred latch for "lastLevelEnded" at LevelController.sv(260) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 260
+Warning (10230): Verilog HDL assignment warning at LevelController.sv(285): truncated value with size 32 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 285
+Warning (10230): Verilog HDL assignment warning at LevelController.sv(328): truncated value with size 32 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 328
+Warning (10230): Verilog HDL assignment warning at LevelController.sv(332): truncated value with size 32 to match size of target (9) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 332
+Warning (10240): Verilog HDL Always Construct warning at LevelController.sv(274): inferring latch(es) for variable "lastLevelEnded", which holds its previous value in one or more paths through the always construct File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 274
+Info (10041): Inferred latch for "lastLevelEnded" at LevelController.sv(274) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 274
 Info (12128): Elaborating entity "Hook" for hierarchy "LevelController:inst2|Hook:hook" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 103
 Warning (10230): Verilog HDL assignment warning at Hook.sv(39): truncated value with size 32 to match size of target (8) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 39
 Warning (10230): Verilog HDL assignment warning at Hook.sv(40): truncated value with size 32 to match size of target (8) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/Hook.sv Line: 40
@@ -2542,16 +2573,16 @@ Warning (10230): Verilog HDL assignment warning at GrabbableObject.sv(125): trun
 Info (10264): Verilog HDL Case Statement information at GrabbableObject.sv(122): all case item expressions in this case statement are onehot File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/GrabbableObject.sv Line: 122
 Warning (10230): Verilog HDL assignment warning at GrabbableObject.sv(163): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/GrabbableObject.sv Line: 163
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "objectsBitmap" into its bus
-Info (12128): Elaborating entity "square_object" for hierarchy "LevelController:inst2|square_object:timeDisplaySquareObject" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 163
-Info (12128): Elaborating entity "TimeDisplay" for hierarchy "LevelController:inst2|TimeDisplay:timeDisplay" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 178
+Info (12128): Elaborating entity "TimeDisplay" for hierarchy "LevelController:inst2|TimeDisplay:timeDisplay" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 194
+Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(22): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 22
 Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(23): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 23
-Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(24): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
+Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(25): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 25
 Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(26): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
-Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(27): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 27
-Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(403): truncated value with size 32 to match size of target (3) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 403
-Warning (10230): Verilog HDL assignment warning at TimeDisplay.sv(405): truncated value with size 32 to match size of target (4) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 405
+Info (12128): Elaborating entity "FiveDigitDisplay" for hierarchy "LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at FiveDigitDisplay.sv(416): truncated value with size 11 to match size of target (3) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/FiveDigitDisplay.sv Line: 416
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "number_bitmap" into its bus
-Info (12128): Elaborating entity "LevelMaker" for hierarchy "LevelController:inst2|LevelMaker:levelMaker" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 194
+Info (12128): Elaborating entity "square_object" for hierarchy "LevelController:inst2|TimeDisplay:timeDisplay|FiveDigitDisplay:display|square_object:timeDisplaySquareObject" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Utilities/FiveDigitDisplay.sv Line: 41
+Info (12128): Elaborating entity "LevelMaker" for hierarchy "LevelController:inst2|LevelMaker:levelMaker" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 208
 Warning (10036): Verilog HDL or VHDL warning at LevelMaker.sv(30): object "overallLevelValue" assigned a value but never read File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/LevelMaker.sv Line: 30
 Warning (10230): Verilog HDL assignment warning at LevelMaker.sv(25): truncated value with size 32 to match size of target (11) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/LevelMaker.sv Line: 25
 Warning (10230): Verilog HDL assignment warning at LevelMaker.sv(26): truncated value with size 32 to match size of target (11) File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/LevelMaker.sv Line: 26
@@ -2918,11 +2949,11 @@ Warning (14284): Synthesized away the following node(s):
 Info (278001): Inferred 8 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|LevelMaker:levelMaker|Mod0" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/LevelMaker.sv Line: 25
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|LevelMaker:levelMaker|Mod1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/LevelMaker.sv Line: 26
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Mod1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 27
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Mod2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 27
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Div1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Mod0" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Div2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Mod2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Mod3" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Div2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 23
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Mod0" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 23
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|TimeDisplay:timeDisplay|Div3" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 25
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LevelController:inst2|LevelMaker:levelMaker|Mod2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/LevelMaker.sv Line: 67
 Info (12130): Elaborated megafunction instantiation "LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod0" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/LevelMaker.sv Line: 25
 Info (12133): Instantiated megafunction "LevelController:inst2|LevelMaker:levelMaker|lpm_divide:Mod0" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/GameControl/LevelMaker.sv Line: 25
@@ -2948,8 +2979,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_klh File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/sign_div_unsign_klh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_eve.tdf
     Info (12023): Found entity 1: alt_u_div_eve File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_eve.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 27
-Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod1" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 27
+Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
     Info (12134): Parameter "LPM_WIDTHN" = "11"
     Info (12134): Parameter "LPM_WIDTHD" = "6"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -2960,8 +2991,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/sign_div_unsign_nlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kve.tdf
     Info (12023): Found entity 1: alt_u_div_kve File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_kve.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 27
-Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod2" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 27
+Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod3" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod3" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -2972,16 +3003,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_9kh File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/sign_div_unsign_9kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ose.tdf
     Info (12023): Found entity 1: alt_u_div_ose File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_ose.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
-Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div1" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
+Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 23
+Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 23
     Info (12134): Parameter "LPM_WIDTHN" = "11"
     Info (12134): Parameter "LPM_WIDTHD" = "6"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hbm.tdf
     Info (12023): Found entity 1: lpm_divide_hbm File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/lpm_divide_hbm.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
-Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 24
+Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 23
+Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Mod0" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 23
     Info (12134): Parameter "LPM_WIDTHN" = "11"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -2992,8 +3023,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_llh File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/sign_div_unsign_llh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_gve.tdf
     Info (12023): Found entity 1: alt_u_div_gve File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_gve.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
-Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div2" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 26
+Info (12130): Elaborated megafunction instantiation "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div3" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 25
+Info (12133): Instantiated megafunction "LevelController:inst2|TimeDisplay:timeDisplay|lpm_divide:Div3" with the following parameter: File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Graphics/TimeDisplay.sv Line: 25
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -3014,14 +3045,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alt_
     Info (12023): Found entity 1: alt_u_div_qve File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/db/alt_u_div_qve.tdf Line: 23
 Warning (12241): 20 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "LevelController:inst2|timer[3]" is converted into an equivalent circuit using register "LevelController:inst2|timer[3]~_emulated" and latch "LevelController:inst2|timer[3]~1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 275
-    Warning (13310): Register "LevelController:inst2|timer[1]" is converted into an equivalent circuit using register "LevelController:inst2|timer[1]~_emulated" and latch "LevelController:inst2|timer[1]~5" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 275
-    Warning (13310): Register "LevelController:inst2|timer[2]" is converted into an equivalent circuit using register "LevelController:inst2|timer[2]~_emulated" and latch "LevelController:inst2|timer[2]~9" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 275
-    Warning (13310): Register "LevelController:inst2|timer[8]" is converted into an equivalent circuit using register "LevelController:inst2|timer[8]~_emulated" and latch "LevelController:inst2|timer[8]~13" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 275
-    Warning (13310): Register "LevelController:inst2|timer[7]" is converted into an equivalent circuit using register "LevelController:inst2|timer[7]~_emulated" and latch "LevelController:inst2|timer[7]~17" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 275
-    Warning (13310): Register "LevelController:inst2|timer[6]" is converted into an equivalent circuit using register "LevelController:inst2|timer[6]~_emulated" and latch "LevelController:inst2|timer[6]~21" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 275
-    Warning (13310): Register "LevelController:inst2|timer[5]" is converted into an equivalent circuit using register "LevelController:inst2|timer[5]~_emulated" and latch "LevelController:inst2|timer[5]~25" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 275
-    Warning (13310): Register "LevelController:inst2|timer[4]" is converted into an equivalent circuit using register "LevelController:inst2|timer[4]~_emulated" and latch "LevelController:inst2|timer[4]~29" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 275
+    Warning (13310): Register "LevelController:inst2|timer[3]" is converted into an equivalent circuit using register "LevelController:inst2|timer[3]~_emulated" and latch "LevelController:inst2|timer[3]~1" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 289
+    Warning (13310): Register "LevelController:inst2|timer[1]" is converted into an equivalent circuit using register "LevelController:inst2|timer[1]~_emulated" and latch "LevelController:inst2|timer[1]~5" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 289
+    Warning (13310): Register "LevelController:inst2|timer[2]" is converted into an equivalent circuit using register "LevelController:inst2|timer[2]~_emulated" and latch "LevelController:inst2|timer[2]~9" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 289
+    Warning (13310): Register "LevelController:inst2|timer[8]" is converted into an equivalent circuit using register "LevelController:inst2|timer[8]~_emulated" and latch "LevelController:inst2|timer[8]~13" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 289
+    Warning (13310): Register "LevelController:inst2|timer[7]" is converted into an equivalent circuit using register "LevelController:inst2|timer[7]~_emulated" and latch "LevelController:inst2|timer[7]~17" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 289
+    Warning (13310): Register "LevelController:inst2|timer[6]" is converted into an equivalent circuit using register "LevelController:inst2|timer[6]~_emulated" and latch "LevelController:inst2|timer[6]~21" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 289
+    Warning (13310): Register "LevelController:inst2|timer[5]" is converted into an equivalent circuit using register "LevelController:inst2|timer[5]~_emulated" and latch "LevelController:inst2|timer[5]~25" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 289
+    Warning (13310): Register "LevelController:inst2|timer[4]" is converted into an equivalent circuit using register "LevelController:inst2|timer[4]~_emulated" and latch "LevelController:inst2|timer[4]~29" File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/Stages/LevelController.sv Line: 289
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "OVGA[26]" is stuck at VCC
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
@@ -3063,9 +3094,9 @@ Info (21057): Implemented 10974 device resources after synthesis - the final res
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 12 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 414 warnings
-    Info: Peak virtual memory: 5061 megabytes
-    Info: Processing ended: Tue Jan 06 22:11:17 2026
-    Info: Elapsed time: 00:01:58
+    Info: Peak virtual memory: 5062 megabytes
+    Info: Processing ended: Wed Jan 07 18:31:43 2026
+    Info: Elapsed time: 00:02:01
     Info: Total CPU time (on all processors): 00:02:17
 
 
