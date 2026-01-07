@@ -1,0 +1,105 @@
+// Address 0: FILLER (1024 bytes of 00 or FF)
+@0000
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+
+
+// Address 0x0400 (Decimal 1024): VALUABLE_1 (Index 1)
+@0400
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff b4 b4 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff b4 fc fc 8c ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff 8c fc fc fc fc ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff d4 fc fc fc fc 8c ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff 8c 8c ff ff ff ff d4 f8 f8 f8 fc 90 ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff 8c fc fc f8 8c ff ff b0 fc fc fc d4 90 ff ff 8c f8 f8 8c ff ff ff ff ff ff ff
+ff ff ff ff ff ff 8c fc fc fc f8 8c 64 f8 fc fd fc d4 b0 ff 8c f8 fc fc 8c ff ff ff ff ff ff ff
+ff ff ff ff ff ff 8c fc f8 fc fc d4 64 f8 f8 fc d4 b0 8c 64 f8 fc fc f8 8c ff ff ff ff ff ff ff
+ff ff ff ff ff 6c fc fc fc fc f8 d4 d4 d4 f8 b0 b0 8c f8 fc fc fc f8 8c ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff 8c f8 fc fc b0 b4 b4 f8 f8 b0 8c b0 f8 f8 fc f8 b0 ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff 64 b0 b0 f8 b0 fc fc f8 b0 8c 8c d4 f8 f8 d4 d4 64 ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff b0 b0 b4 b0 fc fc fc f8 8c d4 f8 fc f8 b0 6c 64 64 ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff 64 64 d4 b4 8c fc fc fc f8 b0 d4 d4 f8 d4 d4 8c 90 64 ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff 64 90 6c 90 8c f8 f8 d4 b0 90 90 f8 f8 8c 90 90 8c 64 ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff 64 8c 8c 90 6c f8 f8 d4 b0 b0 fc fc fc 8c 8c 8c b0 b0 8c ff ff ff ff ff ff
+ff ff ff ff ff ff ff b4 fc fc 8c 8c 90 f8 d4 b0 fc fc f8 f8 6c 8c fc f8 fc 8c ff ff ff ff ff ff
+ff ff ff ff ff ff ff b4 f8 fc f8 8c 8c 90 d4 d4 fc d4 d4 8c 90 d4 fc f8 8c ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff 8c fc fc f8 8c fc fc b0 d4 d4 d4 b0 8c b4 b0 90 90 64 ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff 64 6c b0 90 d4 f8 fc f8 b0 b0 b0 8c 90 b4 8c 64 ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff 64 b0 90 8c fc fc f8 b0 90 8c 90 b4 64 ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff 64 90 90 6c d4 d4 8c 6c 6c 64 ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff 64 64 64 64 ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+
+// Address 0x1000 (Decimal 4096): ROCK_1 (Index 4)
+@1000
+FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 24 24 24 FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+FF FF FF FF FF FF FF FF FF FF FF FF FF 24 24 b6 da b6 24 FF FF FF FF FF FF FF FF FF FF FF FF FF
+FF FF FF FF FF FF FF FF FF FF FF FF 24 b6 da da da da b6 24 FF FF FF FF FF FF FF FF FF FF FF FF
+FF FF FF FF FF FF FF FF FF 24 24 b6 da da da da da da da 6d 24 FF FF FF FF FF FF FF FF FF FF FF
+FF FF FF FF FF FF FF 91 b6 b6 da da da da da da da da da 91 91 24 FF FF FF FF FF FF FF FF FF FF
+FF FF FF FF FF FF 24 da da da da da da da da da da da 91 91 91 6d FF FF FF FF FF FF FF FF FF FF
+FF FF FF FF FF 24 da da da da da da da da da da da da 6d 91 91 91 24 FF FF FF FF FF FF FF FF FF
+FF FF FF FF FF b6 da da da da da da da da da da da da 91 6d b6 b6 24 24 FF FF FF FF FF FF FF FF
+FF FF FF FF FF 91 da da da da 6d 91 da da da da da b6 6d 6d da da da 24 FF FF FF FF FF FF FF FF
+FF FF FF FF FF 24 da da da da da da da da da b6 6d 91 6d 91 da da da da 24 FF FF FF FF FF FF FF
+FF FF FF FF FF 91 91 da da da da da da da da 91 91 6d 6d da da da da da da 6d 24 FF FF FF FF FF
+FF FF FF FF 24 91 6d da da da da da da da da 6d 6d 6d 91 da da da da da da da b6 24 FF FF FF FF
+FF FF FF FF 24 91 24 da da da da da da da da b6 6d 6d 91 da da da da da da da da 91 24 FF FF FF
+FF FF FF 24 91 91 6d b6 da da da da da da da da 91 6d da da da da da da da da b6 91 24 FF FF FF
+FF FF FF 91 91 91 6d b6 da da da da da da da da 6d 91 da da da da da da da da b6 91 91 24 FF FF
+FF FF FF 91 91 91 6d 91 b6 b6 da da da da da 91 da 91 6d b6 da da da da da da da 6d 91 24 FF FF
+FF FF 24 91 91 91 6d 91 91 91 b6 da da da da 91 da da da b6 6d 91 b6 da da da da da 91 6d FF FF
+FF FF 24 91 91 6d 6d 91 91 91 91 91 da da 91 da da da da da da 91 6d 91 b6 b6 da da b6 91 24 FF
+FF FF 24 91 91 6d 6d 91 91 6d 91 91 91 b6 b6 da da da da da da da 91 6d 6d 91 b6 b6 b6 91 24 FF
+FF FF 24 6d 6d b6 da da da da 6d 91 91 6d da da da da da da da da 91 91 6d 6d 91 b6 b6 91 6d FF
+FF FF 91 b6 da da da da da da b6 91 91 6d da da da da da da 91 91 91 91 6d 6d 6d 91 91 91 6d FF
+FF 91 da da da da da da b6 91 b6 b6 6d 6d 91 da da da da b6 91 91 91 91 91 6d 6d 6d 91 91 6d 24
+24 b6 91 b6 da da da da da b6 b6 b6 91 91 91 da da 6d 91 6d 91 91 91 91 91 91 91 6d 6d 91 6d 24
+91 b6 b6 b6 da da da b6 b6 b6 b6 b6 b6 91 6d da b6 b6 b6 6d 91 91 91 91 91 91 91 6d 6d 91 6d 6d
+91 b6 b6 b6 b6 b6 b6 b6 b6 b6 b6 b6 b6 91 6d 91 b6 b6 b6 6d 91 91 91 91 91 91 91 91 6d 91 6d 91
+24 b6 b6 b6 b6 b6 6d 6d 6d 6d 91 91 91 91 6d 6d b6 b6 b6 b6 91 91 91 91 91 91 91 91 91 91 6d 24
+FF 91 b6 b6 b6 b6 b6 b6 b6 b6 b6 6d 91 91 6d 6d b6 b6 b6 b6 91 91 91 91 91 91 91 91 91 6d 6d 24
+FF 6d b6 b6 b6 b6 b6 b6 b6 b6 b6 b6 91 91 6d 6d b6 b6 b6 b6 b6 91 91 91 91 91 91 91 91 6d 24 FF
+FF 24 91 91 91 91 b6 b6 b6 b6 b6 b6 6d 6d 6d 6d b6 b6 b6 b6 b6 91 91 91 91 91 91 91 6d 6d 24 FF
+FF FF 24 24 6d 6d 6d 91 91 91 91 91 91 6d 6d 6d b6 b6 b6 b6 b6 91 91 91 91 6d 6d 6d 6d 24 FF FF
+FF FF FF FF FF FF FF 24 24 24 24 6d 6d 6d 6d 6d 91 91 91 91 b6 6d 6d 6d 6d 6d 24 24 24 FF FF FF
+FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 24 24 24 24 24 FF FF FF FF FF FF FF

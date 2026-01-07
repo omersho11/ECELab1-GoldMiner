@@ -1,5 +1,5 @@
 Flow report for Lab1Demo
-Wed Jan 07 18:36:50 2026
+Wed Jan 07 21:45:42 2026
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,19 +41,19 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Jan 07 18:36:30 2026       ;
+; Flow Status                     ; Successful - Wed Jan 07 21:45:33 2026       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 7,975 / 41,910 ( 19 % )                     ;
-; Total registers                 ; 1011                                        ;
+; Logic utilization (in ALMs)     ; 3,406 / 41,910 ( 8 % )                      ;
+; Total registers                 ; 1153                                        ;
 ; Total pins                      ; 35 / 499 ( 7 % )                            ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 131,072 / 5,662,720 ( 2 % )                 ;
-; Total DSP Blocks                ; 12 / 112 ( 11 % )                           ;
+; Total block memory bits         ; 196,608 / 5,662,720 ( 3 % )                 ;
+; Total DSP Blocks                ; 9 / 112 ( 8 % )                             ;
 ; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                               ;
 ; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                               ;
 ; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                               ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/07/2026 18:29:42 ;
+; Start date & time ; 01/07/2026 21:43:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab1Demo            ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 91755325164.176780338211248            ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 213533737471305.176781502130476        ; --            ; --          ; --         ;
 ; FITTER_EFFORT                       ; Fast Fit                               ; Auto Fit      ; --          ; --         ;
 ; MISC_FILE                           ; RTL/VGA/valX.bsf                       ; --            ; --          ; --         ;
 ; MISC_FILE                           ; RTL/VGA/valX_inst.v                    ; --            ; --          ; --         ;
@@ -105,11 +105,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:58     ; 1.0                     ; 5062 MB             ; 00:02:15                           ;
-; Fitter                    ; 00:04:27     ; 1.5                     ; 8022 MB             ; 00:24:19                           ;
-; Assembler                 ; 00:00:15     ; 1.0                     ; 4922 MB             ; 00:00:08                           ;
-; TimeQuest Timing Analyzer ; 00:00:19     ; 7.5                     ; 5503 MB             ; 00:01:27                           ;
-; Total                     ; 00:06:59     ; --                      ; --                  ; 00:28:09                           ;
+; Analysis & Synthesis      ; 00:00:27     ; 1.0                     ; 4989 MB             ; 00:00:38                           ;
+; Fitter                    ; 00:01:14     ; 1.5                     ; 8065 MB             ; 00:08:58                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 4892 MB             ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 4.0                     ; 5416 MB             ; 00:00:26                           ;
+; Total                     ; 00:01:56     ; --                      ; --                  ; 00:10:09                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,10 +118,10 @@ agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; Bactus           ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; Bactus           ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; Bactus           ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; Bactus           ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-IMBL1LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; DESKTOP-IMBL1LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; DESKTOP-IMBL1LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-IMBL1LM  ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

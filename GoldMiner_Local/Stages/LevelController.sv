@@ -57,23 +57,24 @@ logic remainingObjects;
 
 
 // timeDisplay params
-localparam [10:0] TIMEDISPLAY_WIDTH_X = 80; 	//16 * 5
-localparam [10:0] TIMEDISPLAY_HEIGHT_Y = 32; //32 * 1
 localparam [10:0] TIMEDISPLAY_POS_LEFT = 32;
 localparam [10:0] TIMEDISPLAY_POS_TOP = 32;
-logic [10:0] timeDisplayOffsetX;
-logic [10:0] timeDisplayOffsetY;
-wire timeDisplayInsideRectangle;
+
 wire timeDisplayDR;
 logic [7:0] timeDisplayRGB;
+
+localparam [10:0] SCORE_POS_LEFT = 32;
+localparam [10:0] SCORE_POS_TOP = 64;
+
+wire scoreDisplayDR;
+logic [7:0] scoreDisplayRGB;
 
 
 assign startingNewLevel = (enable && !enable_d);
 									
 									
 GRABBABLE_OBJECT_METADATA activeLevelData [MAX_OBJECTS - 1:0];
-logic [MAX_OBJECTS-1:0] drBus;
-logic [MAX_OBJECTS-1:0] drBusLatch;
+logic [MAX_OBJECTS-1:0] drBus, drBusLatch;
 
 logic [MAX_OBJECTS-1:0] [10:0] valueBus;
 logic [MAX_OBJECTS-1:0] destroyedBus;
@@ -116,66 +117,64 @@ DrawLine lineDrawer (
 	.lineRGB(hookRGB),
 );
 
-
+logic [MAX_OBJECTS-1:0] insideBus,valuePulseBus;
+logic [4:0] busX [MAX_OBJECTS];
+logic [4:0] busY [MAX_OBJECTS];
+logic [3:0] busTex [MAX_OBJECTS];
 
 genvar i;
-generate 
-	for(i=0; i < MAX_OBJECTS; i=i+1) begin : GrabbableObject_GEN	
-		GrabbableObject obj_inst (
-			.clk(clk),
-			.resetN(resetN),
-			.manualReset(startingNewLevel),
-			.idleX(activeLevelData[i].col * 32),
-			.idleY(96 + (activeLevelData[i].row *32)),
-			.objectType(activeLevelData[i].elementType),
-			.pixelX(pixelX),
-			.pixelY(pixelY),
-			.hookX(hookPosX),
-			.hookY(hookPosY),
-			.isHooked(drBusLatch[i] && hookDRLatch),
-			.hookReturned(hookReturned),
-			
-			.value(valueBus[i]),
-			.destroyed(destroyedBus[i]),
-			.dr(drBus[i]),
-			.RGBout(RGBBus[i*8 +: 8])
-		);
-	end
+generate
+    for(i=0; i < MAX_OBJECTS; i=i+1) begin : GrabbableObject_GEN    
+        NewGrabbableObject obj_inst (
+            .clk(clk), .resetN(resetN), .manualReset(startingNewLevel),
+            .idleX(activeLevelData[i].col * 32),
+            .idleY(96 + (activeLevelData[i].row * 32)),
+            .objectType(activeLevelData[i].elementType),
+            .pixelX(pixelX), .pixelY(pixelY),
+            .hookX(hookPosX), .hookY(hookPosY),
+            .isHooked(drBusLatch[i] && hookDRLatch),
+            .hookReturned(hookReturned),
+            .value(valueBus[i]),
+            .destroyed(destroyedBus[i]),
+            // Address outputs to the shared ROM
+            .texToRead(busTex[i]),
+            .addrX(busX[i]), .addrY(busY[i]),
+            .isInside(insideBus[i]),
+				.valuePulse(valuePulseBus[i])
+        );
+    end
 endgenerate
 
+// --- SHARED RESOURCES ---
+logic [3:0] activeTex;
+logic [4:0] activeX, activeY;
+logic anyInside;
 
-// TIMEDISPLAY INSTANTIATION
-//square_object #(
-//	.OBJECT_WIDTH_X(TIMEDISPLAY_WIDTH_X),
-//	.OBJECT_HEIGHT_Y(TIMEDISPLAY_HEIGHT_Y)
-//) timeDisplaySquareObject (
-//	.clk(clk),
-//   .resetN(resetN),
-//	.pixelX(pixelX),
-//	.pixelY(pixelY),
-//	.topLeftX(TIMEDISPLAY_POS_LEFT),
-//	.topLeftY(TIMEDISPLAY_POS_TOP),
-//	
-//	.offsetX(timeDisplayOffsetX),
-//	.offsetY(timeDisplayOffsetY),
-//	.drawingRequest(timeDisplayInsideRectangle),
-//	.RGBout(8'b0)
-//);
-//
-//TimeDisplay #(
-//	.color(8'b11100000)
-//) timeDisplay (
-//	.clk(clk),
-//   .resetN(resetN),
-//   .enable(enable),
-//	.offsetX(timeDisplayOffsetX),
-//	.offsetY(timeDisplayOffsetY),
-//	.InsideRectangle(timeDisplayInsideRectangle),
-//	.timeInSeconds(timer),
-//	
-//	.drawingRequest(timeDisplayDR),
-//	.RGBout(timeDisplayRGB)
-//);
+always_comb begin
+    activeTex = 0; activeX = 0; activeY = 0; anyInside = 0;
+    for(int j=0; j<MAX_OBJECTS; j++) begin
+        if(insideBus[j]) begin
+            activeTex = activeLevelData[j].elementType;
+            activeX = busX[j];
+            activeY = busY[j];
+            anyInside = 1;
+        end
+    end
+end
+
+// Single ROM Instance
+logic [7:0] romColor;
+SpriteRom sharedROM (
+    .clk(clk),
+    .objectType(activeTex),
+    .offsetX(activeX),
+    .offsetY(activeY),
+    .rgb(romColor)
+);
+
+// Final Output Logic
+assign drGrabbableObject = anyInside && (romColor != 8'hFF);
+
 
 TimeDisplay #(
 	.color(8'b11100000)
@@ -194,6 +193,22 @@ TimeDisplay #(
 );
 
 
+FiveDigitNumberDisplay #(
+	.color(8'hFE)
+) scoreDisplay (
+	.clk(clk),
+   .resetN(resetN),
+   .enable(enable),
+	.topLeftX(SCORE_POS_LEFT),
+	.topLeftY(SCORE_POS_TOP),
+	.pixelX(pixelX),
+	.pixelY(pixelY),
+	.number(score[10:0]),
+	
+	.drawingRequest(scoreDisplayDR),
+	.RGBout(scoreDisplayRGB)
+);
+
 // LEVELMAKER INSTANTIATION
 LevelMaker levelMaker (
 	.clk(clk),
@@ -206,22 +221,6 @@ LevelMaker levelMaker (
 	.levelValue(levelValue),
 	.finishedGenerating(finishedGenerating)
 );
-
-// --- 3. OUTPUT MULTIPLEXING ---
-
-//logic [$clog2(MAX_OBJECTS)-1:0] activeObj;
-//logic anyObj;
-
-//always_comb begin
-//    anyObj = 0;
-//    activeObj = 0;
-//    for (int j=0; j<MAX_OBJECTS; j++) begin
-//        if (drBus[j] && !anyObj) begin
-//            activeObj = j;
-//            anyObj = 1;
-//        end
-//    end
-//end
 
 
 
@@ -258,65 +257,80 @@ always_ff @(posedge clk or negedge resetN) begin
             collisionOccurred <= 1'b0; // Reset at the top of every frame
 				drBusLatch <= 0;
 				hookDRLatch<= 0;
-        end else if (hookDR && (|drBus)) begin
+        end else if (hookDR && (|insideBus)) begin
             collisionOccurred <= 1'b1; // Latch the collision if signals overlap
-				drBusLatch <= drBus;
+				drBusLatch <= insideBus;
 				hookDRLatch <= hookDR;
         end
 		  else begin 
-				remainingObjects <= remainingObjects || (|drBus);
+				remainingObjects <= remainingObjects || (|insideBus);
 		  end
 		  
     end
 end
 
+// --- REPLACED DRAWING MUX ---
+always_comb begin
+	// Default values (Background/Transparent)
+	levelDR = 0;
+	RGBout  = 8'hFF;
+	
+	if(enable && currentLevelGenerated) begin
+		// Priority Mux (Top layer to bottom layer)
+		if (timeDisplayDR) begin
+			levelDR = 1;
+			RGBout  = timeDisplayRGB;
+		end 
+		else if (scoreDisplayDR) begin
+			levelDR = 1;
+			RGBout  = scoreDisplayRGB;
+		end 
+		else if (hookDR) begin
+			levelDR = 1;
+			RGBout  = hookRGB;
+		end 
+		else if (anyInside) begin
+        // Check if the ROM pixel is transparent
+			if (romColor != 8'hFF) begin
+				levelDR = 1;
+				RGBout  = romColor;
+			end
+		end
+	end
+end
+
+// --- SCORE ACCUMULATION ---
+// Move this to a separate block to avoid interfering with drawing
+logic [10:0] totalValuePerCycle;
+
+always_comb begin
+    totalValuePerCycle = 0;
+    for (int k = 0; k < MAX_OBJECTS; k++) begin
+        if (valuePulseBus[k]) begin // Check the new pulse signal
+            totalValuePerCycle = totalValuePerCycle + valueBus[k];
+        end
+    end
+end
+
+always_ff @(posedge clk or negedge resetN) begin
+    if (!resetN) scoreIncrease <= 0;
+    else scoreIncrease <= totalValuePerCycle; 
+end
 
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin  
 		lastLevelEnded <= 0;
 		currentLevel <= 0;
-
-		levelDR <= 0;
-		RGBout <= 8'h00;
 		
 		stageEnded <= 0;
 		stagePassed <= 0;
 		
 		timer <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
-		scoreIncrease <= 0;		
 		
 	end
    else if(enable && currentLevelGenerated) begin
       stageEnded <= 0;
 		stagePassed <= debugAlwaysWin;
-      levelDR <= 0;
-      RGBout <= 8'hFF;
-		scoreIncrease <= 0;
-		// MUX all drawing requests:
-//		if (anyObj) begin
-//			levelDR <= 1;
-//			RGBout <= RGBBus[activeObj*8 +: 8];
-//		end
-		
-      for(int j = 0; j < MAX_OBJECTS; j = j + 1) begin
-          if(drBus[j]) begin
-              levelDR <= 1;
-              RGBout <= RGBBus[j*8 +: 8];
-          end
-			 if (valueBus[j] != 0) begin
-				scoreIncrease <= valueBus[j];
-			 end;
-      end
-		
-		if (hookDR) begin
-			levelDR <= 1;
-			RGBout <= hookRGB;
-		end
-		
-		if (timeDisplayDR) begin
-			levelDR <= 1;
-			RGBout <= timeDisplayRGB;
-		end
 		
 		if ((&destroyedBus) === 1'b1) begin 
 			stageEnded <= 1;
@@ -326,7 +340,6 @@ always_ff @(posedge clk or negedge resetN) begin
 		// Timer managment:
 		if (startingNewLevel) begin
 			timer <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
-			scoreIncrease <= 0;
 		end
 		else if (oneSecPulse) begin	
 			timer <= timer - 1;
@@ -334,7 +347,8 @@ always_ff @(posedge clk or negedge resetN) begin
 				stageEnded <= 1;
 				currentLevel <= currentLevel + 1;
 			end;
-		end		  
+		end	
+		
 		  
     end	
 	 else begin
