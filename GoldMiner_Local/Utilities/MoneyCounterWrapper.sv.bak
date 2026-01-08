@@ -1,0 +1,21 @@
+module MoneyCounterWrapper (
+    input  logic clk,
+    input  logic resetN,
+    input  logic [19:0] increase, // You still have to declare ports explicitly
+    input  logic [19:0] decrease,
+    output logic [19:0] value
+);
+    // Import package to get the constant
+    import GlobalsPKG::*; 
+
+    // Instantiate the generic counter using the package width
+    Counter #(
+        .WIDTH($bits(MONEY)) 
+    ) counter_inst (
+        .clk(clk),
+        .resetN(resetN),
+        .increase(increase),
+        .decrease(decrease),
+        .value(value)
+    );
+endmodule

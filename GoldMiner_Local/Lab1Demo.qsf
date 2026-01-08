@@ -47,7 +47,6 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name SMART_RECOMPILE ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 16
 set_location_assignment PIN_AF14 -to CLOCK_50
-set_location_assignment PIN_AA14 -to KEY[2]
 set_location_assignment PIN_AA15 -to KEY[3]
 set_location_assignment PIN_AB30 -to SW[0]
 set_location_assignment PIN_Y27 -to SW[1]
@@ -164,6 +163,47 @@ set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION OFF
 set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING OFF
 set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT FAST
 set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[24]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[25]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[27]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[28]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to resetN_pin
+set_location_assignment PIN_AK4 -to skipStageKey
+set_location_assignment PIN_AA14 -to grabAllObjectsKey
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to skipStageKey
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE GameControl/NewGrabbableObject.sv
 set_global_assignment -name BDF_FILE RTL/VGA/TOP_VGA_DEMO_KBD.bdf
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/game_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/smiley_move.sv
@@ -204,45 +244,11 @@ set_global_assignment -name SIP_FILE CLK_31P5.sip
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/MyConstant.sv
 set_global_assignment -name CDF_FILE output_files/Chain2.cdf
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/old_objects_mux.sv
-set_global_assignment -name SIGNALTAP_FILE RANDOM_SIGNAL_TAP.stp
 set_global_assignment -name BDF_FILE RTL/VGA/TOP_VGA_DEMO_KBD_old.bdf
 set_global_assignment -name SYSTEMVERILOG_FILE GameControl/StageController.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Stages/MainMenu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Stages/LevelController.sv
 set_global_assignment -name BDF_FILE RTL/GameLoop/main.bdf
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[10]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[11]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[12]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[13]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[14]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[15]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[16]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[17]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[18]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[19]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[20]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[21]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[22]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[23]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[24]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[25]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[26]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[27]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[28]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to resetN_pin
 set_global_assignment -name SYSTEMVERILOG_FILE Decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Bitmaps/MainMenuBitmap.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Bitmaps/GameLoopBitmap.sv
@@ -260,17 +266,20 @@ set_global_assignment -name SYSTEMVERILOG_FILE Stages/GameEndMenu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/VectorOr.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/OneSecPulse.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Graphics/TimeDisplay.sv
-set_location_assignment PIN_AK4 -to skipStageKey
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/Pulsinator.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/Counter.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/Random.sv
 set_global_assignment -name SYSTEMVERILOG_FILE GameControl/LevelMaker.sv
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/GlobalsPKG.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/FiveDigitDisplay.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Graphics/FiveDigitNumberDisplay.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Graphics/SpriteRom.sv
-set_global_assignment -name SYSTEMVERILOG_FILE GameControl/NewGrabbableObject'.sv
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SYSTEMVERILOG_FILE Stages/Shop.sv
+set_global_assignment -name SYSTEMVERILOG_FILE GameControl/GameStatsManager.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Utilities/MoneyCounterWrapper.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Utilities/ScoreCounterWrapper.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

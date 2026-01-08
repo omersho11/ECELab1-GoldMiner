@@ -1,0 +1,123 @@
+module Shop(	
+	input	logic	clk,
+	input	logic	resetN,
+	input logic enable,
+	input logic [3:0] numberKeyPressed, // 1-6
+	input GlobalsPKG::MONEY money,      // Current wallet
+	input logic enterKeyPressed,
+	
+	// --- Outputs ---
+	output logic drStage,               // UI Draw Request
+	output logic stageEnded,            // Exit Shop
+	
+	// Money Transaction
+	output GlobalsPKG::MONEY spendAmount,
+	output logic spendPulse,
+	
+	// Stats Transaction (To StatsManager)
+	output GlobalsPKG::SHOP_ITEM_T itemToUpgrade,
+	output logic upgradeRequestPulse
+);
+
+	import GlobalsPKG::*;
+
+	// --- Prices ---
+	localparam MONEY COST_SPEED_UP    = 20'd50;
+	localparam MONEY COST_LUCK_UP     = 20'd100;
+	localparam MONEY COST_MULTIPLIER  = 20'd500;
+	localparam MONEY COST_ROTATION    = 20'd30;
+
+	// --- Key Logic ---
+	logic [3:0] lastKey;
+	logic keyPulse;
+	logic enterLast;
+	logic enterPulse;
+
+	// Edge detection for keys
+	always_ff @(posedge clk or negedge resetN) begin
+		if(!resetN) begin 
+			lastKey <= 0; 
+			enterLast <= 0;
+		end else begin 
+			lastKey <= numberKeyPressed; 
+			enterLast <= enterKeyPressed;
+		end
+	end
+	assign keyPulse   = (numberKeyPressed != 0) && (numberKeyPressed != lastKey);
+	assign enterPulse = (enterKeyPressed && !enterLast);
+
+
+	// --- Transaction Logic ---
+	always_ff @(posedge clk or negedge resetN) begin
+		if(!resetN) begin
+			spendAmount <= 0;
+			spendPulse  <= 0;
+			upgradeRequestPulse <= 0;
+			itemToUpgrade <= ITEM_NONE;
+			stageEnded <= 0;
+			
+		end else if (enable) begin
+			// Default pulses to 0 every cycle
+			spendPulse <= 0;
+			upgradeRequestPulse <= 0;
+			itemToUpgrade <= ITEM_NONE; // Clear item bus
+			stageEnded <= 0; // Default
+			
+			if (keyPulse) begin
+				case(numberKeyPressed)
+					4'd1: begin // BUY EXTENSION SPEED
+						if (money >= COST_SPEED_UP) begin
+							spendAmount <= COST_SPEED_UP;
+							spendPulse  <= 1; // Take Money
+							
+							itemToUpgrade <= ITEM_EXT_SPEED;
+							upgradeRequestPulse <= 1; // Add Stat
+						end
+					end
+					
+					4'd2: begin // BUY LUCK
+						if (money >= COST_LUCK_UP) begin
+							spendAmount <= COST_LUCK_UP;
+							spendPulse  <= 1;
+							
+							itemToUpgrade <= ITEM_LUCK;
+							upgradeRequestPulse <= 1;
+						end
+					end
+					
+					4'd3: begin // BUY MULTIPLIER
+						if (money >= COST_MULTIPLIER) begin
+							spendAmount <= COST_MULTIPLIER;
+							spendPulse  <= 1;
+							
+							itemToUpgrade <= ITEM_MULTIPLIER;
+							upgradeRequestPulse <= 1;
+						end
+					end
+					
+					4'd4: begin // BUY ROTATION SPEED
+						if (money >= COST_ROTATION) begin
+							spendAmount <= COST_ROTATION;
+							spendPulse  <= 1;
+							
+							itemToUpgrade <= ITEM_ROT_SPEED;
+							upgradeRequestPulse <= 1;
+						end
+					end
+					
+					default: ;
+				endcase
+			end
+			
+			if (enterPulse) stageEnded <= 1;
+			
+		end else begin
+			spendPulse <= 0;
+			upgradeRequestPulse <= 0;
+			stageEnded <= 0;
+		end
+	end
+	
+	assign drStage = enable; // Simple background draw request
+
+endmodule

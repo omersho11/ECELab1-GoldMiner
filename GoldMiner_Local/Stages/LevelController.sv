@@ -16,8 +16,10 @@ module LevelController (
 	 input logic [19:0] score,
 	 input logic [19:0] money,
 	 input logic [3:0] playerLuckStat,
+	 input logic [19:0] scoreMultiplier,
 	 input logic debugSkipLevel,
 	 input logic startingNewGame,
+	 input logic [3:0] currentLevel,
 	 
 	 
     output logic levelDR,
@@ -25,14 +27,14 @@ module LevelController (
     output logic stagePassed,
 	 output logic stageEnded,
     output logic lastLevelEnded,
-	 output logic [19:0] scoreIncrease
+	 output logic [19:0] scoreIncrease,
+	 output logic [19:0] moneyIncrease
 	 
 );
 
 import GlobalsPKG::*;
 
 logic [8:0] timer = MIN_LEVEL_TIME;
-int currentLevel = 0;
 logic enable_d; // Delayed version of enable to detect the edge
 
 // level creation params
@@ -57,17 +59,23 @@ logic remainingObjects;
 
 
 // timeDisplay params
-localparam [10:0] TIMEDISPLAY_POS_LEFT = 32;
-localparam [10:0] TIMEDISPLAY_POS_TOP = 32;
+localparam [10:0] TIMEDISPLAY_POS_LEFT = 16;
+localparam [10:0] TIMEDISPLAY_POS_TOP = 16;
 
 wire timeDisplayDR;
 logic [7:0] timeDisplayRGB;
 
-localparam [10:0] SCORE_POS_LEFT = 32;
-localparam [10:0] SCORE_POS_TOP = 64;
+localparam [10:0] SCORE_POS_LEFT = 16;
+localparam [10:0] SCORE_POS_TOP = 48;
 
 wire scoreDisplayDR;
 logic [7:0] scoreDisplayRGB;
+
+localparam [10:0] MONEY_POS_LEFT = 16;
+localparam [10:0] MONEY_POS_TOP = 80;
+
+wire moneyDisplayDR;
+logic [7:0] moneyDisplayRGB;
 
 
 assign startingNewLevel = (enable && !enable_d);
@@ -80,7 +88,7 @@ logic [MAX_OBJECTS-1:0] [10:0] valueBus;
 logic [MAX_OBJECTS-1:0] destroyedBus;
 logic [(MAX_OBJECTS*8)-1:0] RGBBus;
 
-
+assign moneyIncrease = scoreIncrease;
 
 // --- 2. OBJECT INSTANTIATION ---
 Hook #(
@@ -128,12 +136,14 @@ generate
         NewGrabbableObject obj_inst (
             .clk(clk), .resetN(resetN), .manualReset(startingNewLevel),
             .idleX(activeLevelData[i].col * 32),
-            .idleY(96 + (activeLevelData[i].row * 32)),
+            .idleY((activeLevelData[i].row * 32)),
             .objectType(activeLevelData[i].elementType),
             .pixelX(pixelX), .pixelY(pixelY),
             .hookX(hookPosX), .hookY(hookPosY),
-            .isHooked(drBusLatch[i] && hookDRLatch),
-            .hookReturned(hookReturned),
+            .isHooked((drBusLatch[i] && hookDRLatch)|| debugSkipLevel),
+            .hookReturned(hookReturned || debugSkipLevel),
+				
+				//outputs
             .value(valueBus[i]),
             .destroyed(destroyedBus[i]),
             // Address outputs to the shared ROM
@@ -207,6 +217,22 @@ FiveDigitNumberDisplay #(
 	
 	.drawingRequest(scoreDisplayDR),
 	.RGBout(scoreDisplayRGB)
+);
+
+FiveDigitNumberDisplay #(
+	.color(8'h1C)
+) moneyDisplay (
+	.clk(clk),
+   .resetN(resetN),
+   .enable(enable),
+	.topLeftX(MONEY_POS_LEFT),
+	.topLeftY(MONEY_POS_TOP),
+	.pixelX(pixelX),
+	.pixelY(pixelY),
+	.number(money[10:0]),
+	
+	.drawingRequest(moneyDisplayDR),
+	.RGBout(moneyDisplayRGB)
 );
 
 // LEVELMAKER INSTANTIATION
@@ -285,6 +311,10 @@ always_comb begin
 			levelDR = 1;
 			RGBout  = scoreDisplayRGB;
 		end 
+		else if (moneyDisplayDR) begin
+			levelDR = 1;
+			RGBout  = moneyDisplayRGB;
+		end 
 		else if (hookDR) begin
 			levelDR = 1;
 			RGBout  = hookRGB;
@@ -314,13 +344,12 @@ end
 
 always_ff @(posedge clk or negedge resetN) begin
     if (!resetN) scoreIncrease <= 0;
-    else scoreIncrease <= totalValuePerCycle; 
+    else scoreIncrease <= 1*totalValuePerCycle; 
 end
 
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin  
 		lastLevelEnded <= 0;
-		currentLevel <= 0;
 		
 		stageEnded <= 0;
 		stagePassed <= 0;
@@ -332,10 +361,9 @@ always_ff @(posedge clk or negedge resetN) begin
       stageEnded <= 0;
 		stagePassed <= debugAlwaysWin;
 		
-		if ((&destroyedBus) === 1'b1) begin 
+		if ((&destroyedBus) == 1'b1) begin 
 			stageEnded <= 1;
 			stagePassed <= 1;
-			currentLevel <= currentLevel + 1;
 		end
 		// Timer managment:
 		if (startingNewLevel) begin
@@ -343,9 +371,8 @@ always_ff @(posedge clk or negedge resetN) begin
 		end
 		else if (oneSecPulse) begin	
 			timer <= timer - 1;
-			if (timer == 1 || debugSkipLevel) begin // == 1 and not 0 to avoid timer == 0 race condition
+			if (timer == 1) begin // == 1 and not 0 to avoid timer == 0 race condition
 				stageEnded <= 1;
-				currentLevel <= currentLevel + 1;
 			end;
 		end	
 		

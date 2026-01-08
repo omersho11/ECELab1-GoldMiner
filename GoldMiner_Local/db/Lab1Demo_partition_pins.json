@@ -124,6 +124,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "grabAllObjectsKey",
+					"strict" : false
+				},
+				{
 					"name" : "SW[0]",
 					"strict" : false
 				}

@@ -26,7 +26,7 @@ module NewGrabbableObject (
     // State Machine
     always_ff @(posedge clk or negedge resetN) begin
         if(!resetN) begin
-            state <= STATE_IDLE;
+				state <= (objectType == FILLER ? STATE_DESTROYED : STATE_IDLE);
             value <= 0;
 				destroyed <= 0;
 				valuePulse <= 0;
@@ -34,7 +34,7 @@ module NewGrabbableObject (
 				valuePulse <= 0;
 		  
 				if (manualReset) begin
-					state <= STATE_IDLE;
+					state <= (objectType == FILLER ? STATE_DESTROYED : STATE_IDLE);
 					value <= 0;
 					destroyed <= 0;
 				end
