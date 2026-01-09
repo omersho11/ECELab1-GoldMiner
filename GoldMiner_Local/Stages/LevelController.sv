@@ -13,8 +13,6 @@ module LevelController (
 	 input logic [8:0] extentionSpeed,
 	 input logic [8:0] rotationSpeed,
 	 
-	 input logic [19:0] score,
-	 input logic [19:0] money,
 	 input logic [3:0] playerLuckStat,
 	 input logic [19:0] scoreMultiplier,
 	 input logic debugSkipLevel,
@@ -28,7 +26,8 @@ module LevelController (
 	 output logic stageEnded,
     output logic lastLevelEnded,
 	 output logic [19:0] scoreIncrease,
-	 output logic [19:0] moneyIncrease
+	 output logic [19:0] moneyIncrease,
+	 output logic [3:0] levelIncrease
 	 
 );
 
@@ -64,19 +63,6 @@ localparam [10:0] TIMEDISPLAY_POS_TOP = 16;
 
 wire timeDisplayDR;
 logic [7:0] timeDisplayRGB;
-
-localparam [10:0] SCORE_POS_LEFT = 16;
-localparam [10:0] SCORE_POS_TOP = 48;
-
-wire scoreDisplayDR;
-logic [7:0] scoreDisplayRGB;
-
-localparam [10:0] MONEY_POS_LEFT = 16;
-localparam [10:0] MONEY_POS_TOP = 80;
-
-wire moneyDisplayDR;
-logic [7:0] moneyDisplayRGB;
-
 
 assign startingNewLevel = (enable && !enable_d);
 									
@@ -203,38 +189,6 @@ TimeDisplay #(
 );
 
 
-FiveDigitNumberDisplay #(
-	.color(8'hFE)
-) scoreDisplay (
-	.clk(clk),
-   .resetN(resetN),
-   .enable(enable),
-	.topLeftX(SCORE_POS_LEFT),
-	.topLeftY(SCORE_POS_TOP),
-	.pixelX(pixelX),
-	.pixelY(pixelY),
-	.number(score[10:0]),
-	
-	.drawingRequest(scoreDisplayDR),
-	.RGBout(scoreDisplayRGB)
-);
-
-FiveDigitNumberDisplay #(
-	.color(8'h1C)
-) moneyDisplay (
-	.clk(clk),
-   .resetN(resetN),
-   .enable(enable),
-	.topLeftX(MONEY_POS_LEFT),
-	.topLeftY(MONEY_POS_TOP),
-	.pixelX(pixelX),
-	.pixelY(pixelY),
-	.number(money[10:0]),
-	
-	.drawingRequest(moneyDisplayDR),
-	.RGBout(moneyDisplayRGB)
-);
-
 // LEVELMAKER INSTANTIATION
 LevelMaker levelMaker (
 	.clk(clk),
@@ -307,14 +261,6 @@ always_comb begin
 			levelDR = 1;
 			RGBout  = timeDisplayRGB;
 		end 
-		else if (scoreDisplayDR) begin
-			levelDR = 1;
-			RGBout  = scoreDisplayRGB;
-		end 
-		else if (moneyDisplayDR) begin
-			levelDR = 1;
-			RGBout  = moneyDisplayRGB;
-		end 
 		else if (hookDR) begin
 			levelDR = 1;
 			RGBout  = hookRGB;
@@ -350,38 +296,49 @@ end
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin  
 		lastLevelEnded <= 0;
-		
+
 		stageEnded <= 0;
 		stagePassed <= 0;
-		
+
 		timer <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
-		
-	end
-   else if(enable && currentLevelGenerated) begin
-      stageEnded <= 0;
-		stagePassed <= debugAlwaysWin;
-		
-		if ((&destroyedBus) == 1'b1) begin 
-			stageEnded <= 1;
-			stagePassed <= 1;
-		end
-		// Timer managment:
-		if (startingNewLevel) begin
-			timer <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
-		end
-		else if (oneSecPulse) begin	
-			timer <= timer - 1;
-			if (timer == 1) begin // == 1 and not 0 to avoid timer == 0 race condition
-				stageEnded <= 1;
-			end;
-		end	
-		
-		  
-    end	
-	 else begin
+
+	end else begin
 		stageEnded <= 0;
-	 end
+		
+		if(enable && currentLevelGenerated) begin
+			stagePassed <= debugAlwaysWin;
+
+			if ((&destroyedBus) == 1'b1) begin 
+				stageEnded <= 1;
+				stagePassed <= 1;
+			end
+			// Timer managment:
+			if (startingNewLevel) begin
+				timer <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
+			end
+			else if (oneSecPulse) begin	
+				timer <= timer - 1;
+				if (timer == 1) begin // == 1 and not 0 to avoid timer == 0 race condition
+					stageEnded <= 1;
+					
+				end
+			end	
+		end 
+	end
 end
+
+
+// For detecting when to increase level:
+logic stageEnded_d;
+
+always_ff @(posedge clk or negedge resetN) begin
+    if (!resetN)
+        stageEnded_d <= 0;
+    else
+        stageEnded_d <= stageEnded;
+end
+
+assign levelIncrease = {3'b000, (stageEnded & !stageEnded_d)};
 
 endmodule
 

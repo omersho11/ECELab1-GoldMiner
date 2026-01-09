@@ -120,11 +120,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "skipStageKey",
+					"name" : "grabAllObjectsKey",
 					"strict" : false
 				},
 				{
-					"name" : "grabAllObjectsKey",
+					"name" : "skipStageKey",
 					"strict" : false
 				},
 				{

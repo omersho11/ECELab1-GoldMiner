@@ -15,6 +15,7 @@ module	StageController	(
 	
 	assign stage = stageSM;
 	
+	
 	always_ff@(posedge clk or negedge resetN)
 	begin
 		if(!resetN)
