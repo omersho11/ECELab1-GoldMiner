@@ -8,10 +8,14 @@ module LevelMaker (
 //	output LEVEL_ELEMENTS levelData [299:0], // flattened
 	output GRABBABLE_OBJECT_METADATA elementsData [MAX_OBJECTS - 1:0],
 	output logic [19:0] levelValue,
-	output logic finishedGenerating
+	output logic finishedGeneratingPulse
 );
 
 import GlobalsPKG::*;
+
+logic finishedGenerating;
+logic finishedGenerating_d;
+assign finishedGeneratingPulse = (finishedGenerating && (!finishedGenerating_d));
 
 logic [299:0] mask;
 
@@ -58,42 +62,45 @@ end
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin
 		finishedGenerating <= 0;
+		finishedGenerating_d <= 0;
 		
-	end else if (generateNewLevel) begin
-		mask <= 300'b0;
-		overallLevelValue <= 0;
-		amountOfPlacedElements <= 0;
-		finishedGenerating <= 0;
-		maxLevelElementCount <= 5 + randomVal[2:0] + levelIndex;
+	end else begin
+		finishedGenerating_d <= finishedGenerating;
 		
-	end else if (amountOfPlacedElements >= maxLevelElementCount) begin 
-		// Iterate through the entire constant range
-		for (int i = 0; i < MAX_OBJECTS; i = i + 1) begin
-			 // Use an 'if' to create the conditional logic for each slot
-			 if (i >= maxLevelElementCount) begin
-				  elementsData[i] <= '{elementType: FILLER, row: 0, col: 0};
-			 end
+		if (generateNewLevel) begin
+			mask <= 300'b0;
+			overallLevelValue <= 0;
+			amountOfPlacedElements <= 0;
+			finishedGenerating <= 0;
+			finishedGenerating_d <= 0;
+			maxLevelElementCount <= 5 + randomVal[2:0] + levelIndex;
+			
+		end else if (amountOfPlacedElements >= maxLevelElementCount) begin 
+			// Iterate through the entire constant range
+			for (int i = 0; i < MAX_OBJECTS; i = i + 1) begin
+				 // Use an 'if' to create the conditional logic for each slot
+				 if (i >= maxLevelElementCount) begin
+					  elementsData[i] <= '{elementType: FILLER, row: 0, col: 0};
+				 end
+			end
+			finishedGenerating <= 1;
+		end else if (mask[currentIndex] == 0) begin
+			
+			
+			if (truncatedRand < rockSpawnWeight)
+				elementsData[amountOfPlacedElements] <= '{elementType: ROCK_1, row: randRow, col: randCol};
+			else if (truncatedRand < val1SpawnWeight)
+				elementsData[amountOfPlacedElements] <= '{elementType: VALUABLE_1, row: randRow, col: randCol};
+			else if (truncatedRand < val2SpawnWeight)
+				elementsData[amountOfPlacedElements] <= '{elementType: VALUABLE_2, row: randRow, col: randCol};
+			else if (truncatedRand < val3SpawnWeight)
+				elementsData[amountOfPlacedElements] <= '{elementType: VALUABLE_3, row: randRow, col: randCol};
+			
+			if (truncatedRand <= val3SpawnWeight) begin
+				amountOfPlacedElements <= amountOfPlacedElements + 1;
+				mask[currentIndex] <= 1;
+			end
 		end
-		finishedGenerating <= 1;
-	end else if (mask[currentIndex] == 0) begin
-		
-		
-		if (truncatedRand < rockSpawnWeight)
-			elementsData[amountOfPlacedElements] <= '{elementType: ROCK_1, row: randRow, col: randCol};
-		else if (truncatedRand < val1SpawnWeight)
-			elementsData[amountOfPlacedElements] <= '{elementType: VALUABLE_1, row: randRow, col: randCol};
-		else if (truncatedRand < val2SpawnWeight)
-			elementsData[amountOfPlacedElements] <= '{elementType: VALUABLE_2, row: randRow, col: randCol};
-		else if (truncatedRand < val3SpawnWeight)
-			elementsData[amountOfPlacedElements] <= '{elementType: VALUABLE_3, row: randRow, col: randCol};
-		
-		if (truncatedRand <= val3SpawnWeight) begin
-			amountOfPlacedElements <= amountOfPlacedElements + 1;
-			mask[currentIndex] <= 1;
-		end
-		
-		
-		
 	end
 end
 

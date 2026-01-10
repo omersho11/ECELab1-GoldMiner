@@ -32,6 +32,7 @@ module NewGrabbableObject (
 				valuePulse <= 0;
         end else begin
 				valuePulse <= 0;
+				destroyed <= 0;
 		  
 				if (manualReset) begin
 					state <= (objectType == FILLER ? STATE_DESTROYED : STATE_IDLE);

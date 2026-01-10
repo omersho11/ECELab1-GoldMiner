@@ -14,6 +14,9 @@ module	StageController	(
 	
 	
 	assign stage = stageSM;
+	logic stageEnded_d;
+	logic stageEndedPulse;
+	assign stageEndedPulse = (stageEnded && (!stageEnded_d));
 	
 	
 	always_ff@(posedge clk or negedge resetN)
@@ -22,12 +25,14 @@ module	StageController	(
 		begin  
 				stageSM <= S_MAIN_MENU;
 				startingNewGame <= 1;
+				stageEnded_d <= 0;
 		end
 		
 		else begin 
+			stageEnded_d <= stageEnded;
 			startingNewGame <= 0;
 			
-			if(stageEnded) begin
+			if(stageEndedPulse) begin
 				case (stageSM) 
 					S_MAIN_MENU: begin
 						stageSM <= S_LEVEL;

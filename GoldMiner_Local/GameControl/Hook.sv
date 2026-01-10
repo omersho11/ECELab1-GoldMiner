@@ -68,42 +68,44 @@ module Hook #(
 				
             frame_divider <= 0;
         end else if (enable && startOfFrame) begin
-//				isHookOut_d <= isHookOut;
-				hookReturnedPulse <= 0;
-            frame_divider <= frame_divider + 1;
-            // Only update angle every 4th frame to prevent "too fast" rotation
-				isHookOut <= isHookOut || sendHook;
-			   isHookRetracting <= isHookRetracting || forceReturn;
+		  		isHookOut <= isHookOut || sendHook;
+				
+				if (startOfFrame) begin
+					hookReturnedPulse <= 0;
+					frame_divider <= frame_divider + 1;
+					// Only update angle every 4th frame to prevent "too fast" rotation
+					isHookRetracting <= isHookRetracting || forceReturn;
 
-            if (frame_divider == 0) begin
-                if (angle >= maxAngle) begin
-                    direction <= -1;
-					 end
-					 if (angle <= minAngle) begin
-						  direction <= 1;
-                end
-					 if (isHookOut) begin
-						  angle <= angle;
-						  length <= (isHookRetracting) ? length - extentionSpeed : length + extentionSpeed;
+					if (frame_divider == 0) begin
+						 if (angle >= maxAngle) begin
+							  direction <= -1;
+						 end
+						 if (angle <= minAngle) begin
+							  direction <= 1;
+						 end
+						 if (isHookOut) begin
+							  angle <= angle;
+							  length <= (isHookRetracting) ? length - extentionSpeed : length + extentionSpeed;
 
-						  if (length >= MAX_LENGTH) begin
-								isHookRetracting <= 1;
-								length <= MAX_LENGTH;
-						  end
-						  if (length < MIN_LENGTH && isHookRetracting) begin
-								isHookRetracting <= 0;
-								isHookOut <= 0;
-								hookReturnedPulse <= 1;
-								length <= MIN_LENGTH;
-						  end
-						  if (isNotInBoundingBox) isHookRetracting <= 1;
-						  
-						  
-					 end else begin
-						  angle <= angle + rotationSpeed*direction; 
-					 end
+							  if (length >= MAX_LENGTH) begin
+									isHookRetracting <= 1;
+									length <= MAX_LENGTH;
+							  end
+							  if (length < MIN_LENGTH && isHookRetracting) begin
+									isHookRetracting <= 0;
+									isHookOut <= 0;
+									hookReturnedPulse <= 1;
+									length <= MIN_LENGTH;
+							  end
+							  if (isNotInBoundingBox) isHookRetracting <= 1;
+							  
+							  
+						 end else begin
+							  angle <= angle + rotationSpeed*direction; 
+						 end
 
-            end
+					end
+				end
         end
 		  else if(!enable) begin
 				length <= MIN_LENGTH;

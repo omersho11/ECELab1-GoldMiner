@@ -32,7 +32,7 @@ CLOCK_50 => CLK_31P5:inst7.refclk
 resetN_pin => inst3.IN0
 PS2_CLK => TOP_KBD:inst5.PS2_CLK
 PS2_DAT => TOP_KBD:inst5.PS2_DAT
-SW[0] => LevelController:inst2.debugAlwaysWin
+SW[0] => LevelController:inst42.debugAlwaysWin
 grabAllObjectsKey => inst25.IN0
 skipStageKey => inst21.IN0
 
@@ -516,17 +516,15 @@ out[15] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|StageController:inst1
+clk => stageEnded_d.CLK
 clk => startingNewGame~reg0.CLK
 clk => stageSM~1.DATAIN
+resetN => stageEnded_d.ACLR
 resetN => startingNewGame~reg0.PRESET
 resetN => stageSM~3.DATAIN
 startOfFrame => ~NO_FANOUT~
-stageEnded => stageSM.OUTPUTSELECT
-stageEnded => stageSM.OUTPUTSELECT
-stageEnded => stageSM.OUTPUTSELECT
-stageEnded => stageSM.OUTPUTSELECT
-stageEnded => stageSM.OUTPUTSELECT
-stageEnded => startingNewGame.OUTPUTSELECT
+stageEnded => stageEndedPulse.IN1
+stageEnded => stageEnded_d.DATAIN
 playerWon => Selector0.IN3
 playerWon => stageSM.DATAB
 stage[0] <= stage.DB_MAX_OUTPUT_PORT_TYPE
@@ -1513,7 +1511,7 @@ value[18] <= value[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 value[19] <= value[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2
+|main|LevelController:inst42
 clk => clk.IN1
 resetN => NewGrabbableObject:GrabbableObject_GEN[0].obj_inst.resetN
 resetN => NewGrabbableObject:GrabbableObject_GEN[1].obj_inst.resetN
@@ -1556,6 +1554,8 @@ resetN => scoreIncrease[16]~reg0.ACLR
 resetN => scoreIncrease[17]~reg0.ACLR
 resetN => scoreIncrease[18]~reg0.ACLR
 resetN => scoreIncrease[19]~reg0.ACLR
+resetN => enable_d.ACLR
+resetN => stageEnded_d.ACLR
 resetN => timer[0].ACLR
 resetN => timer[1].ALOAD
 resetN => timer[2].ALOAD
@@ -1592,8 +1592,6 @@ resetN => drBusLatch[19].ACLR
 resetN => hookCollided~reg0.ACLR
 resetN => currentLevelGenerated.ACLR
 resetN => generateNewLevel.ACLR
-resetN => enable_d.ACLR
-resetN => stageEnded_d.ACLR
 debugAlwaysWin => stagePassed.DATAA
 pixelX[0] => NewGrabbableObject:GrabbableObject_GEN[0].obj_inst.pixelX[0]
 pixelX[0] => NewGrabbableObject:GrabbableObject_GEN[1].obj_inst.pixelX[0]
@@ -2036,7 +2034,8 @@ pixelY[10] => NewGrabbableObject:GrabbableObject_GEN[17].obj_inst.pixelY[10]
 pixelY[10] => NewGrabbableObject:GrabbableObject_GEN[18].obj_inst.pixelY[10]
 pixelY[10] => NewGrabbableObject:GrabbableObject_GEN[19].obj_inst.pixelY[10]
 enable => startingNewLevel.IN1
-enable => always3.IN1
+enable => levelIncrease.IN1
+enable => always2.IN1
 enable => enable_d.DATAIN
 oneSecPulse => timer.OUTPUTSELECT
 oneSecPulse => timer.OUTPUTSELECT
@@ -2609,7 +2608,7 @@ hookDRLatch => comb.IN1
 hookDRLatch => comb.IN1
 hookDRLatch => comb.IN1
 hookDRLatch => comb.IN1
-hookDRLatch => always2.IN1
+hookDRLatch => always4.IN1
 hookReturned => comb.IN1
 hookReturned => comb.IN1
 hookReturned => comb.IN1
@@ -2700,7 +2699,7 @@ timeInSeconds[9] <= timer[9].DB_MAX_OUTPUT_PORT_TYPE
 timeInSeconds[10] <= timer[10].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[0].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[0].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -2914,7 +2913,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[1].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[1].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -3128,7 +3127,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[2].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[2].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -3342,7 +3341,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[3].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[3].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -3556,7 +3555,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[4].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[4].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -3770,7 +3769,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[5].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[5].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -3984,7 +3983,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[6].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[6].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -4198,7 +4197,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[7].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[7].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -4412,7 +4411,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[8].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[8].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -4626,7 +4625,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[9].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[9].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -4840,7 +4839,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[10].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[10].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -5054,7 +5053,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[11].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[11].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -5268,7 +5267,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[12].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[12].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -5482,7 +5481,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[13].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[13].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -5696,7 +5695,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[14].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[14].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -5910,7 +5909,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[15].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[15].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -6124,7 +6123,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[16].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[16].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -6338,7 +6337,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[17].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[17].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -6552,7 +6551,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[18].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[18].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -6766,7 +6765,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|NewGrabbableObject:GrabbableObject_GEN[19].obj_inst
+|main|LevelController:inst42|NewGrabbableObject:GrabbableObject_GEN[19].obj_inst
 clk => valuePulse~reg0.CLK
 clk => destroyed~reg0.CLK
 clk => value[0]~reg0.CLK
@@ -6980,7 +6979,7 @@ isInside <= isInside.DB_MAX_OUTPUT_PORT_TYPE
 valuePulse <= valuePulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|SpriteRom:sharedROM
+|main|LevelController:inst42|SpriteRom:sharedROM
 clk => rgb[0]~reg0.CLK
 clk => rgb[1]~reg0.CLK
 clk => rgb[2]~reg0.CLK
@@ -7013,7 +7012,7 @@ rgb[6] <= rgb[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rgb[7] <= rgb[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|LevelMaker:levelMaker
+|main|LevelController:inst42|LevelMaker:levelMaker
 clk => Random:random.clk
 clk => elementsData[0].col[0]~reg0.CLK
 clk => elementsData[0].col[1]~reg0.CLK
@@ -7612,9 +7611,11 @@ clk => mask[296].CLK
 clk => mask[297].CLK
 clk => mask[298].CLK
 clk => mask[299].CLK
-clk => finishedGenerating~reg0.CLK
+clk => finishedGenerating_d.CLK
+clk => finishedGenerating.CLK
 resetN => Random:random.resetN
-resetN => finishedGenerating~reg0.ACLR
+resetN => finishedGenerating_d.ACLR
+resetN => finishedGenerating.ACLR
 resetN => mask[299].ENA
 resetN => mask[298].ENA
 resetN => mask[297].ENA
@@ -8613,6 +8614,7 @@ generateNewLevel => amountOfPlacedElements.OUTPUTSELECT
 generateNewLevel => amountOfPlacedElements.OUTPUTSELECT
 generateNewLevel => amountOfPlacedElements.OUTPUTSELECT
 generateNewLevel => finishedGenerating.OUTPUTSELECT
+generateNewLevel => finishedGenerating_d.OUTPUTSELECT
 generateNewLevel => maxLevelElementCount.OUTPUTSELECT
 generateNewLevel => maxLevelElementCount.OUTPUTSELECT
 generateNewLevel => maxLevelElementCount.OUTPUTSELECT
@@ -9204,10 +9206,10 @@ levelValue[16] <= <GND>
 levelValue[17] <= <GND>
 levelValue[18] <= <GND>
 levelValue[19] <= <GND>
-finishedGenerating <= finishedGenerating~reg0.DB_MAX_OUTPUT_PORT_TYPE
+finishedGeneratingPulse <= finishedGeneratingPulse.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|LevelController:inst2|LevelMaker:levelMaker|Random:random
+|main|LevelController:inst42|LevelMaker:levelMaker|Random:random
 clk => randomLatch[0]~reg0.CLK
 clk => randomLatch[1]~reg0.CLK
 clk => randomLatch[2]~reg0.CLK
@@ -9730,6 +9732,83 @@ enable => direction.OUTPUTSELECT
 enable => direction.OUTPUTSELECT
 enable => direction.OUTPUTSELECT
 startOfFrame => always0.IN1
+startOfFrame => hookReturnedPulse.OUTPUTSELECT
+startOfFrame => frame_divider.OUTPUTSELECT
+startOfFrame => frame_divider.OUTPUTSELECT
+startOfFrame => isHookRetracting.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => direction.OUTPUTSELECT
+startOfFrame => angle.OUTPUTSELECT
+startOfFrame => angle.OUTPUTSELECT
+startOfFrame => angle.OUTPUTSELECT
+startOfFrame => angle.OUTPUTSELECT
+startOfFrame => angle.OUTPUTSELECT
+startOfFrame => angle.OUTPUTSELECT
+startOfFrame => angle.OUTPUTSELECT
+startOfFrame => angle.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => length.OUTPUTSELECT
+startOfFrame => isHookOut.OUTPUTSELECT
 sendHook => isHookOut.IN1
 forceReturn => isHookRetracting.IN1
 extentionSpeed[0] => LessThan0.IN11
@@ -10256,12 +10335,12 @@ pulse <= pulse.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|MainMenu:inst
-clk => ~NO_FANOUT~
-resetN => ~NO_FANOUT~
-enable => stageEnded.IN0
-anyKeyPressed => stageEnded.IN1
+clk => stageEnded~reg0.CLK
+resetN => stageEnded~reg0.ACLR
+enable => stageEnded.OUTPUTSELECT
+anyKeyPressed => stageEnded.DATAB
 drStage <= <GND>
-stageEnded <= stageEnded.DB_MAX_OUTPUT_PORT_TYPE
+stageEnded <= stageEnded~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|GameEndMenu:inst15

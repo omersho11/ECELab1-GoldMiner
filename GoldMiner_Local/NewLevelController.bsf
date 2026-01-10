@@ -1,0 +1,219 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 288 352)
+	(text "NewLevelController" (rect 5 0 82 12)(font "Arial" ))
+	(text "inst" (rect 8 320 20 332)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "Arial" ))
+		(text "clk" (rect 21 27 31 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 27 12)(font "Arial" ))
+		(text "resetN" (rect 21 43 48 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "debugAlwaysWin" (rect 0 0 70 12)(font "Arial" ))
+		(text "debugAlwaysWin" (rect 21 59 91 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "pixelX[10..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "pixelX[10..0]" (rect 21 75 67 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "pixelY[10..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "pixelY[10..0]" (rect 21 91 68 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "enable" (rect 0 0 24 12)(font "Arial" ))
+		(text "enable" (rect 21 107 45 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "oneSecPulse" (rect 0 0 50 12)(font "Arial" ))
+		(text "oneSecPulse" (rect 21 123 71 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "startOfFrame" (rect 0 0 55 12)(font "Arial" ))
+		(text "startOfFrame" (rect 21 139 76 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "playerLuckStat[3..0]" (rect 0 0 80 12)(font "Arial" ))
+		(text "playerLuckStat[3..0]" (rect 21 155 101 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "scoreMultiplier[19..0]" (rect 0 0 79 12)(font "Arial" ))
+		(text "scoreMultiplier[19..0]" (rect 21 171 100 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "debugSkipLevel" (rect 0 0 62 12)(font "Arial" ))
+		(text "debugSkipLevel" (rect 21 187 83 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 1))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "startingNewGame" (rect 0 0 70 12)(font "Arial" ))
+		(text "startingNewGame" (rect 21 203 91 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 1))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "currentLevel[3..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "currentLevel[3..0]" (rect 21 219 91 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 3))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "hookPosX[10..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "hookPosX[10..0]" (rect 21 235 84 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 3))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "hookPosY[10..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "hookPosY[10..0]" (rect 21 251 85 263)(font "Arial" ))
+		(line (pt 0 256)(pt 16 256)(line_width 3))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "hookDRLatch" (rect 0 0 56 12)(font "Arial" ))
+		(text "hookDRLatch" (rect 21 267 77 279)(font "Arial" ))
+		(line (pt 0 272)(pt 16 272)(line_width 1))
+	)
+	(port
+		(pt 0 288)
+		(input)
+		(text "hookReturned" (rect 0 0 56 12)(font "Arial" ))
+		(text "hookReturned" (rect 21 283 77 295)(font "Arial" ))
+		(line (pt 0 288)(pt 16 288)(line_width 1))
+	)
+	(port
+		(pt 272 32)
+		(output)
+		(text "levelDR" (rect 0 0 33 12)(font "Arial" ))
+		(text "levelDR" (rect 218 27 251 39)(font "Arial" ))
+		(line (pt 272 32)(pt 256 32)(line_width 1))
+	)
+	(port
+		(pt 272 48)
+		(output)
+		(text "RGBout[7..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "RGBout[7..0]" (rect 198 43 251 55)(font "Arial" ))
+		(line (pt 272 48)(pt 256 48)(line_width 3))
+	)
+	(port
+		(pt 272 64)
+		(output)
+		(text "stagePassed" (rect 0 0 50 12)(font "Arial" ))
+		(text "stagePassed" (rect 201 59 251 71)(font "Arial" ))
+		(line (pt 272 64)(pt 256 64)(line_width 1))
+	)
+	(port
+		(pt 272 80)
+		(output)
+		(text "stageEnded" (rect 0 0 47 12)(font "Arial" ))
+		(text "stageEnded" (rect 204 75 251 87)(font "Arial" ))
+		(line (pt 272 80)(pt 256 80)(line_width 1))
+	)
+	(port
+		(pt 272 96)
+		(output)
+		(text "lastLevelEnded" (rect 0 0 61 12)(font "Arial" ))
+		(text "lastLevelEnded" (rect 190 91 251 103)(font "Arial" ))
+		(line (pt 272 96)(pt 256 96)(line_width 1))
+	)
+	(port
+		(pt 272 112)
+		(output)
+		(text "scoreIncrease[19..0]" (rect 0 0 80 12)(font "Arial" ))
+		(text "scoreIncrease[19..0]" (rect 171 107 251 119)(font "Arial" ))
+		(line (pt 272 112)(pt 256 112)(line_width 3))
+	)
+	(port
+		(pt 272 128)
+		(output)
+		(text "moneyIncrease[19..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "moneyIncrease[19..0]" (rect 165 123 251 135)(font "Arial" ))
+		(line (pt 272 128)(pt 256 128)(line_width 3))
+	)
+	(port
+		(pt 272 144)
+		(output)
+		(text "levelIncrease[3..0]" (rect 0 0 71 12)(font "Arial" ))
+		(text "levelIncrease[3..0]" (rect 180 139 251 151)(font "Arial" ))
+		(line (pt 272 144)(pt 256 144)(line_width 3))
+	)
+	(port
+		(pt 272 160)
+		(output)
+		(text "hookCollided" (rect 0 0 48 12)(font "Arial" ))
+		(text "hookCollided" (rect 203 155 251 167)(font "Arial" ))
+		(line (pt 272 160)(pt 256 160)(line_width 1))
+	)
+	(port
+		(pt 272 176)
+		(output)
+		(text "timeInSeconds[10..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "timeInSeconds[10..0]" (rect 170 171 251 183)(font "Arial" ))
+		(line (pt 272 176)(pt 256 176)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 256 320)(line_width 1))
+	)
+)

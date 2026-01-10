@@ -34,28 +34,6 @@ module LevelController (
 
 import GlobalsPKG::*;
 
-// ========== state machine start ==========
-typedef enum logic [2:0] {
-	ST_RESETTING         = 0,
-	ST_IDLE              = 1,
-	ST_STARTING_NEW_GAME = 2,
-	ST_GENERATING_LEVEL  = 3,
-	ST_LEVEL             = 4,
-	ST_LEVEL_ENDED       = 5
-} level_state_t;
-
-level_state_t state, next_state;
-
-// One-cycle pulses on state entry
-logic enter_generating;
-logic enter_levelEnded;
-
-// End conditions
-logic winCond;
-logic timeUpCond;
-logic endCond;
-
-// ========== state machine end ==========
 
 logic [10:0] timer = MIN_LEVEL_TIME;
 logic enable_d;
@@ -73,7 +51,7 @@ logic currentLevelGenerated;
 logic anyObjectsRemaining;
 
 assign startingNewLevel = (enable && !enable_d);
-assign levelIncrease = {3'b000, (stageEnded & !stageEnded_d)};
+assign levelIncrease = {3'b000, (enable && stageEnded && !stageEnded_d)};
 									
 // data for GrabbableObjects			
 GRABBABLE_OBJECT_METADATA activeLevelData [MAX_OBJECTS - 1:0];
@@ -90,7 +68,7 @@ logic [3:0] busTex [MAX_OBJECTS];
 logic [3:0] activeTex;
 logic [4:0] activeX, activeY;
 logic anyInside;
-assign drGrabbableObject = anyInside && (romColor != 8'hFF)
+assign drGrabbableObject = anyInside && (romColor != 8'hFF);
 
 
 // the sum of the values of all objects that are being grabbed this frame
@@ -98,6 +76,7 @@ logic [10:0] totalValuePerCycle;
 
 // data for ROM	
 logic [7:0] romColor;
+
 
 // instantiation of GrabbableObjects
 genvar i;
@@ -147,7 +126,7 @@ LevelMaker levelMaker (
 	
 	.elementsData(activeLevelData),
 	.levelValue(levelValue),
-	.finishedGenerating(finishedGenerating)
+	.finishedGeneratingPulse(finishedGenerating)
 );
 
 
@@ -202,7 +181,6 @@ end
 
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin
-		
 		generateNewLevel <= 0;
 		currentLevelGenerated <= 0;
 	end else begin
@@ -244,6 +222,7 @@ end
 // - detect rising edge of stageEnded
 // - detect rising edge of enabled
 // - calculate scoreIncrease
+// - makes sure level was actually created (and not using junk startup data)
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin
 		stageEnded_d <= 0;
@@ -259,40 +238,36 @@ end
 
 // main logic
 always_ff @(posedge clk or negedge resetN) begin
-	if (!resetN) begin  
+	if (!resetN) begin
+		stageEnded   <= 0;
+		stagePassed  <= 0;
+		timer        <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
 		lastLevelEnded <= 0;
-
-		stageEnded <= 0;
-		stagePassed <= 0;
-
-		timer <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
-
 	end else begin
-		stageEnded <= 0;
-		
-		if(enable && currentLevelGenerated) begin
+		stageEnded <= 0; // default pulse behavior
+
+		// IMPORTANT: don't evaluate win/time on the same tick you're starting a new level
+		if (startingNewLevel) begin
+			stagePassed <= 0;
+			timer <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
+		end
+		else if (enable && currentLevelGenerated) begin
 			stagePassed <= debugAlwaysWin;
 
-			if ((&destroyedBus) == 1'b1) begin 
-				stageEnded <= 1;
+			if ((&destroyedBus) == 1'b1) begin
+				stageEnded  <= 1;
 				stagePassed <= 1;
 			end
-			// Timer managment:
-			if (startingNewLevel) begin
-				timer <= MIN_LEVEL_TIME + currentLevel * EXTRA_TIME_PER_LEVEL;
-			end
-			else if (oneSecPulse) begin	
+
+			if (oneSecPulse) begin
 				timer <= timer - 1;
-				if (timer == 1) begin // == 1 and not 0 to avoid timer == 0 race condition
+				if (timer == 1) begin
 					stageEnded <= 1;
-					
 				end
-			end	
-		end 
+			end
+		end
 	end
 end
-
-
 
 
 

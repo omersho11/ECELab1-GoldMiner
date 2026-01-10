@@ -203,6 +203,13 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_INCLUDE_FILE pkg
+set_global_assignment -name SOURCE_FILE force
+set_global_assignment -name SOURCE_FILE new
 set_global_assignment -name SYSTEMVERILOG_FILE GameControl/NewGrabbableObject.sv
 set_global_assignment -name BDF_FILE RTL/VGA/TOP_VGA_DEMO_KBD.bdf
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/game_controller.sv
@@ -274,10 +281,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE Utilities/GlobalsPKG.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/FiveDigitDisplay.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Graphics/FiveDigitNumberDisplay.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Graphics/SpriteRom.sv
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name SYSTEMVERILOG_FILE Stages/Shop.sv
 set_global_assignment -name SYSTEMVERILOG_FILE GameControl/GameStatsManager.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Utilities/MoneyCounterWrapper.sv

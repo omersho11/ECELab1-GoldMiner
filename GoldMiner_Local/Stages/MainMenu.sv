@@ -8,9 +8,12 @@ module	MainMenu	(
 );
 
 
-always_ff@(posedge clk or negedge resetN)
-begin
-	stageEnded <= 0;
-	stageEnded <= (enable && anyKeyPressed);
+always_ff@(posedge clk or negedge resetN) begin
+	if (!resetN) begin
+		stageEnded <= 0;
+	end else begin
+		stageEnded <= 0;
+		if (enable) stageEnded <= anyKeyPressed;
+	end
 end
 endmodule
