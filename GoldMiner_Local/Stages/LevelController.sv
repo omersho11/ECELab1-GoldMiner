@@ -1,40 +1,68 @@
 
 module LevelController (	
-    input logic clk,
-    input logic resetN,
-    input logic debugAlwaysWin,
-    input logic [10:0] pixelX,
-    input logic [10:0] pixelY,
-    input logic enable,
-	 input logic oneSecPulse,
-	 input logic startOfFrame,
-	 input logic sendHook,
+	input logic clk,
+	input logic resetN,
+	input logic debugAlwaysWin,
+	input logic [10:0] pixelX,
+	input logic [10:0] pixelY,
+	input logic enable,
+	input logic oneSecPulse,
+	input logic startOfFrame,
 	 
-	 input logic [8:0] extentionSpeed,
-	 input logic [8:0] rotationSpeed,
-	 
-	 input logic [3:0] playerLuckStat,
-	 input logic [19:0] scoreMultiplier,
-	 input logic debugSkipLevel,
-	 input logic startingNewGame,
-	 input logic [3:0] currentLevel,
-	 
-	 
-    output logic levelDR,
-    output logic [7:0] RGBout,
-    output logic stagePassed,
-	 output logic stageEnded,
-    output logic lastLevelEnded,
-	 output logic [19:0] scoreIncrease,
-	 output logic [19:0] moneyIncrease,
-	 output logic [3:0] levelIncrease
-	 
+	input logic [3:0] playerLuckStat,
+	input logic [19:0] scoreMultiplier,
+	input logic debugSkipLevel,
+	input logic startingNewGame,
+	input logic [3:0] currentLevel,
+	input logic [10:0] hookPosX,
+	input logic [10:0] hookPosY,
+	input logic hookDRLatch,
+	input logic hookReturned,
+
+
+	output logic levelDR,
+	output logic [7:0] RGBout,
+	output logic stagePassed,
+	output logic stageEnded,
+	output logic lastLevelEnded,
+	output logic [19:0] scoreIncrease,
+	output logic [19:0] moneyIncrease,
+	output logic [3:0] levelIncrease,
+	output logic hookCollided,
+	output logic [10:0] timeInSeconds
 );
 
 import GlobalsPKG::*;
 
-logic [8:0] timer = MIN_LEVEL_TIME;
-logic enable_d; // Delayed version of enable to detect the edge
+// ========== state machine start ==========
+typedef enum logic [2:0] {
+	ST_RESETTING         = 0,
+	ST_IDLE              = 1,
+	ST_STARTING_NEW_GAME = 2,
+	ST_GENERATING_LEVEL  = 3,
+	ST_LEVEL             = 4,
+	ST_LEVEL_ENDED       = 5
+} level_state_t;
+
+level_state_t state, next_state;
+
+// One-cycle pulses on state entry
+logic enter_generating;
+logic enter_levelEnded;
+
+// End conditions
+logic winCond;
+logic timeUpCond;
+logic endCond;
+
+// ========== state machine end ==========
+
+logic [10:0] timer = MIN_LEVEL_TIME;
+logic enable_d;
+logic stageEnded_d;
+
+assign timeInSeconds = timer; // easier to read imo
+assign moneyIncrease = scoreIncrease;
 
 // level creation params
 logic generateNewLevel;
@@ -42,80 +70,36 @@ logic [19:0] levelValue;
 logic finishedGenerating;
 logic currentLevelGenerated;
 
-// hook params
-localparam [10:0] HOOK_ORIGIN_X = 320;
-localparam [10:0] HOOK_ORIGIN_Y = 96;
-localparam [4:0] LINE_THICKNESS = 1;
-localparam [7:0] LINE_COLOR = 8'hFE;
-logic [10:0] hookPosX, hookPosY;
-wire hookDR;
-logic hookDRLatch;
-logic [7:0] hookRGB;
-wire hookReturned;
-
-logic collisionOccurred;
-logic remainingObjects;
-
-
-// timeDisplay params
-localparam [10:0] TIMEDISPLAY_POS_LEFT = 16;
-localparam [10:0] TIMEDISPLAY_POS_TOP = 16;
-
-wire timeDisplayDR;
-logic [7:0] timeDisplayRGB;
+logic anyObjectsRemaining;
 
 assign startingNewLevel = (enable && !enable_d);
+assign levelIncrease = {3'b000, (stageEnded & !stageEnded_d)};
 									
-									
+// data for GrabbableObjects			
 GRABBABLE_OBJECT_METADATA activeLevelData [MAX_OBJECTS - 1:0];
 logic [MAX_OBJECTS-1:0] drBus, drBusLatch;
-
 logic [MAX_OBJECTS-1:0] [10:0] valueBus;
 logic [MAX_OBJECTS-1:0] destroyedBus;
 logic [(MAX_OBJECTS*8)-1:0] RGBBus;
-
-assign moneyIncrease = scoreIncrease;
-
-// --- 2. OBJECT INSTANTIATION ---
-Hook #(
-		.OFFSET_X(HOOK_ORIGIN_X),
-		.OFFSET_Y(HOOK_ORIGIN_Y)
-) hook (
-    .clk(clk),
-    .resetN(resetN),
-    .enable(enable),
-	 .startOfFrame(startOfFrame),
-	 .sendHook(sendHook),
-	 .forceReturn(collisionOccurred),
-	 
-	 .extentionSpeed(extentionSpeed),
-	 .rotationSpeed(rotationSpeed),
-	 
-	 .x(hookPosX),
-	 .y(hookPosY),
-	 .hookReturnedPulse(hookReturned)
-
-);
-
-DrawLine lineDrawer (
-	.pixelX(pixelX),
-	.pixelY(pixelY),
-	.x1(HOOK_ORIGIN_X),
-	.y1(HOOK_ORIGIN_Y),
-	.x2(hookPosX),
-	.y2(hookPosY),
-	.width(LINE_THICKNESS),
-	.lineColor(LINE_COLOR),
-	
-	.lineDR(hookDR),
-	.lineRGB(hookRGB),
-);
-
 logic [MAX_OBJECTS-1:0] insideBus,valuePulseBus;
 logic [4:0] busX [MAX_OBJECTS];
 logic [4:0] busY [MAX_OBJECTS];
 logic [3:0] busTex [MAX_OBJECTS];
 
+// data about "current" GrabbableObject
+logic [3:0] activeTex;
+logic [4:0] activeX, activeY;
+logic anyInside;
+assign drGrabbableObject = anyInside && (romColor != 8'hFF)
+
+
+// the sum of the values of all objects that are being grabbed this frame
+logic [10:0] totalValuePerCycle;
+
+// data for ROM	
+logic [7:0] romColor;
+
+// instantiation of GrabbableObjects
 genvar i;
 generate
     for(i=0; i < MAX_OBJECTS; i=i+1) begin : GrabbableObject_GEN    
@@ -141,25 +125,10 @@ generate
     end
 endgenerate
 
-// --- SHARED RESOURCES ---
-logic [3:0] activeTex;
-logic [4:0] activeX, activeY;
-logic anyInside;
 
-always_comb begin
-    activeTex = 0; activeX = 0; activeY = 0; anyInside = 0;
-    for(int j=0; j<MAX_OBJECTS; j++) begin
-        if(insideBus[j]) begin
-            activeTex = activeLevelData[j].elementType;
-            activeX = busX[j];
-            activeY = busY[j];
-            anyInside = 1;
-        end
-    end
-end
+
 
 // Single ROM Instance
-logic [7:0] romColor;
 SpriteRom sharedROM (
     .clk(clk),
     .objectType(activeTex),
@@ -167,27 +136,6 @@ SpriteRom sharedROM (
     .offsetY(activeY),
     .rgb(romColor)
 );
-
-// Final Output Logic
-assign drGrabbableObject = anyInside && (romColor != 8'hFF);
-
-
-TimeDisplay #(
-	.color(8'b11100000)
-) timeDisplay (
-	.clk(clk),
-   .resetN(resetN),
-   .enable(enable),
-	.topLeftX(TIMEDISPLAY_POS_LEFT),
-	.topLeftY(TIMEDISPLAY_POS_TOP),
-	.pixelX(pixelX),
-	.pixelY(pixelY),
-	.timeInSeconds(timer),
-	
-	.drawingRequest(timeDisplayDR),
-	.RGBout(timeDisplayRGB)
-);
-
 
 // LEVELMAKER INSTANTIATION
 LevelMaker levelMaker (
@@ -204,15 +152,60 @@ LevelMaker levelMaker (
 
 
 
-// EDGE DETECTION & MEMORY LOADING 
-// We use a synchronous clock and check for the rising edge of 'enable'
+
+
+
+// --- LOGIC ---
+
+// caches the data of the "active" GrabbableObject (active == colliding with the hook)
+always_comb begin
+    activeTex = 0; activeX = 0; activeY = 0; anyInside = 0;
+    for(int j=0; j<MAX_OBJECTS; j++) begin
+        if(insideBus[j]) begin
+            activeTex = activeLevelData[j].elementType;
+            activeX = busX[j];
+            activeY = busY[j];
+            anyInside = 1;
+        end
+    end
+end
+
+
+// calculates the total value of grabbed objects
+always_comb begin
+    totalValuePerCycle = 0;
+    for (int k = 0; k < MAX_OBJECTS; k++) begin
+        if (valuePulseBus[k]) begin // Check the new pulse signal
+            totalValuePerCycle = totalValuePerCycle + valueBus[k];
+        end
+    end
+end
+
+
+// determines if the level needs to draw to screen at current pixel
+always_comb begin
+	// Default values (Background/Transparent)
+	levelDR = 0;
+	RGBout  = 8'hFF;
+	
+	if(enable && currentLevelGenerated) begin
+		if (anyInside) begin
+			if (romColor != 8'hFF) begin
+				levelDR = 1;
+				RGBout  = romColor;
+			end
+		end
+	end
+end
+//
+
+
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin
-		enable_d <= 1'b0;
+		
 		generateNewLevel <= 0;
 		currentLevelGenerated <= 0;
 	end else begin
-		enable_d <= enable; // Store previous state
 		generateNewLevel <= 0;
 		
 		if (startingNewLevel) begin
@@ -227,72 +220,44 @@ end
 
 always_ff @(posedge clk or negedge resetN) begin
     if (!resetN) begin
-        collisionOccurred <= 1'b0;
+        hookCollided <= 1'b0;
 		  drBusLatch <= 0;
-		  hookDRLatch <= 0;
-		  remainingObjects <= 0;
+		  anyObjectsRemaining <= 0;
     end else begin
         if (startOfFrame) begin
-				remainingObjects <= 0;
-            collisionOccurred <= 1'b0; // Reset at the top of every frame
+				anyObjectsRemaining <= 0;
+            hookCollided <= 1'b0;
 				drBusLatch <= 0;
-				hookDRLatch<= 0;
-        end else if (hookDR && (|insideBus)) begin
-            collisionOccurred <= 1'b1; // Latch the collision if signals overlap
+        end else if (hookDRLatch && (|insideBus)) begin
+            hookCollided <= 1'b1;
 				drBusLatch <= insideBus;
-				hookDRLatch <= hookDR;
         end
 		  else begin 
-				remainingObjects <= remainingObjects || (|insideBus);
+				anyObjectsRemaining <= anyObjectsRemaining || (|insideBus);
 		  end
 		  
     end
 end
 
-// --- REPLACED DRAWING MUX ---
-always_comb begin
-	// Default values (Background/Transparent)
-	levelDR = 0;
-	RGBout  = 8'hFF;
-	
-	if(enable && currentLevelGenerated) begin
-		// Priority Mux (Top layer to bottom layer)
-		if (timeDisplayDR) begin
-			levelDR = 1;
-			RGBout  = timeDisplayRGB;
-		end 
-		else if (hookDR) begin
-			levelDR = 1;
-			RGBout  = hookRGB;
-		end 
-		else if (anyInside) begin
-        // Check if the ROM pixel is transparent
-			if (romColor != 8'hFF) begin
-				levelDR = 1;
-				RGBout  = romColor;
-			end
-		end
+
+// used to:
+// - detect rising edge of stageEnded
+// - detect rising edge of enabled
+// - calculate scoreIncrease
+always_ff @(posedge clk or negedge resetN) begin
+	if (!resetN) begin
+		stageEnded_d <= 0;
+		enable_d <= 0;
+		scoreIncrease <= 0;
+	end else begin
+		stageEnded_d <= stageEnded;
+		enable_d <= enable;
+		scoreIncrease <= 1*totalValuePerCycle;  // scoreMultiplier * totalValuePerCycle
 	end
 end
 
-// --- SCORE ACCUMULATION ---
-// Move this to a separate block to avoid interfering with drawing
-logic [10:0] totalValuePerCycle;
 
-always_comb begin
-    totalValuePerCycle = 0;
-    for (int k = 0; k < MAX_OBJECTS; k++) begin
-        if (valuePulseBus[k]) begin // Check the new pulse signal
-            totalValuePerCycle = totalValuePerCycle + valueBus[k];
-        end
-    end
-end
-
-always_ff @(posedge clk or negedge resetN) begin
-    if (!resetN) scoreIncrease <= 0;
-    else scoreIncrease <= 1*totalValuePerCycle; 
-end
-
+// main logic
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin  
 		lastLevelEnded <= 0;
@@ -328,17 +293,10 @@ always_ff @(posedge clk or negedge resetN) begin
 end
 
 
-// For detecting when to increase level:
-logic stageEnded_d;
 
-always_ff @(posedge clk or negedge resetN) begin
-    if (!resetN)
-        stageEnded_d <= 0;
-    else
-        stageEnded_d <= stageEnded;
-end
 
-assign levelIncrease = {3'b000, (stageEnded & !stageEnded_d)};
+
+
 
 endmodule
 

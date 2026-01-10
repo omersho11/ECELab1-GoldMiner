@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 256 192)
+	(rect 16 16 256 256)
 	(text "DisplayMux" (rect 5 0 52 12)(font "Arial" ))
-	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(text "inst" (rect 8 224 20 236)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -74,6 +74,34 @@ agreement for further details.
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
+		(pt 0 144)
+		(input)
+		(text "hookDR" (rect 0 0 34 12)(font "Arial" ))
+		(text "hookDR" (rect 21 139 55 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "hookRGB[7..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "hookRGB[7..0]" (rect 21 155 81 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "timeDR" (rect 0 0 31 12)(font "Arial" ))
+		(text "timeDR" (rect 21 171 52 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "timeRGB[7..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "timeRGB[7..0]" (rect 21 187 78 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
+	)
+	(port
 		(pt 240 32)
 		(output)
 		(text "RGBout[7..0]" (rect 0 0 53 12)(font "Arial" ))
@@ -81,6 +109,6 @@ agreement for further details.
 		(line (pt 240 32)(pt 224 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 224 160)(line_width 1))
+		(rectangle (rect 16 16 224 224)(line_width 1))
 	)
 )
