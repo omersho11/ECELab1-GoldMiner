@@ -231,7 +231,7 @@ always_ff @(posedge clk or negedge resetN) begin
 	end else begin
 		stageEnded_d <= stageEnded;
 		enable_d <= enable;
-		scoreIncrease <= 1*totalValuePerCycle;  // scoreMultiplier * totalValuePerCycle
+		scoreIncrease <= scoreMultiplier*totalValuePerCycle;  // scoreMultiplier * totalValuePerCycle
 	end
 end
 

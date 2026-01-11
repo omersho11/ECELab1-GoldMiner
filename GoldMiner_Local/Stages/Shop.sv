@@ -2,9 +2,13 @@ module Shop(
 	input	logic	clk,
 	input	logic	resetN,
 	input logic enable,
-	input logic [3:0] numberKeyPressed, // 1-6
+	input logic [9:0] numberKeyPressed, // 0-9
 	input GlobalsPKG::MONEY money,      // Current wallet
 	input logic enterKeyPressed,
+	input logic [3:0] levelExtSpeed,
+ 	input logic [3:0] levelLuck,
+	input logic [3:0] levelMultiplier,
+	input logic [3:0] levelRotSpeed,
 	
 	// --- Outputs ---
 	output logic drStage,               // UI Draw Request
@@ -16,19 +20,37 @@ module Shop(
 	
 	// Stats Transaction (To StatsManager)
 	output GlobalsPKG::SHOP_ITEM_T itemToUpgrade,
-	output logic upgradeRequestPulse
+	output logic upgradeRequestPulse,
+	output logic [19:0] currentCostExtSpeed,
+	output logic [19:0] currentCostLuck,
+	output logic [19:0] currentCostMult,
+	output logic [19:0] currentCostRotSpeed
 );
 
 	import GlobalsPKG::*;
 
 	// --- Prices ---
-	localparam MONEY COST_SPEED_UP    = 20'd1;
-	localparam MONEY COST_LUCK_UP     = 20'd1;
-	localparam MONEY COST_MULTIPLIER  = 20'd1;
-	localparam MONEY COST_ROTATION    = 20'd1;
-
+	localparam MONEY BASE_COST_SPEED      = 20'd10;
+	localparam MONEY BASE_COST_LUCK       = 20'd10;
+	localparam MONEY BASE_COST_MULTIPLIER = 20'd10;
+	localparam MONEY BASE_COST_ROTATION   = 20'd30;
+	
+	// 2. Cost Increase 
+	localparam MONEY INC_COST_SPEED      = 20'd10;  
+	localparam MONEY INC_COST_LUCK       = 20'd25;
+	localparam MONEY INC_COST_MULTIPLIER = 20'd50;
+	localparam MONEY INC_COST_ROTATION   = 20'd50;
+	
+	// --- Calculate Current Costs ---
+	// Cost = Base + (Current Level * Increment)
+	
+	assign currentCostExtSpeed = BASE_COST_SPEED 	  + (levelExtSpeed   * INC_COST_SPEED);
+	assign currentCostLuck     = BASE_COST_LUCK       + (levelLuck       * INC_COST_LUCK);
+	assign currentCostMult     = BASE_COST_MULTIPLIER + (levelMultiplier * INC_COST_MULTIPLIER);
+	assign currentCostRotSpeed = BASE_COST_ROTATION   + (levelRotSpeed   * INC_COST_ROTATION);
+	
 	// --- Key Logic ---
-	logic [3:0] lastKey;
+	logic [9:0] lastKey;
 	logic keyPulse;
 	logic enterLast;
 	logic enterPulse;
@@ -65,19 +87,19 @@ module Shop(
 			
 			if (keyPulse) begin
 				case(numberKeyPressed)
-					4'd1: begin // BUY EXTENSION SPEED
-						if (money >= COST_SPEED_UP) begin
-							spendAmount <= COST_SPEED_UP;
-							spendPulse  <= 1; // Take Money
+					EXTENSION_SPEED_KEY: begin // BUY EXTENSION SPEED
+						if (money >= currentCostExtSpeed) begin
+							spendAmount <= currentCostExtSpeed;
+							spendPulse  <= 1;
 							
 							itemToUpgrade <= ITEM_EXT_SPEED;
-							upgradeRequestPulse <= 1; // Add Stat
+							upgradeRequestPulse <= 1; 
 						end
 					end
 					
-					4'd2: begin // BUY LUCK
-						if (money >= COST_LUCK_UP) begin
-							spendAmount <= COST_LUCK_UP;
+					LUCK_KEY: begin // BUY LUCK
+						if (money >= currentCostLuck) begin
+							spendAmount <= currentCostLuck;
 							spendPulse  <= 1;
 							
 							itemToUpgrade <= ITEM_LUCK;
@@ -85,9 +107,9 @@ module Shop(
 						end
 					end
 					
-					4'd3: begin // BUY MULTIPLIER
-						if (money >= COST_MULTIPLIER) begin
-							spendAmount <= COST_MULTIPLIER;
+					MULTIPLIER_KEY: begin // BUY MULTIPLIER
+						if (money >= currentCostMult) begin
+							spendAmount <= currentCostMult;
 							spendPulse  <= 1;
 							
 							itemToUpgrade <= ITEM_MULTIPLIER;
@@ -95,9 +117,9 @@ module Shop(
 						end
 					end
 					
-					4'd4: begin // BUY ROTATION SPEED
-						if (money >= COST_ROTATION) begin
-							spendAmount <= COST_ROTATION;
+					ROTATION_SPEED_KEY: begin // BUY ROTATION SPEED
+						if (money >= currentCostRotSpeed) begin
+							spendAmount <= currentCostRotSpeed;
 							spendPulse  <= 1;
 							
 							itemToUpgrade <= ITEM_ROT_SPEED;

@@ -30,7 +30,16 @@ package GlobalsPKG;
 		ITEM_MULTIPLIER    = 3'd3,
 		ITEM_ROT_SPEED     = 3'd4
 	} SHOP_ITEM_T;
-
+	
+	typedef enum logic [9:0] {
+		EXTENSION_SPEED_KEY  = 10'b0000000010,
+		LUCK_KEY 				= 10'b0000000100,
+		MULTIPLIER_KEY 		= 10'b0000001000,
+		ROTATION_SPEED_KEY 	= 10'b0000010000
+	} SHOP_KEYBINDS;
+	// --- Common Types ---
+	typedef logic [7:0] RGB_T;
+	typedef logic [10:0] PIXEL_T;
 	// --- Constants ---
 	parameter int MAX_OBJECTS = 20;
 	parameter logic [5:0] MAX_LEVEL = 10;

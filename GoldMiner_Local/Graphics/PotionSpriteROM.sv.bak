@@ -1,0 +1,83 @@
+module PotionAssetsROM (
+    input  logic        clk,
+    input  logic [1:0]  potionID,   // 0=Speed, 1=Luck, 2=Mult, 3=Rot
+    input  logic [3:0]  frameIndex, // Animation frame (0, 1, 2...)
+    input  logic [5:0]  offsetX,    // 0-63 relative to top-left
+    input  logic [5:0]  offsetY,    // 0-63 relative to top-left
+    
+    output logic [7:0]  rgbOut,     // The pixel color
+    output logic        isTransparent
+);
+
+    // --- 1. CONFIGURATION: Sprite Dimensions ---
+    // Change these values to match your actual pixel art sizes!
+    logic [5:0] width, height;
+    logic [15:0] baseAddress; // Where this potion starts in memory
+    logic [15:0] frameSize;   // width * height
+
+    // Metadata Lookup Table
+    always_comb begin
+        case (potionID)
+            2'd0: begin // POTION 0: SPEED (Standard 32x32)
+                width  = 32;
+                height = 32;
+                baseAddress = 0; 
+            end
+            2'd1: begin // POTION 1: LUCK (Tall 16x40)
+                width  = 16;
+                height = 40;
+                baseAddress = 32*32*4; // Starts after Potion 0 (assuming 4 frames)
+            end
+            2'd2: begin // POTION 2: MULTIPLIER (Wide 40x32)
+                width  = 40;
+                height = 32;
+                baseAddress = (32*32*4) + (16*40*4); 
+            end
+            2'd3: begin // POTION 3: ROTATION (Small 16x16)
+                width  = 16;
+                height = 16;
+                baseAddress = (32*32*4) + (16*40*4) + (40*32*4);
+            end
+            default: begin width = 0; height = 0; baseAddress=0; end
+        endcase
+        
+        frameSize = width * height;
+    end
+
+    // --- 2. ADDRESS CALCULATION ---
+    logic [15:0] readAddress;
+    logic inBounds;
+
+    assign inBounds = (offsetX < width) && (offsetY < height);
+
+    always_comb begin
+        if (inBounds) begin
+            // Address = Base + (Frame * SizeOfOneFrame) + (Y * Width) + X
+            readAddress = baseAddress + 
+                          (16'(frameIndex) * frameSize) + 
+                          (16'(offsetY) * 16'(width)) + 
+                          16'(offsetX);
+        end else begin
+            readAddress = 0; // Dummy address for safety
+        end
+    end
+
+    // --- 3. MEMORY STORAGE (The Actual Art) ---
+//	 logic [7:0] mem [0:MAX_SIZE];
+//    initial $readmemh("potions.mif", mem);
+    
+    logic [7:0] data;
+    
+    // Simulating sprite data with patterns so you can see it working immediately
+    always_ff @(posedge clk) begin
+        if (potionID == 0)      data <= (offsetX[4] ^ offsetY[4]) ? 8'hE0 : 8'hFF; // Red Checker (Speed)
+        else if (potionID == 1) data <= (offsetY > 20) ? 8'h1C : 8'hFF;            // Green Bottom (Luck)
+        else if (potionID == 2) data <= (offsetX % 4 == 0) ? 8'hFC : 8'h00;        // Gold Stripes (Mult)
+        else                    data <= 8'h03;                                     // Blue Solid (Rot)
+    end
+
+    // --- 4. OUTPUT ---
+    assign isTransparent = (!inBounds) || (data == 8'hFF); 
+    assign rgbOut = data;
+
+endmodule

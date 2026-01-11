@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Lab1Demo
-Sat Jan 10 15:50:21 2026
+Sun Jan 11 12:58:23 2026
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -93,36 +93,35 @@ agreement for further details.
 +-----------------------+-----------------------------------------------------+
 
 
-Parallel compilation attempted to use more processors than were available, which may cause increased compilation time. For lowest compilation time, correct your settings.
-+--------------------------------------------+
-; Parallel Compilation                       ;
-+------------------------------+-------------+
-; Processors                   ; Number      ;
-+------------------------------+-------------+
-; Number detected on machine   ; 12          ;
-; Maximum allowed              ; 16          ;
-;                              ;             ;
-; Average used                 ; 6.46        ;
-; Maximum used                 ; 16          ;
-;                              ;             ;
-; Usage by Processor           ; % Time Used ;
-;     Processor 1              ; 100.0%      ;
-;     Processor 2              ;  38.8%      ;
-;     Processor 3              ;  38.6%      ;
-;     Processor 4              ;  38.3%      ;
-;     Processor 5              ;  35.9%      ;
-;     Processor 6              ;  35.9%      ;
-;     Processor 7              ;  35.9%      ;
-;     Processor 8              ;  35.9%      ;
-;     Processor 9              ;  35.9%      ;
-;     Processor 10             ;  35.9%      ;
-;     Processor 11             ;  35.9%      ;
-;     Processor 12             ;  35.8%      ;
-;     Processors 13 (overused) ;  35.8%      ;
-;     Processors 14 (overused) ;  35.8%      ;
-;     Processors 15 (overused) ;  35.8%      ;
-;     Processors 16 (overused) ;  35.8%      ;
-+------------------------------+-------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 4.89        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  28.5%      ;
+;     Processor 3            ;  28.1%      ;
+;     Processor 4            ;  28.0%      ;
+;     Processor 5            ;  25.4%      ;
+;     Processor 6            ;  25.4%      ;
+;     Processor 7            ;  25.4%      ;
+;     Processor 8            ;  25.4%      ;
+;     Processor 9            ;  25.4%      ;
+;     Processor 10           ;  25.4%      ;
+;     Processor 11           ;  25.4%      ;
+;     Processor 12           ;  25.4%      ;
+;     Processor 13           ;  25.3%      ;
+;     Processor 14           ;  25.3%      ;
+;     Processor 15           ;  25.3%      ;
+;     Processor 16           ;  25.3%      ;
++----------------------------+-------------+
 
 
 +-------------------------------------------------------------+
@@ -130,7 +129,7 @@ Parallel compilation attempted to use more processors than were available, which
 +-------------------------+--------+--------------------------+
 ; SDC File Path           ; Status ; Read at                  ;
 +-------------------------+--------+--------------------------+
-; DE10_Standard_Audio.sdc ; OK     ; Sat Jan 10 15:50:11 2026 ;
+; DE10_Standard_Audio.sdc ; OK     ; Sun Jan 11 12:58:15 2026 ;
 +-------------------------+--------+--------------------------+
 
 
@@ -150,7 +149,7 @@ Parallel compilation attempted to use more processors than were available, which
 +-----------+-----------------+----------------------------------------------------------------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name                                                                 ; Note ;
 +-----------+-----------------+----------------------------------------------------------------------------+------+
-; 35.58 MHz ; 35.58 MHz       ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 31.33 MHz ; 31.33 MHz       ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
 +-----------+-----------------+----------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -161,13 +160,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+----------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Setup Summary                                                                ;
-+----------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                      ; Slack ; End Point TNS ;
-+----------------------------------------------------------------------------+-------+---------------+
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 3.639 ; 0.000         ;
-+----------------------------------------------------------------------------+-------+---------------+
++-----------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary                                                                 ;
++----------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                      ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------+--------+---------------+
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -0.173 ; -0.180        ;
++----------------------------------------------------------------------------+--------+---------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -175,7 +174,7 @@ HTML report is unavailable in plain text report export.
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.163 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.214 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -198,7 +197,7 @@ No paths to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.793  ; 0.000         ;
 ; CLOCK_50                                                                   ; 9.670  ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.647 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.642 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -213,18 +212,18 @@ No synchronizer chains to report.
 +-----------+-----------------+----------------------------------------------------------------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name                                                                 ; Note ;
 +-----------+-----------------+----------------------------------------------------------------------------+------+
-; 34.67 MHz ; 34.67 MHz       ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 30.07 MHz ; 30.07 MHz       ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
 +-----------+-----------------+----------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+----------------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Setup Summary                                                                 ;
-+----------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                      ; Slack ; End Point TNS ;
-+----------------------------------------------------------------------------+-------+---------------+
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 2.899 ; 0.000         ;
-+----------------------------------------------------------------------------+-------+---------------+
++-----------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary                                                                  ;
++----------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                      ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------+--------+---------------+
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1.515 ; -2.836        ;
++----------------------------------------------------------------------------+--------+---------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -232,7 +231,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.142 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.130 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -255,7 +254,7 @@ No paths to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.793  ; 0.000         ;
 ; CLOCK_50                                                                   ; 9.673  ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.621 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.623 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -270,7 +269,7 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 16.176 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.756 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -279,7 +278,7 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.130 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.129 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -302,7 +301,7 @@ No paths to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.793  ; 0.000         ;
 ; CLOCK_50                                                                   ; 9.336  ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.762 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.756 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -317,7 +316,7 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 17.408 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 16.128 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -326,7 +325,7 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.097 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.091 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -349,7 +348,7 @@ No paths to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.793  ; 0.000         ;
 ; CLOCK_50                                                                   ; 9.286  ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.760 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.756 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -359,20 +358,20 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                                                                    ;
-+-----------------------------------------------------------------------------+-------+-------+----------+---------+---------------------+
-; Clock                                                                       ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+-----------------------------------------------------------------------------+-------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                            ; 2.899 ; 0.097 ; N/A      ; N/A     ; 0.793               ;
-;  CLOCK_50                                                                   ; N/A   ; N/A   ; N/A      ; N/A     ; 9.286               ;
-;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A   ; N/A   ; N/A      ; N/A     ; 0.793               ;
-;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 2.899 ; 0.097 ; N/A      ; N/A     ; 14.621              ;
-; Design-wide TNS                                                             ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
-;  CLOCK_50                                                                   ; N/A   ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A   ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-+-----------------------------------------------------------------------------+-------+-------+----------+---------+---------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                                                     ;
++-----------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
+; Clock                                                                       ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-----------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack                                                            ; -1.515 ; 0.091 ; N/A      ; N/A     ; 0.793               ;
+;  CLOCK_50                                                                   ; N/A    ; N/A   ; N/A      ; N/A     ; 9.286               ;
+;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A    ; N/A   ; N/A      ; N/A     ; 0.793               ;
+;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1.515 ; 0.091 ; N/A      ; N/A     ; 14.623              ;
+; Design-wide TNS                                                             ; -2.836 ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  CLOCK_50                                                                   ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.836 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++-----------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -617,7 +616,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Input Ports       ; 5     ; 5     ;
 ; Unconstrained Input Port Paths  ; 186   ; 186   ;
 ; Unconstrained Output Ports      ; 28    ; 28    ;
-; Unconstrained Output Port Paths ; 10627 ; 10627 ;
+; Unconstrained Output Port Paths ; 11872 ; 11872 ;
 +---------------------------------+-------+-------+
 
 
@@ -736,97 +735,97 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Jan 10 15:50:09 2026
+    Info: Processing started: Sun Jan 11 12:58:12 2026
 Info: Command: quartus_sta Lab1Demo -c Lab1Demo
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 16 processors
-Warning (20031): Parallel compilation is enabled for 16 processors, but there are only 10 processors in the system. Runtime may increase due to over usage of the processor space.
+Warning (20031): Parallel compilation is enabled for 16 processors, but there are only 14 processors in the system. Runtime may increase due to over usage of the processor space.
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Warning (335093): TimeQuest Timing Analyzer is analyzing 47 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Info (332104): Reading SDC File: 'DE10_Standard_Audio.sdc'
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(9): CLOCK2_50 could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 9
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(9): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 9
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK2_50] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 9
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(10): CLOCK3_50 could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 10
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(10): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 10
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK3_50] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 10
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(11): CLOCK4_50 could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 11
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(11): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 11
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK4_50] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 11
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(14): CLOCK_27 could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 14
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(14): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 14
-    Info (332050): create_clock -period "27.000000 MHz" [get_ports CLOCK_27] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 14
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(17): AUD_XCK could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 17
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(17): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 17
-    Info (332050): create_clock -period "18.432 MHz" -name clk_audxck [get_ports AUD_XCK] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 17
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(18): AUD_BCLK could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 18
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(18): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 18
-    Info (332050): create_clock -period "3.536 MHz" -name clk_audbck [get_ports AUD_BCLK] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 18
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(20): VGA_CLK could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 20
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(20): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 20
-    Info (332050): create_clock -period "25.18 MHz" -name clk_vga [get_ports VGA_CLK] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 20
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(28): altera_reserved_tck could not be matched with a port or pin or register or keeper or net or combinational node or node File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 28
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(28): Argument <targets> is not an object ID File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 28
-    Info (332050): create_clock -name {altera_reserved_tck} -period 40 {altera_reserved_tck} File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 28
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(29): altera_reserved_tdi could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 29
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(29): altera_reserved_tck could not be matched with a clock File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 29
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(29): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 29
-    Info (332050): set_input_delay -clock altera_reserved_tck -clock_fall 3 [get_ports altera_reserved_tdi] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 29
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(29): Argument -clock is not an object ID File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 29
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(30): altera_reserved_tms could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 30
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(30): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 30
-    Info (332050): set_input_delay -clock altera_reserved_tck -clock_fall 3 [get_ports altera_reserved_tms] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 30
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(30): Argument -clock is not an object ID File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 30
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(31): altera_reserved_tdo could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 31
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(31): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 31
-    Info (332050): set_output_delay -clock altera_reserved_tck 3 [get_ports altera_reserved_tdo] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 31
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(31): Argument -clock is not an object ID File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 31
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(9): CLOCK2_50 could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 9
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(9): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 9
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK2_50] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 9
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(10): CLOCK3_50 could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 10
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(10): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 10
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK3_50] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 10
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(11): CLOCK4_50 could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 11
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(11): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 11
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK4_50] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 11
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(14): CLOCK_27 could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 14
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(14): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 14
+    Info (332050): create_clock -period "27.000000 MHz" [get_ports CLOCK_27] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 14
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(17): AUD_XCK could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 17
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(17): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 17
+    Info (332050): create_clock -period "18.432 MHz" -name clk_audxck [get_ports AUD_XCK] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 17
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(18): AUD_BCLK could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 18
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(18): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 18
+    Info (332050): create_clock -period "3.536 MHz" -name clk_audbck [get_ports AUD_BCLK] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 18
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(20): VGA_CLK could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 20
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(20): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 20
+    Info (332050): create_clock -period "25.18 MHz" -name clk_vga [get_ports VGA_CLK] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 20
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(28): altera_reserved_tck could not be matched with a port or pin or register or keeper or net or combinational node or node File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 28
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(28): Argument <targets> is not an object ID File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 28
+    Info (332050): create_clock -name {altera_reserved_tck} -period 40 {altera_reserved_tck} File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 28
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(29): altera_reserved_tdi could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 29
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(29): altera_reserved_tck could not be matched with a clock File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 29
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(29): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 29
+    Info (332050): set_input_delay -clock altera_reserved_tck -clock_fall 3 [get_ports altera_reserved_tdi] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 29
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(29): Argument -clock is not an object ID File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 29
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(30): altera_reserved_tms could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 30
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(30): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 30
+    Info (332050): set_input_delay -clock altera_reserved_tck -clock_fall 3 [get_ports altera_reserved_tms] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 30
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(30): Argument -clock is not an object ID File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 30
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(31): altera_reserved_tdo could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 31
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(31): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 31
+    Info (332050): set_output_delay -clock altera_reserved_tck 3 [get_ports altera_reserved_tdo] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 31
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(31): Argument -clock is not an object ID File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 31
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin} -divide_by 5 -multiply_by 63 -duty_cycle 50.00 -name {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]} {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]}
     Info (332110): create_generated_clock -source {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 20 -duty_cycle 50.00 -name {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk} {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(38): u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 38
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(39): DRAM_CLK could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 39
-Critical Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 38
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(38): u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 38
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(39): DRAM_CLK could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 39
+Critical Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 38
     Info (332050): create_generated_clock -source [get_pins {u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                      -name clk_dram_ext [get_ports {DRAM_CLK}] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 38
-Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument -source is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 38
+                      -name clk_dram_ext [get_ports {DRAM_CLK}] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 38
+Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument -source is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 38
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): DRAM_DQ* could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 62
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): clk_dram_ext could not be matched with a clock File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 62
-    Info (332050): set_input_delay -max -clock clk_dram_ext 5.9 [get_ports DRAM_DQ*] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument -clock is not an object ID File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 63
-    Info (332050): set_input_delay -min -clock clk_dram_ext 3.0 [get_ports DRAM_DQ*] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 63
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument -clock is not an object ID File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 63
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(67): u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a clock File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 67
-Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <from> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 66
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): DRAM_DQ* could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 62
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): clk_dram_ext could not be matched with a clock File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 62
+    Info (332050): set_input_delay -max -clock clk_dram_ext 5.9 [get_ports DRAM_DQ*] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument -clock is not an object ID File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 63
+    Info (332050): set_input_delay -min -clock clk_dram_ext 3.0 [get_ports DRAM_DQ*] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 63
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument -clock is not an object ID File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 63
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(67): u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a clock File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 67
+Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <from> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 66
     Info (332050): set_multicycle_path -from [get_clocks {clk_dram_ext}] \
                     -to [get_clocks {u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                                                  -setup 2 File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 66
-Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <to> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 66
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_*DQM could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 80
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_DQ* could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 80
-    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument -clock is not an object ID File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 81
-    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 81
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument -clock is not an object ID File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 81
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_ADDR* could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_BA* could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CAS_N could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CKE could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CS_N could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_RAS_N could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_WE_N could not be matched with a port File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
-    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument -clock is not an object ID File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument <targets> is an empty collection File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 83
-    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 83
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument -clock is not an object ID File: C:/Users/rotem/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 83
+                                                  -setup 2 File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 66
+Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <to> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 66
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_*DQM could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 80
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_DQ* could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 80
+    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument -clock is not an object ID File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 81
+    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 81
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument -clock is not an object ID File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 81
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_ADDR* could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_BA* could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CAS_N could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CKE could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CS_N could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_RAS_N could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_WE_N could not be matched with a port File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
+    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument -clock is not an object ID File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument <targets> is an empty collection File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 83
+    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 83
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument -clock is not an object ID File: C:/Users/Omer/Documents/GitHub/ECELab1-GoldMiner/GoldMiner_Local/DE10_Standard_Audio.sdc Line: 83
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
@@ -834,14 +833,16 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
-Info (332146): Worst-case setup slack is 3.639
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.173
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.639               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.163
+    Info (332119):    -0.173              -0.180 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.214
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.163               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.214               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 0.793
@@ -849,7 +850,7 @@ Info (332146): Worst-case minimum pulse width slack is 0.793
     Info (332119): ========= =================== =====================
     Info (332119):     0.793               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.670               0.000 CLOCK_50 
-    Info (332119):    14.647               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    14.642               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -858,34 +859,12 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 2.899
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.515
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     2.899               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.142
-    Info (332119):     Slack       End Point TNS Clock 
-    Info (332119): ========= =================== =====================
-    Info (332119):     0.142               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.793
-    Info (332119):     Slack       End Point TNS Clock 
-    Info (332119): ========= =================== =====================
-    Info (332119):     0.793               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     9.673               0.000 CLOCK_50 
-    Info (332119):    14.621               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info: Analyzing Fast 1100mV 85C Model
-Info (334003): Started post-fitting delay annotation
-Info (334004): Delay annotation completed successfully
-Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
-    Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
-    Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 16.176
-    Info (332119):     Slack       End Point TNS Clock 
-    Info (332119): ========= =================== =====================
-    Info (332119):    16.176               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -1.515              -2.836 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info (332146): Worst-case hold slack is 0.130
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -896,22 +875,46 @@ Info (332146): Worst-case minimum pulse width slack is 0.793
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.793               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     9.673               0.000 CLOCK_50 
+    Info (332119):    14.623               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info: Analyzing Fast 1100mV 85C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332146): Worst-case setup slack is 14.756
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    14.756               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.129
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.129               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 0.793
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.793               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.336               0.000 CLOCK_50 
-    Info (332119):    14.762               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    14.756               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 17.408
+Info (332146): Worst-case setup slack is 16.128
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    17.408               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.097
+    Info (332119):    16.128               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.091
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.097               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.091               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 0.793
@@ -919,13 +922,13 @@ Info (332146): Worst-case minimum pulse width slack is 0.793
     Info (332119): ========= =================== =====================
     Info (332119):     0.793               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.286               0.000 CLOCK_50 
-    Info (332119):    14.760               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    14.756               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 58 warnings
-    Info: Peak virtual memory: 5426 megabytes
-    Info: Processing ended: Sat Jan 10 15:50:21 2026
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:48
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 5483 megabytes
+    Info: Processing ended: Sun Jan 11 12:58:23 2026
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:43
 
 

@@ -1,0 +1,132 @@
+module ShopDisplay (
+    input  logic clk,
+    input  logic resetN,
+    input  logic enable,        // Active when state == SHOP
+    input  logic [10:0] pixelX,
+    input  logic [10:0] pixelY,
+
+    // --- Price Inputs (From Shop Logic) ---
+    input  logic [19:0] priceSpeed,
+    input  logic [19:0] priceLuck,
+    input  logic [19:0] priceMult,
+    input  logic [19:0] priceRot,
+
+    // --- Video Output ---
+    output logic shopDR,        // Draw Request
+    output logic [7:0] shopRGB  // Color Output
+);
+
+    // --- 1. Layout Configuration ---
+	 localparam TOP_ROW_Y = 11'100;
+	 
+	 localparam BOTTOM_ROW_Y = 11'300;
+	 
+    localparam POS_Y_ICONS = 11'd200;
+    localparam POS_Y_TEXT  = 11'd240; 
+    
+    localparam POS_X_SPEED = 11'd80;
+    localparam POS_X_LUCK  = 11'd210;
+    localparam POS_X_MULT  = 11'd340;
+    localparam POS_X_ROT   = 11'd470;
+
+    localparam ICON_SIZE   = 32; // Size of the colored square
+
+    // --- 2. Price Displays (Text) ---
+    logic drTextSpeed, drTextLuck, drTextMult, drTextRot;
+    logic [7:0] rgbSpeed, rgbLuck, rgbMult, rgbRot;
+
+    // Item 1: Speed (White Text)
+    FiveDigitNumberDisplay #( .color(8'hFE) ) dispSpeed (
+        .clk(clk), .resetN(resetN), .enable(enable),
+        .topLeftX(POS_X_SPEED), .topLeftY(POS_Y_TEXT),
+        .pixelX(pixelX), .pixelY(pixelY),
+        .number(priceSpeed),
+        .drawingRequest(drTextSpeed),
+        .RGBout(rgbSpeed)
+    );
+
+    // Item 2: Luck (White Text)
+    FiveDigitNumberDisplay #( .color(8'hFE) ) dispLuck (
+        .clk(clk), .resetN(resetN), .enable(enable),
+        .topLeftX(POS_X_LUCK), .topLeftY(POS_Y_TEXT),
+        .pixelX(pixelX), .pixelY(pixelY),
+        .number(priceLuck),
+        .drawingRequest(drTextLuck),
+        .RGBout(rgbLuck)
+    );
+
+    // Item 3: Multiplier (White Text)
+    FiveDigitNumberDisplay #( .color(8'hFE) ) dispMult (
+        .clk(clk), .resetN(resetN), .enable(enable),
+        .topLeftX(POS_X_MULT), .topLeftY(POS_Y_TEXT),
+        .pixelX(pixelX), .pixelY(pixelY),
+        .number(priceMult),
+        .drawingRequest(drTextMult),
+        .RGBout(rgbMult)
+    );
+
+    // Item 4: Rotation (White Text)
+    FiveDigitNumberDisplay #( .color(8'hFE) ) dispRot (
+        .clk(clk), .resetN(resetN), .enable(enable),
+        .topLeftX(POS_X_ROT), .topLeftY(POS_Y_TEXT),
+        .pixelX(pixelX), .pixelY(pixelY),
+        .number(priceRot),
+        .drawingRequest(drTextRot),
+        .RGBout(rgbRot)
+    );
+
+    // --- 3. Icon Drawing (Simple Squares) ---
+    // In a real game, you would replace these with SpriteROM lookups
+    logic iconSpeed, iconLuck, iconMult, iconRot;
+
+    always_comb begin
+        iconSpeed = (pixelX >= POS_X_SPEED && pixelX < POS_X_SPEED + ICON_SIZE) &&
+                    (pixelY >= POS_Y_ICONS && pixelY < POS_Y_ICONS + ICON_SIZE);
+
+        iconLuck  = (pixelX >= POS_X_LUCK  && pixelX < POS_X_LUCK  + ICON_SIZE) &&
+                    (pixelY >= POS_Y_ICONS && pixelY < POS_Y_ICONS + ICON_SIZE);
+
+        iconMult  = (pixelX >= POS_X_MULT  && pixelX < POS_X_MULT  + ICON_SIZE) &&
+                    (pixelY >= POS_Y_ICONS && pixelY < POS_Y_ICONS + ICON_SIZE);
+
+        iconRot   = (pixelX >= POS_X_ROT   && pixelX < POS_X_ROT   + ICON_SIZE) &&
+                    (pixelY >= POS_Y_ICONS && pixelY < POS_Y_ICONS + ICON_SIZE);
+    end
+
+    // --- 4. Final Output Multiplexer ---
+    always_comb begin
+        shopDR  = 1'b0;
+        shopRGB = 8'hFF;
+
+        if (enable) begin
+            // Priority 1: Text (Prices)
+            if (drTextSpeed) begin
+                shopDR = 1'b1; shopRGB = rgbSpeed;
+            end
+            else if (drTextLuck) begin
+                shopDR = 1'b1; shopRGB = rgbLuck;
+            end
+            else if (drTextMult) begin
+                shopDR = 1'b1; shopRGB = rgbMult;
+            end
+            else if (drTextRot) begin
+                shopDR = 1'b1; shopRGB = rgbRot;
+            end
+            
+            // Priority 2: Icons (Colored Squares)
+            else if (iconSpeed) begin
+                shopDR = 1'b1; shopRGB = 8'hE0; // Red
+            end
+            else if (iconLuck) begin
+                shopDR = 1'b1; shopRGB = 8'h1C; // Green
+            end
+            else if (iconMult) begin
+                shopDR = 1'b1; shopRGB = 8'hFC; // Yellow/Gold
+            end
+            else if (iconRot) begin
+                shopDR = 1'b1; shopRGB = 8'h03; // Blue
+            end
+        end
+    end
+
+endmodule

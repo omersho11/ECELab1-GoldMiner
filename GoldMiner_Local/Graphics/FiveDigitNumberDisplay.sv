@@ -8,7 +8,7 @@ module FiveDigitNumberDisplay # (
 	input logic	[10:0] topLeftY,
 	input logic	[10:0] pixelX,
 	input logic	[10:0] pixelY,
-	input logic [10:0] number,
+	input logic [19:0] number,
 
 	output logic drawingRequest, //output that the pixel should be dispalyed 
 	output logic [7:0] RGBout

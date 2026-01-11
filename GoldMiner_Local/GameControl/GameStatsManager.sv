@@ -8,7 +8,12 @@ module GameStatsManager (
     output GlobalsPKG::SPEED_T      currentExtSpeed,
     output GlobalsPKG::SPEED_T      currentRotSpeed,
     output GlobalsPKG::LUCK_T       currentLuck,
-    output GlobalsPKG::MULTIPLIER_T currentMultiplier
+    output GlobalsPKG::MULTIPLIER_T currentMultiplier,
+	 
+	 output logic [3:0] rawExtSpeedLevel,
+ 	 output logic [3:0] rawRotSpeedLevel,
+	 output logic [3:0] rawLuckLevel,
+	 output logic [3:0] rawMultLevel
 );
 
     import GlobalsPKG::*;
@@ -24,6 +29,11 @@ module GameStatsManager (
     logic [3:0] rotSpeedLevel;
     logic [3:0] luckLevel;
     logic [3:0] multLevel;
+	 
+	 assign rawExtSpeedLevel = extSpeedLevel;
+	 assign rawRotSpeedLevel = rotSpeedLevel;
+	 assign rawLuckLevel = luckLevel;
+	 assign rawMultLevel = rawMultLevel;
 
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin

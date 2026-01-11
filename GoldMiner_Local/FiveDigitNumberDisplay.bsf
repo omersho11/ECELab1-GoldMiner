@@ -76,8 +76,8 @@ agreement for further details.
 	(port
 		(pt 0 144)
 		(input)
-		(text "number[10..0]" (rect 0 0 54 12)(font "Arial" ))
-		(text "number[10..0]" (rect 21 139 75 151)(font "Arial" ))
+		(text "number[19..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "number[19..0]" (rect 21 139 75 151)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
 	)
 	(port
