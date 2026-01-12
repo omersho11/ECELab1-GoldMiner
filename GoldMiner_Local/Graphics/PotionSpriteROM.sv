@@ -1,4 +1,4 @@
-module PotionAssetsROM (
+module PotionSpriteROM (
     input  logic        clk,
     input  logic [1:0]  potionID,   // 0=Speed, 1=Luck, 2=Mult, 3=Rot
     input  logic [3:0]  frameIndex, // Animation frame (0, 1, 2...)
@@ -34,8 +34,8 @@ module PotionAssetsROM (
                 baseAddress = (18*32*22) + (18*32*14); 
             end
             2'd3: begin // POTION 3: ROTATION 24 FRAMES
-                width  = 16;
-                height = 16;
+                width  = 18;
+                height = 32;
                 baseAddress = (18*32*22) + (18*32*14) + (18*32*15);
             end
             default: begin width = 0; height = 0; baseAddress=0; end

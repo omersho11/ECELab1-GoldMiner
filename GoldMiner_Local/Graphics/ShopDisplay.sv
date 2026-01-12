@@ -4,6 +4,7 @@ module ShopDisplay (
     input  logic enable,        // Active when state == SHOP
     input  logic [10:0] pixelX,
     input  logic [10:0] pixelY,
+	 input logic startOfFrame,
 
     // --- Price Inputs (From Shop Logic) ---
     input  logic [19:0] priceExtSpeed,
@@ -61,11 +62,16 @@ module ShopDisplay (
 	 logic [3:0] animFrame;
     logic [25:0] animCounter;
     always_ff @(posedge clk) begin
-        animCounter <= animCounter + 1;
-        if (animCounter == 26'd5_000_000) begin
-            animCounter <= 0;
-            animFrame <= animFrame + 1;
-        end
+		  if (!resetN) begin
+			  animCounter <= 0;
+			  animFrame   <= 0;
+		 end else begin
+			  animCounter <= animCounter + 1;
+			  if (animCounter == 26'd5_000_000) begin
+					animCounter <= 0;
+					animFrame <= animFrame + 1;
+			  end
+		  end
     end
 	 
 	 // Item 1: Speed (White Text)
@@ -74,6 +80,7 @@ module ShopDisplay (
         .topLeftX(POS_X_EXT_SPEED), .topLeftY(POS_Y_TEXT_EXT_SPEED),
         .pixelX(pixelX), .pixelY(pixelY),
         .number(priceExtSpeed),
+		  .startOfFrame(startOfFrame),
         .drawingRequest(drTextSpeed),
         .RGBout(rgbSpeed)
     );
@@ -84,6 +91,7 @@ module ShopDisplay (
         .topLeftX(POS_X_LUCK), .topLeftY(POS_Y_TEXT_LUCK),
         .pixelX(pixelX), .pixelY(pixelY),
         .number(priceLuck),
+		  .startOfFrame(startOfFrame),
         .drawingRequest(drTextLuck),
         .RGBout(rgbLuck)
     );
@@ -94,6 +102,7 @@ module ShopDisplay (
         .topLeftX(POS_X_MULT), .topLeftY(POS_Y_TEXT_MULT),
         .pixelX(pixelX), .pixelY(pixelY),
         .number(priceMult),
+		  .startOfFrame(startOfFrame),
         .drawingRequest(drTextMult),
         .RGBout(rgbMult)
     );
@@ -104,6 +113,7 @@ module ShopDisplay (
         .topLeftX(POS_X_ROT), .topLeftY(POS_Y_TEXT_ROT_SPEED),
         .pixelX(pixelX), .pixelY(pixelY),
         .number(priceRotSpeed),
+		  .startOfFrame(startOfFrame),
         .drawingRequest(drTextRot),
         .RGBout(rgbRot)
     );
@@ -115,7 +125,7 @@ module ShopDisplay (
     logic [1:0] currentPotionID;
     logic [5:0] currentOffsetX, currentOffsetY;
 	 
-	 PotionAssetsROM potionROM (
+	 PotionSpriteROM potionROM (
         .clk(clk),
         .potionID(currentPotionID),
         .frameIndex(animFrame),
@@ -126,9 +136,10 @@ module ShopDisplay (
     );
 	 
 	always_comb begin
-	currentPotionID = 0;
-   currentOffsetX  = 0;
-   currentOffsetY  = 0;
+		currentPotionID = 0;
+		currentOffsetX  = 0;
+		currentOffsetY  = 0;
+		
 		if ((pixelX >= POS_X_EXT_SPEED && pixelX < POS_X_EXT_SPEED + 64) && 
 			 (pixelY >= POS_Y_EXT_SPEED && pixelY < POS_Y_EXT_SPEED + 32)) begin
 			currentPotionID = 0;
