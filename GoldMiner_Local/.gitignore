@@ -1,0 +1,35 @@
+# --- Quartus Generated Folders (Do Not Commit) ---
+/db/
+/incremental_db/
+/output_files/
+/simulation/
+/greybox_tmp/
+/hc_output/
+/.qsys_edit/
+
+# --- Quartus Temporary & Report Files ---
+*.qws
+*.bak
+*.done
+*.rpt
+*.summary
+*.smsg
+*.pin
+*.sof
+*.pof
+*.jdi
+*.sld
+*.qdf
+*.eqn
+*.ipregen.rpt
+
+# --- OS & Editor Junk ---
+.DS_Store
+Thumbs.db
+*~
+
+# --- SPECIFIC: Keep your Asset Files! ---
+# (Quartus sometimes treats .hex/.mif as generated, 
+# but for your game, they are source data)
+!*.hex
+!*.mif
