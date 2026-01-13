@@ -1,0 +1,66 @@
+module AnimationRom # (
+	parameter logic [5:0] WIDTH = 18,
+	parameter logic [5:0] HEIGHT = 32,
+	parameter logic [10:0] TOP = 0,
+	parameter logic [10:0] LEFT = 0,
+	parameter logic [4:0] ANIMATION_LENGTH = 1,
+	parameter string MEMFILE = "Bitmaps/potions.hex"
+) (
+	input logic clk,
+	input	logic	resetN,
+	input logic [1:0] potionID,
+	input logic [5:0] pixelX,  
+	input logic [5:0] pixelY,  
+	input logic startOfFrame, 
+
+	output logic [7:0] RGBout,     // The pixel color
+	output logic dr
+);
+
+logic isInBoundingBox;
+logic [10:0] offsetX;
+logic [10:0] offsetY;
+
+logic [7:0] mem [0:WIDTH * HEIGHT * ANIMATION_LENGTH - 1];
+initial $readmemh(MEMFILE, mem);
+logic [10:0] frameSize = WIDTH * HEIGHT;
+
+logic [4:0] animationIndex = 0;
+
+always_ff @(posedge clk or negedge resetN) begin
+	if (!resetN) begin
+		animationIndex <= 0;
+	end else
+		if (startOfFrame) begin
+			animationIndex = ((animationIndex == ANIMATION_LENGTH) ? 0 : animationIndex + 1);
+		end
+	begin
+end
+
+always_ff @(posedge clk or negedge resetN) begin
+	if (!resetN) begin
+		RGBout <= 0;
+		dr <= 0;
+	end else
+		
+	begin
+end
+
+square_object squareObject #(
+	.OBJECT_WIDTH_X(WIDTH),
+	.OBJECT_HEIGHT_Y(HEIGHT)
+)(	
+	clk(clk),
+	resetN(resetN),
+	pixelX(pixelX),
+	pixelY(pixelY),
+	topLeftX(LEFT),
+	topLeftY(TOP),
+
+	offsetX(offsetX),
+	offsetY(offsetY),
+	drawingRequest(isInBoundingBox),
+	RGBout(0)
+);
+
+endmodule

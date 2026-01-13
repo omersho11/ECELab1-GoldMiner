@@ -18,10 +18,10 @@
 --  agreement for further details.
 
 
-FUNCTION sign_div_unsign_llh (denominator[3..0], numerator[10..0])
+FUNCTION sign_div_unsign_mlh (denominator[3..0], numerator[10..0])
 RETURNS ( quotient[10..0], remainder[3..0]);
 
---synthesis_resources = 
+--synthesis_resources = lut 56 
 SUBDESIGN lpm_divide_fbm
 ( 
 	denom[3..0]	:	input;
@@ -30,7 +30,7 @@ SUBDESIGN lpm_divide_fbm
 	remain[3..0]	:	output;
 ) 
 VARIABLE 
-	divider : sign_div_unsign_llh;
+	divider : sign_div_unsign_mlh;
 	numer_tmp[10..0]	: WIRE;
 
 BEGIN 

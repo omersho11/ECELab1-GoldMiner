@@ -53,7 +53,7 @@ always_ff @(posedge clk or negedge resetN) begin
 		bin               <= 20'd0;
 		bitCnt            <= 5'd0;
 		busy              <= 1'b0;
-		digits_next       <= '{default:4'd0};
+		digits_next       <= '{default:4'd11};
 		digits_next_valid <= 1'b0;
 
 	end else if (!enable) begin
@@ -109,11 +109,28 @@ always_ff @(posedge clk or negedge resetN) begin
 				busy <= 1'b0;
 
 				// bcd_next: [3:0]=ones, [7:4]=tens, ...
-				digits_next[4] <= bcd_next[3:0];     // ones
-				digits_next[3] <= bcd_next[7:4];     // tens
-				digits_next[2] <= bcd_next[11:8];    // hundreds
-				digits_next[1] <= bcd_next[15:12];   // thousands
-				digits_next[0] <= bcd_next[19:16];   // ten-thousands
+				// ten-thousands
+				if (number < 10000) digits_next[0] <= 11;
+				else digits_next[0] <= bcd_next[19:16];   
+				
+				// thousands
+				if (number < 1000) digits_next[1] <= 11;
+				else digits_next[1] <= bcd_next[15:12];  
+			
+				// hundreds
+				if (number < 100) digits_next[2] <= 11;
+				else digits_next[2] <= bcd_next[11:8];   
+			
+				// tens
+				if (number < 10) digits_next[3] <= 11;
+				else digits_next[3] <= bcd_next[7:4];
+
+				// ones				
+				digits_next[4] <= bcd_next[3:0];     
+				
+				
+				
+				
 
 				digits_next_valid <= 1'b1;
 			end
