@@ -52,7 +52,7 @@ Random random (
 always_comb begin
 	// As level increases, rock threshold grows. As luck increases, it shrinks.
 	//fillerSpawnWeight = ((60 > levelIndex * 5) ? 50 - levelIndex * 5 : 10);
-	rockSpawnWeight = 100 + (levelIndex * 10) - (playerLuckStat * 5);
+	rockSpawnWeight = 30 + (levelIndex * 10) - (playerLuckStat * 5);
 	val1SpawnWeight = rockSpawnWeight + 60 + (playerLuckStat * 2);
 	val2SpawnWeight = val1SpawnWeight + 60 + (playerLuckStat * 5);
 	val3SpawnWeight = val2SpawnWeight + 15 + (playerLuckStat * 8);

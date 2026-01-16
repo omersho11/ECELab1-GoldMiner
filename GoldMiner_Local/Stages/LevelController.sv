@@ -29,7 +29,8 @@ module LevelController (
 	output logic [19:0] moneyIncrease,
 	output logic [3:0] levelIncrease,
 	output logic hookCollided,
-	output logic [10:0] timeInSeconds
+	output logic [10:0] timeInSeconds,
+	output logic hookSlowdown
 );
 
 import GlobalsPKG::*;
@@ -138,13 +139,14 @@ LevelMaker levelMaker (
 
 // caches the data of the "active" GrabbableObject (active == colliding with the hook)
 always_comb begin
-    activeTex = 0; activeX = 0; activeY = 0; anyInside = 0;
+    activeTex = 0; activeX = 0; activeY = 0; anyInside = 0; hookSlowdown = 0;
     for(int j=0; j<MAX_OBJECTS; j++) begin
         if(insideBus[j]) begin
             activeTex = activeLevelData[j].elementType;
             activeX = busX[j];
             activeY = busY[j];
             anyInside = 1;
+				hookSlowdown = (activeTex == ROCK_1);
         end
     end
 end
@@ -152,14 +154,13 @@ end
 
 // calculates the total value of grabbed objects
 always_comb begin
-    totalValuePerCycle = 0;
-    for (int k = 0; k < MAX_OBJECTS; k++) begin
-        if (valuePulseBus[k]) begin // Check the new pulse signal
-            totalValuePerCycle = totalValuePerCycle + valueBus[k];
-        end
-    end
+   totalValuePerCycle = 0;
+   for (int k = 0; k < MAX_OBJECTS; k++) begin
+		if (valuePulseBus[k]) begin // Check the new pulse signal
+			totalValuePerCycle = totalValuePerCycle + valueBus[k];
+		end
+	end
 end
-
 
 // determines if the level needs to draw to screen at current pixel
 always_comb begin
@@ -231,7 +232,9 @@ always_ff @(posedge clk or negedge resetN) begin
 	end else begin
 		stageEnded_d <= stageEnded;
 		enable_d <= enable;
-		scoreIncrease <= scoreMultiplier*totalValuePerCycle;  // scoreMultiplier * totalValuePerCycle
+		
+		// theres a cutoff since using the entire 20 bits vector adds alot of DPS that slow down compilation time
+		scoreIncrease <= scoreMultiplier[6:0] * totalValuePerCycle;  
 	end
 end
 

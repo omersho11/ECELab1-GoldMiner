@@ -30,7 +30,10 @@ module	StageController	(
 		
 		else begin 
 			stageEnded_d <= stageEnded;
-			startingNewGame <= 0;
+			
+			if (startOfFrame) begin
+				startingNewGame <= 0;
+			end
 			
 			if(stageEndedPulse) begin
 				case (stageSM) 

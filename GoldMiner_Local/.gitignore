@@ -22,6 +22,7 @@
 *.qdf
 *.eqn
 *.ipregen.rpt
+*.qarlog
 
 # --- OS & Editor Junk ---
 .DS_Store

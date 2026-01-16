@@ -28,6 +28,8 @@ module Shop(
 );
 
 	import GlobalsPKG::*;
+	// --- level cap ---
+	localparam MAX_LEVEL = {3{1'b1}};
 
 	// --- Prices ---
 	localparam MONEY BASE_COST_SPEED      = 20'd10;
@@ -88,7 +90,7 @@ module Shop(
 			if (keyPulse) begin
 				case(numberKeyPressed)
 					EXTENSION_SPEED_KEY: begin // BUY EXTENSION SPEED
-						if (money >= currentCostExtSpeed) begin
+						if ((money >= currentCostExtSpeed) && (levelExtSpeed < MAX_LEVEL)) begin
 							spendAmount <= currentCostExtSpeed;
 							spendPulse  <= 1;
 							
@@ -98,7 +100,7 @@ module Shop(
 					end
 					
 					LUCK_KEY: begin // BUY LUCK
-						if (money >= currentCostLuck) begin
+						if ((money >= currentCostLuck) && (levelLuck < MAX_LEVEL)) begin
 							spendAmount <= currentCostLuck;
 							spendPulse  <= 1;
 							
@@ -108,7 +110,7 @@ module Shop(
 					end
 					
 					MULTIPLIER_KEY: begin // BUY MULTIPLIER
-						if (money >= currentCostMult) begin
+						if ((money >= currentCostMult) && (levelMultiplier < MAX_LEVEL)) begin
 							spendAmount <= currentCostMult;
 							spendPulse  <= 1;
 							
@@ -118,7 +120,7 @@ module Shop(
 					end
 					
 					ROTATION_SPEED_KEY: begin // BUY ROTATION SPEED
-						if (money >= currentCostRotSpeed) begin
+						if ((money >= currentCostRotSpeed) && (levelRotSpeed < MAX_LEVEL)) begin
 							spendAmount <= currentCostRotSpeed;
 							spendPulse  <= 1;
 							

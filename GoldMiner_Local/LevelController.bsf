@@ -213,6 +213,13 @@ agreement for further details.
 		(text "timeInSeconds[10..0]" (rect 170 171 251 183)(font "Arial" ))
 		(line (pt 272 176)(pt 256 176)(line_width 3))
 	)
+	(port
+		(pt 272 192)
+		(output)
+		(text "hookSlowdown" (rect 0 0 56 12)(font "Arial" ))
+		(text "hookSlowdown" (rect 195 187 251 199)(font "Arial" ))
+		(line (pt 272 192)(pt 256 192)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 256 320)(line_width 1))
 	)

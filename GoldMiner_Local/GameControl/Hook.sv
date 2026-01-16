@@ -14,6 +14,7 @@ module Hook #(
 	 
 	 input logic [8:0] extentionSpeed,
 	 input logic [8:0] rotationSpeed,
+	 input logic hookRetractSlowdown,
 	 
     output logic [10:0] x,
     output logic [10:0] y,
@@ -34,6 +35,9 @@ module Hook #(
 	 logic isHookOut;
 	 int length;
 	 logic isHookRetracting;
+	 logic [8:0] currentRetractSpeed;
+    assign currentRetractSpeed = (hookRetractSlowdown) ? (extentionSpeed >> 3) : extentionSpeed;
+	 
 	 assign isNotInBoundingBox = (x <= extentionSpeed || x >= 640-extentionSpeed || y <= extentionSpeed || y >= 480-extentionSpeed);
 	 
 	 assign maxAngle = ANGLE_TWO_PI - 2*rotationSpeed;
@@ -56,7 +60,74 @@ module Hook #(
 
     // --- Part 1: Motion Logic (Slowed down for visibility) ---
     logic [1:0] frame_divider; 
-
+	 
+//	 always_ff @(posedge clk or negedge resetN) begin
+//        if (!resetN) begin
+//            isHookOut <= 0;
+//            isHookRetracting <= 0;
+//            length <= MIN_LENGTH;
+//            angle <= startingPosition;
+//            direction <= 1;
+//            frame_divider <= 0;
+//            hookReturnedPulse <= 0;
+//            
+//        end else if (enable) begin
+//             
+//             if (sendHook) isHookOut <= 1;
+//
+//             if (startOfFrame) begin
+//                hookReturnedPulse <= 0;
+//                frame_divider <= frame_divider + 1;
+//                
+//                if (forceReturn) isHookRetracting <= 1;
+//
+//                if (frame_divider == 0) begin
+//                     
+//                     if (!isHookOut) begin
+//                         if (angle >= maxAngle) direction <= -1;
+//                         else if (angle <= minAngle) direction <= 1;
+//                         angle <= angle + (rotationSpeed * direction); 
+//                     end
+//                     
+//                     else begin
+//                         angle <= angle; 
+//
+//                         if (isHookRetracting) begin
+//                             if (length > MIN_LENGTH)
+//                                length <= length - currentRetractSpeed;
+//                             
+//                             if (length <= MIN_LENGTH + currentRetractSpeed) begin
+//                                 length <= MIN_LENGTH;
+//                                 isHookRetracting <= 0;
+//                                 isHookOut <= 0;
+//                                 hookReturnedPulse <= 1;
+//                             end
+//                         end 
+//                         else begin
+//                             length <= length + extentionSpeed;
+//
+//                             if (length >= MAX_LENGTH || isNotInBoundingBox) begin
+//                                 isHookRetracting <= 1;
+//                                 length <= (length >= MAX_LENGTH) ? MAX_LENGTH : length;
+//                             end
+//                         end
+//                     end
+//                end
+//            end
+//        end
+//        else if(!enable) begin
+//            length <= MIN_LENGTH;
+//            isHookOut <= 0;
+//            isHookRetracting <= 0;
+//            angle <= startingPosition;
+//            direction <= 1;
+//            hookReturnedPulse <= 0;
+//        end
+//    end
+//	 
+	 
+	 
+	 
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin
 				isHookOut <= 0;
@@ -85,7 +156,7 @@ module Hook #(
 						 end
 						 if (isHookOut) begin
 							  angle <= angle;
-							  length <= (isHookRetracting) ? length - extentionSpeed : length + extentionSpeed;
+							  length <= (isHookRetracting) ? length - currentRetractSpeed : length + extentionSpeed;
 
 							  if (length >= MAX_LENGTH) begin
 									isHookRetracting <= 1;
@@ -118,7 +189,7 @@ module Hook #(
     end
 
 
-    always_comb begin
+		always_comb begin
 		shortint offsetX, offsetY;
 
 		offsetX = (length * rawCos) >>> 8;

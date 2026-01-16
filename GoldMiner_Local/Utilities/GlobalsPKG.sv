@@ -7,6 +7,21 @@ package GlobalsPKG;
 		VALUABLE_3  = 3'd3,
 		ROCK_1      = 3'd4
 	} LEVEL_ELEMENTS; 
+	
+	typedef enum logic [3:0] {
+		BANNER_EXT_SPEED = 4'd0,
+		BANNER_LUCK      = 4'd1,
+		BANNER_MULT      = 4'd2,
+		BANNER_ROT_SPEED = 4'd3,
+		KEY_1 			  = 4'd4,
+		KEY_2				  = 4'd5,
+		KEY_3				  = 4'd6,
+		KEY_4 			  = 4'd7,
+		TEXT_SCORE       = 4'd8,
+		TEXT_MONEY       = 4'd9,
+		TEXT_COST        = 4'd10
+		
+	} IMAGE_IDS;
 
 	typedef struct packed {
 		LEVEL_ELEMENTS elementType;
@@ -15,7 +30,7 @@ package GlobalsPKG;
 	} GRABBABLE_OBJECT_METADATA;
 	
 	// --- Economy & Stats Types ---
-	typedef logic [19:0] MONEY;        
+	typedef logic [19:0] MONEY;
 	typedef logic [19:0] SCORE;
 	
 	typedef logic [8:0]  SPEED_T;      // 9 bits for hook movement
@@ -45,5 +60,7 @@ package GlobalsPKG;
 	parameter logic [5:0] MAX_LEVEL = 10;
 	parameter logic [7:0] MIN_LEVEL_TIME = 20;
 	parameter logic [7:0] EXTRA_TIME_PER_LEVEL = 10;
+	parameter RGB_T MONEY_TEXT_COLOR = 8'b00011000;
+	parameter RGB_T SCORE_TEXT_COLOR = 8'b11111110;	
 	
 endpackage

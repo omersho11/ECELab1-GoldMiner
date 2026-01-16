@@ -11,9 +11,9 @@ module NewGrabbableObject (
     
     output logic [10:0] value,
     output logic destroyed,
-    output logic [3:0]  texToRead,
-    output logic [4:0]  addrX, addrY,
-    output logic        isInside,
+    output logic [3:0] texToRead,
+    output logic [4:0] addrX, addrY,
+    output logic isInside,
 	 output logic valuePulse
 );
 

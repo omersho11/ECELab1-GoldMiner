@@ -30,6 +30,7 @@ module GameStatsManager (
     logic [3:0] luckLevel;
     logic [3:0] multLevel;
 	 
+	 
 	 assign rawExtSpeedLevel = extSpeedLevel;
 	 assign rawRotSpeedLevel = rotSpeedLevel;
 	 assign rawLuckLevel = luckLevel;

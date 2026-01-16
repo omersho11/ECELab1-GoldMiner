@@ -16,6 +16,7 @@ module CompleteHook #(
 	input logic [8:0] rotationSpeed,
 	input logic [10:0] pixelX,
 	input logic [10:0] pixelY,
+	input logic hookSlowdown,
 
 	
 	output logic [10:0] hookPosX,
@@ -43,7 +44,8 @@ Hook #(
 	 
 	 .x(hookPosX),
 	 .y(hookPosY),
-	 .hookReturnedPulse(hookReturned)
+	 .hookReturnedPulse(hookReturned),
+	 .hookRetractSlowdown(hookSlowdown)
 
 );
 
