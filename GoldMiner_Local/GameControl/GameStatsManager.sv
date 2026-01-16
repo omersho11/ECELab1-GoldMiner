@@ -34,7 +34,7 @@ module GameStatsManager (
 	 assign rawExtSpeedLevel = extSpeedLevel;
 	 assign rawRotSpeedLevel = rotSpeedLevel;
 	 assign rawLuckLevel = luckLevel;
-	 assign rawMultLevel = rawMultLevel;
+	 assign rawMultLevel = multLevel;
 
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin

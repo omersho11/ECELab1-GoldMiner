@@ -51,11 +51,12 @@ logic [3:0] animationFrameDurationCounter;
 
 initial begin
 	case (POTION_ID)
-		0: $readmemh("Assets/potion0.hex", mem);
-		1: $readmemh("Assets/potion1.hex", mem);
-		2: $readmemh("Assets/potion2.hex", mem);
-		3: $readmemh("Assets/potion3.hex", mem);
-		default: $readmemh("Assets/potion0.hex", mem);
+		0: $readmemh("Assets/Potions/potion0.hex", mem);
+		1: $readmemh("Assets/Potions/potion1.hex", mem);
+		2: $readmemh("Assets/Potions/potion2.hex", mem);
+		3: $readmemh("Assets/Potions/potion3.hex", mem);
+		4: $readmemh("Assets/wizard/spellAnimation.hex", mem);
+		default: $readmemh("Assets/Potions/potion0.hex", mem);
 	endcase	
 end
 

@@ -3,11 +3,15 @@ module DisplayMux (
 	
 	input logic levelDR,
 	input logic [7:0] levelRGB,
+	input logic levelDisplayDR,
+	input logic [7:0] levelDisplayRGB,
 	
 	input logic scoreDR,
 	input logic [7:0] scoreRGB,
 	input logic moneyDR,
 	input logic [7:0] moneyRGB,
+	input logic targetScoreDR,
+	input logic [7:0] targetScoreRGB,
 	
 	input logic hookDR,
 	input logic [7:0] hookRGB,
@@ -26,10 +30,14 @@ module DisplayMux (
 always_comb begin
 	RGBout = RGBBackground;
 	if (hookDR) RGBout = hookRGB;
-	else if(levelDR) RGBout = levelRGB;
 	else if(scoreDR) RGBout = scoreRGB;
 	else if(moneyDR) RGBout = moneyRGB;
+	
+	else if(targetScoreDR) RGBout = targetScoreRGB;
 	else if(timeDR) RGBout = timeRGB;
+	else if(levelDR) RGBout = levelRGB;
+	else if(levelDisplayDR) RGBout = levelDisplayRGB;
+	
 	else if(shopDR) RGBout = shopRGB;
 end
 

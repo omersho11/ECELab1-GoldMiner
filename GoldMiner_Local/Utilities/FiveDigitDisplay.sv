@@ -23,7 +23,7 @@ logic	[10:0] offsetY;
 logic insideRectangle;
 
 (* ramstyle = "M10K" *) logic [15:0] fontRows [0:383];
-initial  $readmemh("Bitmaps/digits.hex", fontRows);
+initial  $readmemh("Assets/digits.hex", fontRows);
 
 
 square_object #(

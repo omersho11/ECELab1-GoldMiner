@@ -8,6 +8,16 @@ package GlobalsPKG;
 		ROCK_1      = 3'd4
 	} LEVEL_ELEMENTS; 
 	
+	const logic [4:0][10:0] VALUE_TABLE = '{
+    FILLER      		: 11'd0,   
+    VALUABLE_1       : 11'd2,   
+    VALUABLE_2       : 11'd5,   
+    VALUABLE_3     	: 11'd10,  
+    ROCK_1 				: 11'd1,   
+    default     		: 11'd0    // Safety catch-all
+};
+
+	
 	typedef enum logic [3:0] {
 		BANNER_EXT_SPEED = 4'd0,
 		BANNER_LUCK      = 4'd1,
@@ -60,7 +70,7 @@ package GlobalsPKG;
 	parameter logic [5:0] MAX_LEVEL = 10;
 	parameter logic [7:0] MIN_LEVEL_TIME = 20;
 	parameter logic [7:0] EXTRA_TIME_PER_LEVEL = 10;
-	parameter RGB_T MONEY_TEXT_COLOR = 8'b00011000;
-	parameter RGB_T SCORE_TEXT_COLOR = 8'b11111110;	
+	parameter RGB_T MONEY_TEXT_COLOR = 8'b000_100_01; // Green
+	parameter RGB_T SCORE_TEXT_COLOR = 8'b111_111_10; // Almost white
 	
 endpackage

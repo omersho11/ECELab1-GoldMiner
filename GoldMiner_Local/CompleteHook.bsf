@@ -136,6 +136,13 @@ agreement for further details.
 		(text "hookRGB[7..0]" (rect 167 91 227 103)(font "Arial" ))
 		(line (pt 248 96)(pt 232 96)(line_width 3))
 	)
+	(port
+		(pt 248 112)
+		(output)
+		(text "isHookOut" (rect 0 0 41 12)(font "Arial" ))
+		(text "isHookOut" (rect 186 107 227 119)(font "Arial" ))
+		(line (pt 248 112)(pt 232 112)(line_width 1))
+	)
 	(parameter
 		"OFFSET_X"
 		"320"

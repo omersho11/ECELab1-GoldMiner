@@ -30,7 +30,9 @@ module LevelController (
 	output logic [3:0] levelIncrease,
 	output logic hookCollided,
 	output logic [10:0] timeInSeconds,
-	output logic hookSlowdown
+	output logic hookSlowdown,
+	output logic [19:0] scoreInActiveLevel,
+	output logic [19:0] targetScoreInLevel
 );
 
 import GlobalsPKG::*;
@@ -45,9 +47,12 @@ assign moneyIncrease = scoreIncrease;
 
 // level creation params
 logic generateNewLevel;
-logic [19:0] levelValue;
 logic finishedGenerating;
 logic currentLevelGenerated;
+
+logic [10:0] totalValuePerCycle; // the sum of the values of all objects that are being grabbed this frame
+logic [19:0] totalLevelValue, targetValueToPass, targetScoreLatch;
+assign targetScoreInLevel = (targetScoreLatch >= scoreInActiveLevel) ? targetScoreLatch - scoreInActiveLevel : 0;
 
 logic anyObjectsRemaining;
 
@@ -72,11 +77,10 @@ logic anyInside;
 assign drGrabbableObject = anyInside && (romColor != 8'hFF);
 
 
-// the sum of the values of all objects that are being grabbed this frame
-logic [10:0] totalValuePerCycle;
+
 
 // data for ROM	
-logic [7:0] romColor;
+RGB_T romColor;
 
 
 // instantiation of GrabbableObjects
@@ -125,8 +129,9 @@ LevelMaker levelMaker (
 	.playerLuckStat(playerLuckStat),
 	.generateNewLevel(generateNewLevel),
 	
+	.levelValue(totalLevelValue),
+	.targetValue(targetValueToPass),
 	.elementsData(activeLevelData),
-	.levelValue(levelValue),
 	.finishedGeneratingPulse(finishedGenerating)
 );
 
@@ -184,15 +189,19 @@ always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin
 		generateNewLevel <= 0;
 		currentLevelGenerated <= 0;
+		targetScoreLatch <= 0;
 	end else begin
 		generateNewLevel <= 0;
 		
 		if (startingNewLevel) begin
 			generateNewLevel <= 1;
 			currentLevelGenerated <= 0;
+			targetScoreLatch <= 0;
+
 			
 		end else if (finishedGenerating) begin
 			currentLevelGenerated <= 1;
+			targetScoreLatch <= targetValueToPass;
 		end
 	end
 end
@@ -229,12 +238,15 @@ always_ff @(posedge clk or negedge resetN) begin
 		stageEnded_d <= 0;
 		enable_d <= 0;
 		scoreIncrease <= 0;
+		
 	end else begin
+		if (generateNewLevel) scoreInActiveLevel <= 0;
 		stageEnded_d <= stageEnded;
 		enable_d <= enable;
 		
 		// theres a cutoff since using the entire 20 bits vector adds alot of DPS that slow down compilation time
 		scoreIncrease <= scoreMultiplier[6:0] * totalValuePerCycle;  
+		scoreInActiveLevel <= scoreInActiveLevel + scoreIncrease;
 	end
 end
 
@@ -265,6 +277,7 @@ always_ff @(posedge clk or negedge resetN) begin
 			if (oneSecPulse) begin
 				timer <= timer - 1;
 				if (timer == 1) begin
+					if (scoreInActiveLevel >= targetScoreLatch) stagePassed <= 1;
 					stageEnded <= 1;
 				end
 			end

@@ -38,10 +38,10 @@ module Shop(
 	localparam MONEY BASE_COST_ROTATION   = 20'd30;
 	
 	// 2. Cost Increase 
-	localparam MONEY INC_COST_SPEED      = 20'd10;  
-	localparam MONEY INC_COST_LUCK       = 20'd25;
-	localparam MONEY INC_COST_MULTIPLIER = 20'd50;
-	localparam MONEY INC_COST_ROTATION   = 20'd50;
+	localparam MONEY INC_COST_SPEED      = 10'd10;  
+	localparam MONEY INC_COST_LUCK       = 10'd25;
+	localparam MONEY INC_COST_MULTIPLIER = 10'd50;
+	localparam MONEY INC_COST_ROTATION   = 10'd50;
 	
 	// --- Calculate Current Costs ---
 	// Cost = Base + (Current Level * Increment)

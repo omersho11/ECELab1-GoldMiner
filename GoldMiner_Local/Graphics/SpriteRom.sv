@@ -10,7 +10,7 @@ module SpriteRom (
 	logic [7:0] rom [0:16383]; 
 
 	initial begin
-		$readmemh("Bitmaps/sprite_data.hex", rom); 
+		$readmemh("Assets/GrabbableObjects.hex", rom); 
 	end
 
 	always_ff @(posedge clk) begin

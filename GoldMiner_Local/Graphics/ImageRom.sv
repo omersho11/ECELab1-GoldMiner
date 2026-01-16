@@ -45,16 +45,16 @@ logic [15:0] address;
 
 initial begin
 	case (IMAGE_ID)
-		BANNER_EXT_SPEED: $readmemh("Assets/extentionSpeedUpgradeIcon.hex", mem);
-		BANNER_LUCK: $readmemh("Assets/playerLuckUpgradeIcon.hex", mem);
-		BANNER_MULT: $readmemh("Assets/scoreMultiplierUpgradeIcon.hex", mem);
-		BANNER_ROT_SPEED: $readmemh("Assets/rotationSpeedUpgradeIcon.hex", mem);
-		KEY_1: $readmemh("Assets/key1.hex", mem);
-		KEY_2: $readmemh("Assets/key2.hex", mem);
-		KEY_3: $readmemh("Assets/key3.hex", mem);
-		KEY_4: $readmemh("Assets/key4.hex", mem);
+		BANNER_EXT_SPEED: $readmemh("Assets/ShopIcons/extentionSpeedUpgradeIcon.hex", mem);
+		BANNER_LUCK: $readmemh("Assets/ShopIcons/playerLuckUpgradeIcon.hex", mem);
+		BANNER_MULT: $readmemh("Assets/ShopIcons/scoreMultiplierUpgradeIcon.hex", mem);
+		BANNER_ROT_SPEED: $readmemh("Assets/ShopIcons/rotationSpeedUpgradeIcon.hex", mem);
+		KEY_1: $readmemh("Assets/ShopIcons/key1.hex", mem);
+		KEY_2: $readmemh("Assets/ShopIcons/key2.hex", mem);
+		KEY_3: $readmemh("Assets/ShopIcons/key3.hex", mem);
+		KEY_4: $readmemh("Assets/ShopIcons/key4.hex", mem);
 		
-		default: $readmemh("Assets/extentionSpeedUpgradeIcon.hex", mem);
+		default: $readmemh("Assets/ShopIcons/extentionSpeedUpgradeIcon.hex", mem);
 	endcase	
 end
 

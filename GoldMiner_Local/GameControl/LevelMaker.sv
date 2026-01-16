@@ -8,6 +8,7 @@ module LevelMaker (
 //	output LEVEL_ELEMENTS levelData [299:0], // flattened
 	output GRABBABLE_OBJECT_METADATA elementsData [MAX_OBJECTS - 1:0],
 	output logic [19:0] levelValue,
+	output logic [19:0] targetValue,
 	output logic finishedGeneratingPulse
 );
 
@@ -31,7 +32,10 @@ assign randRow = randomVal[12:10] + 7; // randomVal % 8 + 7
 assign currentIndex = (randRow << 4) + (randRow << 2) + randCol; // 20 * randRow + randCol
 
 logic [5:0] amountOfPlacedElements;
+
 logic [19:0] overallLevelValue;
+assign levelValue = overallLevelValue;
+assign targetValue = levelValue - (levelValue >> 2); // 75% from max score
 
 logic [7:0] rockSpawnWeight, val1SpawnWeight, val2SpawnWeight, val3SpawnWeight, fillerSpawnWeight;
 logic [9:0] truncatedRand;
@@ -87,15 +91,22 @@ always_ff @(posedge clk or negedge resetN) begin
 		end else if (mask[currentIndex] == 0) begin
 			
 			
-			if (truncatedRand < rockSpawnWeight)
+			if (truncatedRand < rockSpawnWeight) begin
 				elementsData[amountOfPlacedElements] <= '{elementType: ROCK_1, row: randRow, col: randCol};
-			else if (truncatedRand < val1SpawnWeight)
+				overallLevelValue <= overallLevelValue + VALUE_TABLE[ROCK_1];
+			end
+			else if (truncatedRand < val1SpawnWeight) begin
 				elementsData[amountOfPlacedElements] <= '{elementType: VALUABLE_1, row: randRow, col: randCol};
-			else if (truncatedRand < val2SpawnWeight)
+				overallLevelValue <= overallLevelValue + VALUE_TABLE[VALUABLE_1];
+			end
+			else if (truncatedRand < val2SpawnWeight) begin
 				elementsData[amountOfPlacedElements] <= '{elementType: VALUABLE_2, row: randRow, col: randCol};
-			else if (truncatedRand < val3SpawnWeight)
+				overallLevelValue <= overallLevelValue + VALUE_TABLE[VALUABLE_2];
+			end
+			else if (truncatedRand < val3SpawnWeight) begin
 				elementsData[amountOfPlacedElements] <= '{elementType: VALUABLE_3, row: randRow, col: randCol};
-			
+				overallLevelValue <= overallLevelValue + VALUE_TABLE[VALUABLE_3];
+			end
 			if (truncatedRand <= val3SpawnWeight) begin
 				amountOfPlacedElements <= amountOfPlacedElements + 1;
 				mask[currentIndex] <= 1;

@@ -19,7 +19,6 @@ module NewGrabbableObject (
 
 	 import GlobalsPKG::*;
 	 
-	 const logic [3:0][10:0] VALUE_TABLE = {11'd0,11'd2,11'd5,11'd10,11'd1}; 
     enum logic [1:0] {STATE_IDLE, STATE_GRABBED, STATE_DESTROYED} state;
     logic [10:0] topLeftX, topLeftY;
 
