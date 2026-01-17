@@ -21,12 +21,13 @@ assign stageEndedPulse = (stageEnded && (!stageEnded_d));
 always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin  
-			stageSM <= S_MAIN_MENU;
-			stageEnded_d <= 0;
-			manualResetN <= 1;
+		stageSM <= S_MAIN_MENU;
+		stageEnded_d <= 0;
+		manualResetN <= 1;
 	end
 	
 	else begin 
+		manualResetN <= 1;
 		stageEnded_d <= stageEnded;
 		
 		if(stageEndedPulse) begin

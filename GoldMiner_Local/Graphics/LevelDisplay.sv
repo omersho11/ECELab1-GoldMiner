@@ -16,10 +16,10 @@ module LevelDisplay (
 import GlobalsPKG::*;
 
 // --- Configuration ---
-localparam WIZ_X = 11'd256; 
-localparam WIZ_Y = 11'd0;
-localparam SPARK_X = 11'd264; 
-localparam SPARK_Y = 11'd1; 
+localparam WIZ_X = 11'd297; 
+localparam WIZ_Y = 11'd26;
+localparam SPARK_X = 11'd299; 
+localparam SPARK_Y = 11'd24; 
 localparam FRAMES_PER_SWITCH = 15; // 0.5s at 30Hz
 
 // --- Animation Timer ---
@@ -58,7 +58,9 @@ logic wizDR, sparkDR;
 RGB_T wizRGB, sparkRGB;
 
  WizardROM #(
-	.SCALE(1)
+	.SCALE(0),
+	.TOP(WIZ_Y),
+	.LEFT(WIZ_X)
  )wizard (
 	.clk(clk),
 	.resetN(resetN),
@@ -79,7 +81,7 @@ AnimationRom #(
 	.ANIMATION_LENGTH(4),
 	.POTION_ID(4),
 	.ANIMATION_SLOWDOWN_RATE(4),
-	.SCALE(1)
+	.SCALE(0)
 ) spark (
 	.clk(clk),
 	.resetN(resetN),

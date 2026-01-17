@@ -29,7 +29,8 @@ package GlobalsPKG;
 		KEY_4 			  = 4'd7,
 		TEXT_SCORE       = 4'd8,
 		TEXT_MONEY       = 4'd9,
-		TEXT_COST        = 4'd10
+		TEXT_COST        = 4'd10,
+		LOGO				  = 4'd11
 		
 	} IMAGE_IDS;
 	

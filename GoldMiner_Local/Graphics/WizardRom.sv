@@ -1,6 +1,6 @@
 module WizardROM #(
-    parameter [10:0] WIDTH = 64,
-    parameter [10:0] HEIGHT = 64,
+    parameter [10:0] WIDTH = 46,
+    parameter [10:0] HEIGHT = 70,
     parameter [3:0] SCALE = 0,
 	 parameter logic [4:0] ANIMATION_LENGTH = 2,
 	 parameter logic [10:0] TOP = 32,
@@ -49,7 +49,7 @@ localparam int DEPTH = 1 << $clog2(DEPTH_RAW);
  
  
  
-(* ramstyle = "M10K" *) logic [7:0] mem [0:16383];
+(* ramstyle = "M10K" *) logic [7:0] mem [0:DEPTH-1];
 initial $readmemh("Assets/wizard/wizardAnimations.hex", mem);
 
 logic [4:0] animationIndex = 0;

@@ -53,6 +53,7 @@ initial begin
 		KEY_2: $readmemh("Assets/ShopIcons/key2.hex", mem);
 		KEY_3: $readmemh("Assets/ShopIcons/key3.hex", mem);
 		KEY_4: $readmemh("Assets/ShopIcons/key4.hex", mem);
+		LOGO: $readmemh("Assets/gameLogo.hex", mem);
 		
 		default: $readmemh("Assets/ShopIcons/extentionSpeedUpgradeIcon.hex", mem);
 	endcase	

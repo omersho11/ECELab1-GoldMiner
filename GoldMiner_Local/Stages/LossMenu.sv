@@ -39,7 +39,7 @@ TextRom # (
 TextRom # (
 	.WIDTH(269),
 	.HEIGHT(14),
-	.TOP(440),
+	.TOP(400),
 	.LEFT(51),
 	.TEXT_ID(PLUS_TO_CONTINUE),
 	.SCALE(1)
@@ -56,10 +56,10 @@ TextRom # (
 TextRom # (
 	.WIDTH(272),
 	.HEIGHT(14),
-	.TOP(300),
+	.TOP(250),
 	.LEFT(48),
 	.TEXT_ID(FINAL_SCORE),
-	.SCALE(0)
+	.SCALE(1)
 ) finalScoreText (
 	.clk(clk),
 	.resetN(resetN),
@@ -75,7 +75,7 @@ TextRom # (
 FiveDigitNumberDisplay #(
     .color(8'hfe),
 	 .topLeftX(280),
-	 .topLeftY(350)
+	 .topLeftY(285)
 ) finalScoreNumber (
     .clk(clk),
     .resetN(resetN),
