@@ -1,68 +1,108 @@
 module WizardROM #(
     parameter [10:0] WIDTH = 64,
     parameter [10:0] HEIGHT = 64,
-    parameter [3:0] SCALE = 0
+    parameter [3:0] SCALE = 0,
+	 parameter logic [4:0] ANIMATION_LENGTH = 2,
+	 parameter logic [10:0] TOP = 32,
+	 parameter logic [10:0] LEFT = 288,
+	 parameter logic [3:0] ANIMATION_SLOWDOWN_RATE = 15
 ) (
     input logic clk,
+	 input logic resetN,
     input logic [10:0] pixelX,
     input logic [10:0] pixelY,
-    input logic [10:0] topLeftX,
-    input logic [10:0] topLeftY,
     input logic [2:0] frameIndex, // 0-3
 	 input logic startOfFrame,
+	 input logic isCasting,
 
     
-    output logic [7:0] rgbOut,
+    output logic [7:0] RGBout,
     output logic dr
 );
-    import GlobalsPKG::*;
-	 
-	 logic [2:0] frameLatch;
 
-    // --- 1. Bounds Check (Scaled) ---
-    logic inBox;
-    logic [10:0] offsetX, offsetY;
-    
-    // We multiply Width/Height by Scale to get the Screen Size
-    assign inBox = (pixelX >= topLeftX) && (pixelX < topLeftX + (WIDTH << SCALE)) &&
-                   (pixelY >= topLeftY) && (pixelY < topLeftY + (HEIGHT << SCALE));
+import GlobalsPKG::*;
+logic isInBoundingBox;
+logic [10:0] offsetX;
+logic [10:0] offsetY;
 
-    assign offsetX = pixelX - topLeftX;
-    assign offsetY = pixelY - topLeftY;
+localparam int FRAME_SIZE = WIDTH * HEIGHT;
+localparam int DEPTH_RAW = WIDTH*HEIGHT*ANIMATION_LENGTH;
+localparam int DEPTH = 1 << $clog2(DEPTH_RAW);
+ 
+ square_object #(
+.OBJECT_WIDTH_X({4'b0, WIDTH}<<SCALE),
+.OBJECT_HEIGHT_Y({4'b0, HEIGHT}<<SCALE)
+) squareObject (	
+.clk(clk),
+.resetN(resetN),
+.pixelX(pixelX),
+.pixelY(pixelY),
+.topLeftX(LEFT),
+.topLeftY(TOP),
 
-    // --- 2. Address Calculation ---
-    logic [15:0] address;
-    localparam FRAME_SIZE = WIDTH * HEIGHT;
-	 localparam FRAME_COUNT = 4;
+.offsetX(offsetX),
+.offsetY(offsetY),
+.drawingRequest(isInBoundingBox),
+.RGBout(0)
+);
+ 
+ 
+ 
+ 
+(* ramstyle = "M10K" *) logic [7:0] mem [0:16383];
+initial $readmemh("Assets/wizard/wizardAnimations.hex", mem);
 
-    always_comb begin
-        address = 0;
-        if (inBox) begin
-            // Division by SCALE maps screen pixels back to texture pixels
-            address = (frameLatch * FRAME_SIZE) + 
-                      ((offsetY >> SCALE) * WIDTH) + 
-                      (offsetX >> SCALE);
-        end
-    end
+logic [4:0] animationIndex = 0;
+logic [4:0] realAnimationIndex = 0;
+logic [15:0] address;
+logic [3:0] animationFrameDurationCounter;
+	
+always_comb begin
+	address = 0;
+	realAnimationIndex = animationIndex + ((isCasting == 1) ? ANIMATION_LENGTH : 0);
 
-    // --- 3. Memory ---
-    (* ramstyle = "M10K" *) RGB_T mem [0:(FRAME_SIZE*FRAME_COUNT)-1]; 
-    initial $readmemh("Assets/wizard/wizardAnimations.hex", mem); 
+	if (isInBoundingBox) begin
+		address = (realAnimationIndex * FRAME_SIZE) + ((offsetY>>SCALE)* WIDTH) + (offsetX>>SCALE);
+	end
+end
 
-    // --- 4. Pipeline Read ---
-    logic [7:0] q;
-    logic inBox_d;
+always_ff @(posedge clk or negedge resetN) begin
+	if (!resetN) begin
+		animationIndex <= 0;
+	end else begin
+		if (startOfFrame) begin
+			if (animationFrameDurationCounter >= ANIMATION_SLOWDOWN_RATE) begin
+				animationIndex <= ((animationIndex == ANIMATION_LENGTH - 1) ? 0 : animationIndex + 1);
+				animationFrameDurationCounter <= 0;
+			end else
+				animationFrameDurationCounter <= animationFrameDurationCounter + 1;
+		end
+	end
+end
 
-    always_ff @(posedge clk) begin
-        q <= mem[address];
-        inBox_d <= inBox;
-    end
-	 
-	 always_ff @(posedge clk) begin
-        if(startOfFrame) frameLatch <= frameIndex;
-    end
-	 
-    assign rgbOut = q;
-    assign dr = inBox_d && (q != 8'hFF); 
+logic [7:0] q;
+always_ff @(posedge clk) begin
+	q <= mem[address];
+end
+
+logic isInBoundingBox_d;
+always_ff @(posedge clk) begin
+	isInBoundingBox_d <= isInBoundingBox;
+end
+
+always_ff @(posedge clk or negedge resetN) begin
+	if (!resetN) begin
+		RGBout <= 0;
+		dr <= 0;
+	end else begin
+		RGBout <= 0;
+		dr <= 0;
+		
+		if (isInBoundingBox_d) begin
+			RGBout <= q;
+			dr <= ((q == 8'hff) ? 0 : 1);
+		end
+	end
+end
 
 endmodule

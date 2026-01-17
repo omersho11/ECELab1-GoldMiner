@@ -18,6 +18,7 @@ module LevelController (
 	input logic [10:0] hookPosY,
 	input logic hookDRLatch,
 	input logic hookReturned,
+	input logic isHookRetracting,
 
 
 	output logic levelDR,
@@ -76,8 +77,8 @@ logic [4:0] activeX, activeY;
 logic anyInside;
 assign drGrabbableObject = anyInside && (romColor != 8'hFF);
 
-
-
+// latch for slowing the hook
+logic hookSlowdownComb;
 
 // data for ROM	
 RGB_T romColor;
@@ -144,18 +145,18 @@ LevelMaker levelMaker (
 
 // caches the data of the "active" GrabbableObject (active == colliding with the hook)
 always_comb begin
-    activeTex = 0; activeX = 0; activeY = 0; anyInside = 0; hookSlowdown = 0;
+    activeTex = 0; activeX = 0; activeY = 0; anyInside = 0;
+	 hookSlowdownComb = 0;
     for(int j=0; j<MAX_OBJECTS; j++) begin
         if(insideBus[j]) begin
             activeTex = activeLevelData[j].elementType;
             activeX = busX[j];
             activeY = busY[j];
             anyInside = 1;
-				hookSlowdown = (activeTex == ROCK_1);
+				hookSlowdownComb = hookSlowdownComb || (activeTex == ROCK_1);
         end
     end
 end
-
 
 // calculates the total value of grabbed objects
 always_comb begin
@@ -183,7 +184,13 @@ always_comb begin
 	end
 end
 //
-
+always_ff @(posedge clk or negedge resetN) begin
+	if (!resetN) begin
+		hookSlowdown <= 0;
+	end else begin
+		hookSlowdown <= hookSlowdownComb;
+	end
+end
 
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin
@@ -238,15 +245,16 @@ always_ff @(posedge clk or negedge resetN) begin
 		stageEnded_d <= 0;
 		enable_d <= 0;
 		scoreIncrease <= 0;
+		scoreInActiveLevel <= 0;
 		
 	end else begin
-		if (generateNewLevel) scoreInActiveLevel <= 0;
 		stageEnded_d <= stageEnded;
 		enable_d <= enable;
-		
+		if (generateNewLevel) scoreInActiveLevel <= 0;
+		else scoreInActiveLevel <= scoreInActiveLevel + scoreIncrease;
 		// theres a cutoff since using the entire 20 bits vector adds alot of DPS that slow down compilation time
 		scoreIncrease <= scoreMultiplier[6:0] * totalValuePerCycle;  
-		scoreInActiveLevel <= scoreInActiveLevel + scoreIncrease;
+		
 	end
 end
 

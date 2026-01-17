@@ -1,11 +1,11 @@
 module FiveDigitNumberDisplay #(
-    parameter logic [7:0] color = 8'hFF
+    parameter logic [7:0] color = 8'hFF,
+	 parameter logic [10:0] topLeftX = 0,
+	 parameter logic [10:0] topLeftY = 0
 ) (
     input  logic        clk,
     input  logic        resetN,
     input  logic        enable,
-    input  logic [10:0] topLeftX,
-    input  logic [10:0] topLeftY,
     input  logic [10:0] pixelX,
     input  logic [10:0] pixelY,
     input  logic [19:0] number,
@@ -46,7 +46,7 @@ logic            digits_next_valid;
 
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin
-		digitsLatch       <= '{default:4'd0};
+		digitsLatch       <= '{4'd0, 4'd11, 4'd11, 4'd11, 4'd11};
 		number_frame      <= 20'd0;
 		req               <= 1'b0;
 		bcd               <= 20'd0;
@@ -58,23 +58,28 @@ always_ff @(posedge clk or negedge resetN) begin
 
 	end else if (!enable) begin
 		// Freeze when disabled (keep last displayed digits)
-		busy <= 1'b0;
-		req  <= 1'b0;
+		busy              <= 1'b0;
+		req               <= 1'b0;
+		digits_next_valid <= 1'b0;   // important
+		// optional cleanup:
+		bitCnt            <= 5'd0;
+		bcd               <= 20'd0;
+		bin               <= 20'd0;
 
-		end else begin
-			// 1) At start of frame: sample number and request convert if changed
-			if (startOfFrame) begin
-				if (number != number_frame) begin
-					number_frame <= number;
-					req          <= 1'b1;
-				end
-
-				// Commit new digits only at frame boundary (prevents tearing)
-				if (digits_next_valid) begin
-					digitsLatch       <= digits_next;
-					digits_next_valid <= 1'b0;
-				end
+	end else begin
+		// 1) At start of frame: sample number and request convert if changed
+		if (startOfFrame) begin
+			if (number != number_frame) begin
+				number_frame <= number;
+				req          <= 1'b1;
 			end
+
+			// Commit new digits only at frame boundary (prevents tearing)
+			if (digits_next_valid) begin
+				digitsLatch       <= digits_next;
+				digits_next_valid <= 1'b0;
+			end
+		end
 
 			// 2) Start conversion if requested and idle
 			if (!busy && req) begin
@@ -110,19 +115,19 @@ always_ff @(posedge clk or negedge resetN) begin
 
 				// bcd_next: [3:0]=ones, [7:4]=tens, ...
 				// ten-thousands
-				if (number < 10000) digits_next[0] <= 11;
+				if (bcd_next[19:16] == 0) digits_next[0] <= 11;
 				else digits_next[0] <= bcd_next[19:16];   
 				
 				// thousands
-				if (number < 1000) digits_next[1] <= 11;
+				if (bcd_next[19:12] == 0) digits_next[1] <= 11;
 				else digits_next[1] <= bcd_next[15:12];  
 			
 				// hundreds
-				if (number < 100) digits_next[2] <= 11;
+				if (bcd_next[19:8] == 0) digits_next[2] <= 11;
 				else digits_next[2] <= bcd_next[11:8];   
 			
 				// tens
-				if (number < 10) digits_next[3] <= 11;
+				if (bcd_next[19:4] == 0) digits_next[3] <= 11;
 				else digits_next[3] <= bcd_next[7:4];
 
 				// ones				

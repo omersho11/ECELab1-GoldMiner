@@ -155,7 +155,7 @@ agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"MIN_LENGTH"
-		"100"
+		"50"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter

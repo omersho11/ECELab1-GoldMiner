@@ -1,7 +1,7 @@
 module Hook #(
     parameter OFFSET_X = 320,
     parameter OFFSET_Y = 96,
-    parameter MIN_LENGTH = 100,
+    parameter MIN_LENGTH = 50,
 	 parameter MAX_LENGTH = 600
 )
 (

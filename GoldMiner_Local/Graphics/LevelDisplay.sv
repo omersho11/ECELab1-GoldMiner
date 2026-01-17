@@ -16,10 +16,10 @@ module LevelDisplay (
 import GlobalsPKG::*;
 
 // --- Configuration ---
-localparam WIZ_X = 11'd288; 
-localparam WIZ_Y = 11'd32;
-localparam SPARK_X = 11'd304; 
-localparam SPARK_Y = 11'd41; 
+localparam WIZ_X = 11'd256; 
+localparam WIZ_Y = 11'd0;
+localparam SPARK_X = 11'd264; 
+localparam SPARK_Y = 11'd1; 
 localparam FRAMES_PER_SWITCH = 15; // 0.5s at 30Hz
 
 // --- Animation Timer ---
@@ -57,14 +57,17 @@ end
 logic wizDR, sparkDR;
 RGB_T wizRGB, sparkRGB;
 
- WizardROM wizard (
+ WizardROM #(
+	.SCALE(1)
+ )wizard (
 	.clk(clk),
+	.resetN(resetN),
 	.pixelX(pixelX),
 	.pixelY(pixelY),
-	.topLeftX(WIZ_X),
-	.topLeftY(WIZ_Y),
 	.frameIndex(currentFrame),
-	.rgbOut(wizRGB),
+	.startOfFrame(startOfFrame),
+	.isCasting(isCasting),
+	.RGBout(wizRGB),
 	.dr(wizDR)
 );
 	 
@@ -75,7 +78,8 @@ AnimationRom #(
 	.LEFT(SPARK_X),
 	.ANIMATION_LENGTH(4),
 	.POTION_ID(4),
-	.ANIMATION_SLOWDOWN_RATE(4)
+	.ANIMATION_SLOWDOWN_RATE(4),
+	.SCALE(1)
 ) spark (
 	.clk(clk),
 	.resetN(resetN),
@@ -87,14 +91,7 @@ AnimationRom #(
 	.dr(sparkDR)
 );
 
-always_ff @(posedge clk or negedge resetN) begin
-	if (!resetN) begin
-		
-	end
-	else if () begin
-	
-	end
-end
+
 always_ff @(posedge clk or negedge resetN) begin
 	if (!resetN) begin
 		levelDisplayDR <= 0;

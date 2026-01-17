@@ -32,6 +32,13 @@ package GlobalsPKG;
 		TEXT_COST        = 4'd10
 		
 	} IMAGE_IDS;
+	
+	typedef enum logic [3:0] {
+		PLUS_TO_CONTINUE = 4'd0,
+		PLUS_TO_START    = 4'd1,
+		YOU_LOST         = 4'd2,
+		FINAL_SCORE		  = 4'd3
+	} TEXT_IDS;
 
 	typedef struct packed {
 		LEVEL_ELEMENTS elementType;

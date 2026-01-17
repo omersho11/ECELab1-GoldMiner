@@ -22,6 +22,12 @@ module DisplayMux (
 	input logic shopDR,
 	input logic [7:0] shopRGB,
 	
+	input logic mainMenuDR,
+	input logic [7:0] mainMenuRGB,
+	
+	input logic lossMenuDR,
+	input logic [7:0] lossMenuRGB,
+	
 	output logic [7:0] RGBout
 );
 
@@ -39,6 +45,8 @@ always_comb begin
 	else if(levelDisplayDR) RGBout = levelDisplayRGB;
 	
 	else if(shopDR) RGBout = shopRGB;
+	else if(mainMenuDR) RGBout = mainMenuRGB;
+	else if(lossMenuDR) RGBout = lossMenuRGB;
 end
 
 

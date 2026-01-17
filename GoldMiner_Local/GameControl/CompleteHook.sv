@@ -1,7 +1,7 @@
 module CompleteHook #(
     parameter OFFSET_X = 320,
     parameter OFFSET_Y = 96,
-    parameter MIN_LENGTH = 100,
+    parameter MIN_LENGTH = 50,
     parameter MAX_LENGTH = 600,
     parameter LINE_THICKNESS = 1, 
     parameter LINE_COLOR = 8'hFE
@@ -54,6 +54,7 @@ module CompleteHook #(
     logic [7:0] lineRGB_out; // Renamed to avoid collision
     
     DrawLine lineDrawer (
+		  .enable(!isHookOut),
         .pixelX(pixelX),
         .pixelY(pixelY),
 		  .width(LINE_THICKNESS),
@@ -111,6 +112,7 @@ module CompleteHook #(
             end
         end else begin
             hookDR <= 0;
+				isHookOut <= 0;
         end
     end
 

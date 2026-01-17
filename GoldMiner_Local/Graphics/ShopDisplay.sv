@@ -83,9 +83,12 @@ RGB_T rgbSpeed, rgbLuck, rgbMult, rgbRot;
  
  
 // Item 1: Speed (White Text)
-FiveDigitNumberDisplay #( .color(MONEY_TEXT_COLOR) ) dispExtSpeed (
+FiveDigitNumberDisplay #(
+	.color(MONEY_TEXT_COLOR),
+	.topLeftX(POS_X_TEXT_EXT_SPEED),
+	.topLeftY(POS_Y_TEXT_EXT_SPEED)
+) dispExtSpeed (
   .clk(clk), .resetN(resetN), .enable(enable),
-  .topLeftX(POS_X_TEXT_EXT_SPEED), .topLeftY(POS_Y_TEXT_EXT_SPEED),
   .pixelX(pixelX), .pixelY(pixelY),
   .number(priceExtSpeed),
   .startOfFrame(startOfFrame),
@@ -94,9 +97,12 @@ FiveDigitNumberDisplay #( .color(MONEY_TEXT_COLOR) ) dispExtSpeed (
 );
 
 // Item 2: Luck (White Text)
-FiveDigitNumberDisplay #( .color(MONEY_TEXT_COLOR) ) dispLuck (
+FiveDigitNumberDisplay #( 
+	.color(MONEY_TEXT_COLOR),
+	.topLeftX(POS_X_TEXT_LUCK),
+	.topLeftY(POS_Y_TEXT_LUCK)
+) dispLuck (
   .clk(clk), .resetN(resetN), .enable(enable),
-  .topLeftX(POS_X_TEXT_LUCK), .topLeftY(POS_Y_TEXT_LUCK),
   .pixelX(pixelX), .pixelY(pixelY),
   .number(priceLuck),
   .startOfFrame(startOfFrame),
@@ -105,9 +111,12 @@ FiveDigitNumberDisplay #( .color(MONEY_TEXT_COLOR) ) dispLuck (
 );
 
 // Item 3: Multiplier (White Text)
-FiveDigitNumberDisplay #( .color(MONEY_TEXT_COLOR) ) dispMult (
+FiveDigitNumberDisplay #( 
+	.color(MONEY_TEXT_COLOR),
+	.topLeftX(POS_X_TEXT_MULT),
+	.topLeftY(POS_Y_TEXT_MULT)
+) dispMult (
   .clk(clk), .resetN(resetN), .enable(enable),
-  .topLeftX(POS_X_TEXT_MULT), .topLeftY(POS_Y_TEXT_MULT),
   .pixelX(pixelX), .pixelY(pixelY),
   .number(priceMult),
   .startOfFrame(startOfFrame),
@@ -116,9 +125,12 @@ FiveDigitNumberDisplay #( .color(MONEY_TEXT_COLOR) ) dispMult (
 );
 
 // Item 4: Rotation (White Text)
-FiveDigitNumberDisplay #( .color(MONEY_TEXT_COLOR) ) dispRotSpeed (
+FiveDigitNumberDisplay #(
+	.color(MONEY_TEXT_COLOR),
+	.topLeftX(POS_X_TEXT_ROT_SPEED),
+	.topLeftY(POS_Y_TEXT_ROT_SPEED)
+) dispRotSpeed (
 	  .clk(clk), .resetN(resetN), .enable(enable),
-	  .topLeftX(POS_X_TEXT_ROT_SPEED), .topLeftY(POS_Y_TEXT_ROT_SPEED),
 	  .pixelX(pixelX), .pixelY(pixelY),
 	  .number(priceRotSpeed),
 	  .startOfFrame(startOfFrame),
